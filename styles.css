@@ -227,10 +227,12 @@ body {
   height: 66px;
   width: auto;
   transition: transform 0.3s ease;
+  transform: scale(2);
+  transform-origin: left center;
 }
 
 .logo-img:hover {
-  transform: scale(1.05);
+  transform: scale(2.1);
 }
 
 .navbar-links {
@@ -681,15 +683,17 @@ body {
 }
 
 .dialog-logo-tagline img {
-  height: 80px;
+  height: 88px;
   width: auto;
   opacity: 0.9;
+  flex-shrink: 0;
 }
 
 .dialog-logo-tagline span {
   color: var(--color-primary);
   font-weight: 600;
   font-size: 1.1rem;
+  line-height: 1.3;
 }
 
 .dialog-image {
@@ -1830,6 +1834,7 @@ body {
 
   .logo-img {
     height: 50px;
+    transform: scale(2);
   }
 
   .navbar-links {
@@ -2690,7 +2695,8 @@ body {
   }
 
   .logo-img {
-    height: 50px;
+    height: 44px;
+    transform: scale(2);
   }
 
   .navbar {
