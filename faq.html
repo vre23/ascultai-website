@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Intrebari Frecvente (FAQ)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasa</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <a href="resources.html" class="active">Resurse</a>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasa</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="resources.html" class="active">Resurse</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="resource-hero scroll-section">
+      <div class="container">
+        <div class="breadcrumb scroll-fade-in"><a href="resources.html">Resurse</a> <span>&rarr;</span> <span>FAQ</span></div>
+        <h1 class="scroll-fade-in"><span class="accent">Intrebari</span> Frecvente</h1>
+        <p class="scroll-fade-in">Tot ce trebuie sa stii despre AscultAI &mdash; securitate, functionare, conformitate si multe altele.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Table of Contents -->
+    <section class="section scroll-section">
+      <div class="container">
+        <div class="faq-toc scroll-fade-in">
+          <nav class="faq-toc-nav">
+            <a href="#despre" class="faq-toc-link">Despre AscultAI</a>
+            <a href="#functionare" class="faq-toc-link">Cum functioneaza</a>
+            <a href="#securitate" class="faq-toc-link">Securitate</a>
+            <a href="#consimtamant" class="faq-toc-link">Consimtamant</a>
+            <a href="#precizie" class="faq-toc-link">Precizie si limite</a>
+            <a href="#functionalitati" class="faq-toc-link">Functionalitati</a>
+            <a href="#tehnic" class="faq-toc-link">Cerinte tehnice</a>
+            <a href="#onboarding" class="faq-toc-link">Onboarding</a>
+            <a href="#conformitate" class="faq-toc-link">Conformitate</a>
+            <a href="#suport" class="faq-toc-link">Suport</a>
+          </nav>
+        </div>
+
+        <!-- 1. Despre AscultAI -->
+        <div class="faq-category scroll-fade-in" id="despre">
+          <h2 class="faq-category-title">1. Despre AscultAI</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este un instrument de productivitate bazat pe inteligenta artificiala care te ajuta sa documentezi mai rapid. Asculta conversatiile tale profesionale (consultatii, intalniri, sedinte), le transcrie automat si genereaza drafturi structurate pe care le poti revizui, edita si valida inainte de utilizare.</p>
+              <p>AscultAI este o aplicatie web (webapp) care functioneaza direct din browser, pe orice dispozitiv cu conexiune la internet. Nu este necesara instalarea niciunei aplicatii.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cine foloseste AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este folosit de profesionisti care au nevoie sa documenteze conversatii: medici (de familie, specialisti, psihologi, stomatologi), avocati, consultanti si alti profesionisti din domenii unde documentatia precisa este esentiala.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este AscultAI un AI generic, precum ChatGPT sau Copilot?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI nu este un generator de continut creativ si nu este un chatbot. Este un sistem specializat, optimizat exclusiv pentru documentarea si structurarea informatiilor din conversatii profesionale.</p>
+              <p>Spre deosebire de asistentii AI generali, AscultAI intelege terminologia de specialitate, genereaza documente structurate conform sabloanelor tale si respecta standarde stricte de confidentialitate si securitate a datelor.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este AscultAI doar o aplicatie de dictare?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. Aplicatiile de dictare clasice produc text brut care necesita editare masiva. AscultAI face un pas in plus: dupa transcriere, analizeaza continutul si genereaza un draft structurat conform sablonului ales de tine &mdash; gata de revizuit si validat, fara rescriere manuala.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce problema rezolva AscultAI, concret?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Rezolva &bdquo;latenta administrativa&rdquo; &mdash; timpul si efortul cognitiv consumate intre finalizarea unei conversatii (de exemplu, o consultatie) si finalizarea documentatiei aferente. In loc sa scrii sau sa dictezi manual dupa fiecare pacient, AscultAI genereaza un draft structurat in secunde. Tu revizuiesti, corectezi daca e nevoie, si validezi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Cum functioneaza -->
+        <div class="faq-category scroll-fade-in" id="functionare">
+          <h2 class="faq-category-title">2. Cum functioneaza</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Care este fluxul de lucru cu AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Procesul este simplu si se desfasoara in patru pasi:</p>
+              <ul>
+                <li><strong>Pasul 1 &ndash; Porneste:</strong> Deschizi AscultAI in browser si apesi &bdquo;Inregistreaza&rdquo;. AscultAI incepe sa asculte conversatia.</li>
+                <li><strong>Pasul 2 &ndash; Converseaza:</strong> Desfasoara-ti consultatia normal. AscultAI lucreaza in fundal, fara sa interfere.</li>
+                <li><strong>Pasul 3 &ndash; Revizuieste:</strong> La final, AscultAI genereaza un draft structurat pe baza conversatiei. Revizuiesti continutul, corectezi ce e necesar.</li>
+                <li><strong>Pasul 4 &ndash; Valideaza si exporta:</strong> Dupa ce confirmi ca documentul este corect, il poti copia, printa sau exporta in format PDF.</li>
+              </ul>
+              <div class="faq-warning">Documentele generate de AscultAI sunt drafturi orientative. Ai obligatia profesionala sa revizuiesti si sa validezi fiecare document inainte de a-l utiliza oficial.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum functioneaza transcrierea?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI foloseste modele avansate de recunoastere vocala (ASR) optimizate pentru terminologie profesionala romaneasca. Sistemul asculta conversatia, o transcrie, apoi analizeaza continutul pentru a genera un draft structurat conform sablonului ales. Transcrierea si structurarea se fac in timp aproape real.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Poate AscultAI sa ia decizii sau sa faca recomandari?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI nu ofera diagnostice, nu propune tratamente si nu substituie judecata profesionala a utilizatorului. Rolul sau este strict de suport pentru documentare: asculta, transcrie si structureaza. Decizia clinica sau profesionala iti apartine in totalitate.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI intelege mai multi vorbitori in aceeasi conversatie?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Sistemul este proiectat sa functioneze in conversatii intre doua sau mai multe persoane. Totusi, pentru rezultate optime, recomandam un mediu cu zgomot de fond minim si o distanta rezonabila fata de microfon.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce sfaturi exista pentru o calitate optima a transcrierii?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li>Foloseste un mediu cat mai linistit (fara muzica, televizor sau conversatii suprapuse).</li>
+                <li>Aseaza dispozitivul la o distanta rezonabila &mdash; nu in buzunar sau sub documente.</li>
+                <li>Vorbeste natural, cu un ritm normal. Nu e nevoie sa dictezi.</li>
+                <li>Daca folosesti telefonul, activeaza microfonul integrat sau foloseste casti cu microfon.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Securitate si confidentialitate -->
+        <div class="faq-category scroll-fade-in" id="securitate">
+          <h2 class="faq-category-title">3. Securitate si confidentialitate</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este sigur sa folosesc AscultAI cu date sensibile?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Securitatea datelor este centrala in arhitectura AscultAI. Toate datele sunt criptate atat in tranzit (TLS 1.2+) cat si la stocare (AES-256), si sunt procesate exclusiv in centre de date din Uniunea Europeana (Microsoft Azure, regiunea North Europe &mdash; Irlanda). Datele nu parasesc niciodata Spatiul Economic European (SEE).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Se stocheaza inregistrarile audio?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>In mod implicit, nu. Aplicam principiul &bdquo;stocare zero&rdquo; (zero-retention): datele audio sunt procesate in timp real pentru generarea draftului, apoi sterse automat. Nu pastram inregistrari audio dupa finalizarea procesului.</p>
+              <p>La cererea explicita a clinicii, putem activa stocarea inregistrarilor ca serviciu aditional (contra cost), cu respectarea termenilor din Acordul de Prelucrare a Datelor (DPA).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cine are acces la documentatia generata?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Doar tu si persoanele carora le acorzi explicit acces. Echipa AscultAI nu are acces la continutul documentelor tale. Accesul este securizat prin protocoale de autentificare si criptare. Poti sterge orice document din sistem in orice moment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Unde sunt stocate datele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Toate datele sunt stocate si procesate exclusiv in Uniunea Europeana (Microsoft Azure, regiunea North Europe &mdash; Irlanda), in conformitate deplina cu GDPR. Nu transferam date in afara SEE.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Sunt datele folosite pentru antrenarea modelelor AI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. Datele tale nu sunt niciodata folosite pentru antrenarea, reantrenarea sau imbunatatirea modelelor de inteligenta artificiala. Acest lucru este garantat contractual prin Termenii de Utilizare si Acordul de Prelucrare a Datelor (DPA).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Consimtamantul pacientului -->
+        <div class="faq-category scroll-fade-in" id="consimtamant">
+          <h2 class="faq-category-title">4. Consimtamantul pacientului</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Trebuie consimtamantul pacientului?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Legislatia romaneasca (inclusiv Legea 46/2003 &mdash; Drepturile pacientului si Art. 226 Cod Penal) impune informarea si obtinerea consimtamantului persoanei inainte de inregistrarea conversatiei. Pacientul trebuie sa stie:</p>
+              <ul>
+                <li>Ca conversatia va fi inregistrata (audio captat de microfon);</li>
+                <li>De ce se face inregistrarea (pentru generarea automata a documentatiei);</li>
+                <li>Cine proceseaza datele si unde sunt stocate;</li>
+                <li>Ca poate refuza fara nicio consecinta asupra calitatii serviciului medical primit.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum obtin consimtamantul?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Exista doua variante:</p>
+              <ul>
+                <li><strong>Consimtamant scris:</strong> Pacientul semneaza un formular dedicat. Oferim un model de formular pe care il poti personaliza.</li>
+                <li><strong>Consimtamant verbal documentat:</strong> Acceptabil daca este consemnat in fisa pacientului. Recomandam formularea: &bdquo;Va informez ca voi folosi un asistent digital care transcrie conversatia pentru a genera documentatia. Sunteti de acord?&rdquo;</li>
+              </ul>
+              <div class="faq-tip">Buna practica: Afiseaza in sala de asteptare un afis informativ care anunta utilizarea AscultAI. Oferim materiale printabile gratuit pe pagina de <a href="explainers.html">Explicatii</a>.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce se intampla daca pacientul refuza?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Consultatia se desfasoara normal, fara AscultAI. Refuzul nu afecteaza in niciun fel calitatea serviciului medical. Documentezi manual, ca de obicei.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Precizie, limite si validarea umana -->
+        <div class="faq-category scroll-fade-in" id="precizie">
+          <h2 class="faq-category-title">5. Precizie, limite si validare umana</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cat de precisa este transcrierea?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI atinge rate de acuratete ridicate pentru terminologia profesionala romaneasca in conditii optime de inregistrare. Performanta variaza in functie de: calitatea microfonului, nivelul de zgomot ambient, claritatea vorbirii si complexitatea terminologiei folosite.</p>
+              <div class="faq-warning">Indiferent de rata de acuratete, fiecare document generat trebuie revizuit si validat de tine inainte de utilizare.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Poate AscultAI sa greseasca?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Ca orice tehnologie bazata pe procesare de limbaj natural, pot aparea:</p>
+              <ul>
+                <li><strong>Erori de transcriere (ASR):</strong> cuvinte similare fonetic pot fi confundate;</li>
+                <li><strong>Erori de interpretare contextuala:</strong> AI-ul poate structura o informatie intr-o sectiune gresita a sablonului;</li>
+                <li><strong>Omisiuni:</strong> unele detalii mentionate in conversatie pot lipsi din draftul generat;</li>
+                <li><strong>Halucinatii AI:</strong> in cazuri rare, AI-ul poate genera informatii care nu au fost mentionate explicit in conversatie.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este &bdquo;Validarea Umana Obligatorie&rdquo;?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI opereaza pe principiul &bdquo;Human-in-the-loop&rdquo;: AI-ul este un instrument de suport, nu un autor. Fiecare document generat are caracter de draft orientativ. Tu, ca profesionist, ai obligatia legala si profesionala de a:</p>
+              <ul>
+                <li>Citi integral draftul generat;</li>
+                <li>Corecta orice eroare identificata;</li>
+                <li>Valida documentul inainte de a-l printa, exporta sau include in dosarul pacientului.</li>
+              </ul>
+              <div class="faq-warning">Nu printa si nu folosi oficial niciun document generat de AscultAI fara sa-l fi citit si validat personal. Responsabilitatea pentru continutul final iti apartine.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>De ce este important sa validez intotdeauna?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Draftul generat poate contine erori. Daca un document cu erori ajunge in dosarul pacientului fara validare, responsabilitatea profesionala si legala iti revine. AscultAI iti economiseste timpul de redactare, nu iti transfera responsabilitatea de verificare.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Functionalitati si personalizari -->
+        <div class="faq-category scroll-fade-in" id="functionalitati">
+          <h2 class="faq-category-title">6. Functionalitati si personalizari</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot personaliza sabloanele de documente?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI ofera sabloane complet personalizabile. Poti crea sabloane proprii sau adapta cele existente pentru a se potrivi stilului tau de documentare si cerintelor specifice ale practicii tale. Oferim sabloane prestabilite pentru specialitati frecvente (medicina de familie, psihologie, dermatologie, stomatologie si altele).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum export documentele generate?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Copiate</strong> &mdash; cu un click, copii continutul si il lipezi in orice sistem (EHR, Word, email);</li>
+                <li><strong>Exportate in PDF</strong> &mdash; format profesional, personalizabil cu logo-ul si datele clinicii tale;</li>
+                <li><strong>Printate direct</strong> &mdash; foaia printata include antetul si datele clinicii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Se poate integra AscultAI cu sistemul meu de evidenta electronica (EHR)?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>La cerere, putem explora posibilitatea de integrare cu sistemul tau de evidenta electronica. Totusi, cea mai mare parte din timpul economisit provine din generarea automata a drafturilor &mdash; indiferent de integrare, poti copia documentele direct in EHR-ul tau in cateva secunde.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>In ce limbi functioneaza AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este optimizat pentru limba romana, inclusiv terminologia medicala specifica. Sistemul poate procesa si conversatii in alte limbi (engleza, franceza s.a.), dar performanta optima este pentru romana.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot folosi AscultAI pentru teleconsiltatii?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI functioneaza atat pentru consultatii fata in fata, cat si pentru consultatii video sau telefonice. In cazul teleconsultatiilor, deschizi AscultAI pe acelasi dispozitiv de pe care desfasori consultatia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot sterge datele mele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Poti sterge orice document generat in orice moment. De asemenea, in conformitate cu GDPR, poti solicita stergerea integrala a tuturor datelor tale asociate contului.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Cerinte tehnice si compatibilitate -->
+        <div class="faq-category scroll-fade-in" id="tehnic">
+          <h2 class="faq-category-title">7. Cerinte tehnice si compatibilitate</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pe ce dispozitive pot folosi AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este o aplicatie web care functioneaza in orice browser modern &mdash; Chrome, Firefox, Safari sau Edge. Poti accesa platforma de pe computer, laptop, tableta sau telefon.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Trebuie sa instalez ceva?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI functioneaza integral din browser. Nu este necesara instalarea niciunei aplicatii, extensii sau software suplimentar.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce conexiune la internet am nevoie?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>O conexiune stabila la internet este necesara pe durata inregistrarii. Recomandam minim 2 Mbps upload pentru o transcriere fluenta. Conexiunea Wi-Fi din cabinet este de obicei suficienta.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce tip de microfon recomandati?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Microfonul integrat al laptopului sau telefonului functioneaza bine in cele mai multe situatii. Pentru cabinete cu zgomot de fond sau conversatii la distanta, recomandam un microfon extern de birou sau casti cu microfon.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Onboarding si primii pasi -->
+        <div class="faq-category scroll-fade-in" id="onboarding">
+          <h2 class="faq-category-title">8. Onboarding si primii pasi</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum incep sa folosesc AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Pasul 1:</strong> Discutie initiala si evaluarea nevoilor &mdash; intelegem volumul si specificul activitatii tale.</li>
+                <li><strong>Pasul 2:</strong> Configurarea contului si sabloanelor &mdash; adaptam platforma la specialitatea si preferintele tale.</li>
+                <li><strong>Pasul 3:</strong> Sesiune de training (15&ndash;20 minute) &mdash; iti aratam cum sa folosesti eficient platforma.</li>
+                <li><strong>Pasul 4:</strong> Utilizare si suport continuu &mdash; echipa noastra e disponibila pentru orice intrebare.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cat dureaza pana incep sa economisesc timp?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>De la prima consultatie. Dupa sesiunea de training de 15&ndash;20 minute, poti folosi AscultAI imediat. Cele mai multe cabinete raporteaza o reducere semnificativa a timpului de documentare din prima zi de utilizare.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce se intampla daca decid sa nu continui?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Datele raman ale tale. La incetarea colaborarii, poti exporta toate documentele generate, iar noi stergem datele tale conform prevederilor GDPR si ale Acordului de Prelucrare a Datelor.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Conformitate si reglementari -->
+        <div class="faq-category scroll-fade-in" id="conformitate">
+          <h2 class="faq-category-title">9. Conformitate si reglementari</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI respecta GDPR?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI este conform cu Regulamentul General privind Protectia Datelor (GDPR &mdash; Reg. UE 2016/679) si cu Legea 190/2018 (legea romaneasca de punere in aplicare a GDPR).</p>
+              <p>Relatia juridica: cabinetul/clinica ta este Operatorul de date (data controller), iar ApolloIQ SRL este Procesatorul (data processor). Aceasta relatie este formalizata printr-un Acord de Prelucrare a Datelor (DPA) semnat la activarea contului.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce drepturi am ca utilizator in legatura cu datele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Conform GDPR, ai dreptul de:</p>
+              <ul>
+                <li><strong>Acces</strong> &mdash; sa stii ce date sunt procesate;</li>
+                <li><strong>Rectificare</strong> &mdash; sa corectezi date incorecte;</li>
+                <li><strong>Stergere</strong> &mdash; sa soliciti stergerea datelor (&bdquo;dreptul de a fi uitat&rdquo;);</li>
+                <li><strong>Portabilitate</strong> &mdash; sa primesti datele intr-un format structurat;</li>
+                <li><strong>Opozitie</strong> &mdash; sa te opui prelucrarii in anumite conditii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce obligatii am eu, ca utilizator, fata de pacientii mei?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Ca operator de date cu caracter personal (data controller), ai urmatoarele obligatii:</p>
+              <ul>
+                <li>Sa obtii consimtamantul pacientului inainte de inregistrare;</li>
+                <li>Sa informezi pacientul despre scopul si modalitatea de prelucrare;</li>
+                <li>Sa validezi personal fiecare document inainte de utilizare;</li>
+                <li>Sa pastrezi confidentialitatea datelor medicale conform legii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI este un dispozitiv medical?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI este un instrument de suport administrativ pentru documentare si productivitate profesionala. Nu este un dispozitiv medical in sensul Regulamentului (UE) 2017/745 si nu a fost proiectat, evaluat sau certificat ca atare.</p>
+              <p>AscultAI nu ofera diagnostice, nu propune tratamente, nu interpreteaza rezultate clinice si nu substituie in niciun fel judecata profesionala a utilizatorului.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este Regulamentul AI Act si cum afecteaza AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Regulamentul UE privind Inteligenta Artificiala (Reg. 2024/1689 &mdash; AI Act) clasificia sistemele AI pe niveluri de risc. AscultAI respecta obligatiile de transparenta ale AI Act: te informam clar ca documentele sunt generate de AI si necesita validare umana.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Suport si contact -->
+        <div class="faq-category scroll-fade-in" id="suport">
+          <h2 class="faq-category-title">10. Suport si contact</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum pot contacta echipa AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Email:</strong> support@ascult.ai</li>
+                <li><strong>Chat in platforma:</strong> disponibil in interfata AscultAI</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce fac daca intampin o problema tehnica?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Contacteaza-ne prin oricare dintre canalele de mai sus. Echipa noastra de suport raspunde in timpul programului de lucru (L&ndash;V, 9:00&ndash;18:00). Pentru probleme urgente legate de pierderea accesului la date, raspundem in maxim 24 de ore.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum raportez o eroare de transcriere?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Direct din interfata AscultAI, poti marca orice sectiune ca &bdquo;eroare&rdquo;. Feedback-ul tau ne ajuta sa imbunatatim continuu calitatea serviciului.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="faq-disclaimer scroll-fade-in">
+          <p>AscultAI este un instrument de suport pentru documentare, produs al ApolloIQ SRL. Documentele generate sunt drafturi orientative create cu ajutorul inteligentei artificiale si necesita verificarea si validarea de catre utilizator. AscultAI nu substituie judecata profesionala.</p>
+          <p>Ultima actualizare: Februarie 2026 &bull; &copy; 2026 ApolloIQ SRL</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        &copy; <span id="year"></span> AscultAI &ndash; Un produs ApolloIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        // Close all items in same category
+        item.closest('.faq-category').querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current
+        item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Scroll animations
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('animated'); }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-fade-in').forEach((el, i) => {
+        const parent = el.closest('.scroll-section');
+        if (parent) {
+          const siblings = Array.from(parent.querySelectorAll('.scroll-fade-in'));
+          el.style.transitionDelay = `${siblings.indexOf(el) * 0.1}s`;
+        }
+        scrollObserver.observe(el);
+      });
+    });
+
+    // Smooth scroll for TOC links
+    document.querySelectorAll('.faq-toc-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+      let isMenuOpen = false;
+      function openMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.add('active'); menuToggle.classList.add('active'); document.body.style.overflow = 'hidden'; isMenuOpen = true; } }
+      function closeMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = ''; isMenuOpen = false; } }
+      if (menuToggle) menuToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); isMenuOpen ? closeMenu() : openMenu(); });
+      if (menuClose) menuClose.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      if (menuOverlay) menuOverlay.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMenu, 100); }); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+    });
+  </script>
+</body>
+
+</html>

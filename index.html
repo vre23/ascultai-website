@@ -13,12 +13,13 @@
     <nav class="navbar">
       <div class="navbar-left">
         <a href="index.html">
-          <img src="assets/Logo.png" alt="AscultAI" class="logo-img">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
         </a>
       </div>
       <div class="navbar-links">
         <a href="index.html" class="active">Acasă</a>
         <a href="pricing.html">Planuri Tarifare</a>
+        <a href="resources.html">Resurse</a>
         <a href="about.html">Despre Noi</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -36,12 +37,13 @@
       <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
       <div class="mobile-menu-content">
         <div class="mobile-menu-header">
-          <img src="assets/Logo.png" alt="AscultAI" class="mobile-logo">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
           <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
         </div>
         <nav class="mobile-menu-nav">
           <a href="index.html" class="active">Acasă</a>
           <a href="pricing.html">Planuri Tarifare</a>
+          <a href="resources.html">Resurse</a>
           <a href="about.html">Despre Noi</a>
           <a href="contact.html">Contact</a>
           <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
@@ -60,7 +62,7 @@
           <span>Documentează</span>
         </div>
 
-        <img src="assets/Logo.png" alt="AscultAI Logo" class="hero-logo">
+        <img src="assets/logo-horizontal.svg" alt="AscultAI Logo" class="hero-logo">
 
         <p class="hero-subtitle scroll-fade-in">
           Asistentul tău AI care transformă conversația cu pacientul în note medicale structurate, în timp real.
@@ -78,7 +80,7 @@
           <p>Principala cauză a epuizării este <strong>munca după program</strong>.</p>
 
           <div class="dialog-logo-tagline">
-            <img src="assets/Logo.png" alt="AscultAI">
+            <img src="assets/logo-horizontal.svg" alt="AscultAI">
             <span>elimină bariera dintre tine și pacient.</span>
           </div>
         </div>
@@ -92,22 +94,21 @@
       <div class="container">
         <h2 class="section-title scroll-fade-in">Cum funcționează</h2>
 
-        <!-- YouTube Video Thumbnail -->
+        <!-- YouTube Video Embed -->
         <div class="video-container scroll-fade-in">
-          <a href="https://www.youtube.com/watch?v=VLAjrXQhRtE" target="_blank" rel="noopener noreferrer" class="video-wrapper">
-            <img 
-              src="https://img.youtube.com/vi/VLAjrXQhRtE/maxresdefault.jpg" 
+          <div class="video-wrapper" id="videoPlayer">
+            <img
+              src="https://img.youtube.com/vi/VLAjrXQhRtE/maxresdefault.jpg"
               alt="AscultAI Demo Video"
               class="video-thumbnail-img"
               onerror="this.src='https://img.youtube.com/vi/VLAjrXQhRtE/hqdefault.jpg'">
-            <div class="video-play-overlay">
+            <div class="video-play-overlay" onclick="loadVideo()">
               <svg class="play-button" viewBox="0 0 68 48" width="68" height="48">
                 <path class="video-play-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path>
                 <path class="video-play-icon" d="M 45,24 27,14 27,34"></path>
               </svg>
-              <span class="video-click-text">Vezi video pe YouTube</span>
             </div>
-          </a>
+          </div>
         </div>
 
         <!-- Step-by-step animation -->
@@ -360,6 +361,20 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lazy-load YouTube video on click
+    function loadVideo() {
+      const wrapper = document.getElementById('videoPlayer');
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/VLAjrXQhRtE?autoplay=1&rel=0';
+      iframe.title = 'AscultAI Demo Video';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:inherit;';
+      wrapper.innerHTML = '';
+      wrapper.appendChild(iframe);
+    }
 
     // Enhanced Intersection Observer for sequential scroll animations
     const observerOptions = {

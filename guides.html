@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Ghiduri și Tutoriale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <a href="resources.html" class="active">Resurse</a>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="resources.html" class="active">Resurse</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="resource-hero scroll-section">
+      <div class="container">
+        <div class="breadcrumb scroll-fade-in"><a href="resources.html">Resurse</a> <span>→</span> <span>Ghiduri</span></div>
+        <h1 class="scroll-fade-in"><span class="accent">Ghiduri</span> și Tutoriale</h1>
+        <p class="scroll-fade-in">Învață să folosești AscultAI la maximum cu ghidurile noastre detaliate pas cu pas.</p>
+      </div>
+    </section>
+
+    <!-- Guides Grid -->
+    <section class="section scroll-section">
+      <div class="container">
+        <div class="guides-grid">
+          <div class="guide-card scroll-fade-in">
+            <div class="guide-card-img">🚀</div>
+            <div class="guide-card-body">
+              <span class="guide-tag">Pentru Începători</span>
+              <h3>Ghid de Pornire Rapidă</h3>
+              <p>Configurează și începe să folosești AscultAI în doar 10 minute.</p>
+              <div class="guide-card-meta">
+                <span>📄 6 pagini</span>
+                <span>⏱️ 10 min</span>
+                <a href="#" class="guide-card-link">Citește →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-card scroll-fade-in">
+            <div class="guide-card-img">🎯</div>
+            <div class="guide-card-body">
+              <span class="guide-tag">Best Practices</span>
+              <h3>Optimizarea Acurateții</h3>
+              <p>Sfaturi pentru cele mai precise transcrieri și note clinice.</p>
+              <div class="guide-card-meta">
+                <span>📄 8 pagini</span>
+                <span>⏱️ 12 min</span>
+                <a href="#" class="guide-card-link">Citește →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        © <span id="year"></span> AscultAI – Un produs ApolloIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('animated'); }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-fade-in').forEach((el, i) => {
+        const parent = el.closest('.scroll-section');
+        if (parent) {
+          const siblings = Array.from(parent.querySelectorAll('.scroll-fade-in'));
+          el.style.transitionDelay = `${siblings.indexOf(el) * 0.1}s`;
+        }
+        scrollObserver.observe(el);
+      });
+    });
+
+    // Mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+      let isMenuOpen = false;
+      function openMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.add('active'); menuToggle.classList.add('active'); document.body.style.overflow = 'hidden'; isMenuOpen = true; } }
+      function closeMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = ''; isMenuOpen = false; } }
+      if (menuToggle) menuToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); isMenuOpen ? closeMenu() : openMenu(); });
+      if (menuClose) menuClose.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      if (menuOverlay) menuOverlay.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMenu, 100); }); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+    });
+  </script>
+</body>
+
+</html>
