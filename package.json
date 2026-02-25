@@ -1,0 +1,12 @@
+{
+  "name": "ascult-ai-website",
+  "version": "1.0.0",
+  "description": "AscultAI static website",
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  },
+  "private": true,
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

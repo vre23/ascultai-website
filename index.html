@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Ascultă. Înțelege. Documentează.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/Logo.png" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html" class="active">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/Logo.png" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html" class="active">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero with words, logo & tagline -->
+    <section class="hero-secondary scroll-section">
+      <div class="container">
+        <div class="hero-main-words scroll-fade-in">
+          <span>Ascultă</span>
+          <span class="accent">Înțelege</span>
+          <span>Documentează</span>
+        </div>
+
+        <img src="assets/Logo.png" alt="AscultAI Logo" class="hero-logo">
+
+        <p class="hero-subtitle scroll-fade-in">
+          Asistentul tău AI care transformă conversația cu pacientul în note medicale structurate, în timp real.
+          <strong>Recâștigă până la 2 ore pe zi</strong> și elimină munca administrativă.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dialog / product screenshot section -->
+    <section class="section scroll-section dialog-section-wrapper">
+      <div class="container dialog-section">
+        <div class="dialog-text scroll-fade-in">
+          <h2>Medicina se face prin <span>dialog</span>.</h2>
+          <p>Știm că până la <strong>70%</strong> din timpul unei consultații este pierdut cu introducerea datelor.</p>
+          <p>Principala cauză a epuizării este <strong>munca după program</strong>.</p>
+
+          <div class="dialog-logo-tagline">
+            <img src="assets/Logo.png" alt="AscultAI">
+            <span>elimină bariera dintre tine și pacient.</span>
+          </div>
+        </div>
+
+        <div class="dialog-image scroll-fade-in"></div>
+      </div>
+    </section>
+
+    <!-- How it works / features / safety -->
+    <section class="section scroll-section how-it-works-section">
+      <div class="container">
+        <h2 class="section-title scroll-fade-in">Cum funcționează</h2>
+
+        <!-- YouTube Video Thumbnail -->
+        <div class="video-container scroll-fade-in">
+          <a href="https://www.youtube.com/watch?v=VLAjrXQhRtE" target="_blank" rel="noopener noreferrer" class="video-wrapper">
+            <img 
+              src="https://img.youtube.com/vi/VLAjrXQhRtE/maxresdefault.jpg" 
+              alt="AscultAI Demo Video"
+              class="video-thumbnail-img"
+              onerror="this.src='https://img.youtube.com/vi/VLAjrXQhRtE/hqdefault.jpg'">
+            <div class="video-play-overlay">
+              <svg class="play-button" viewBox="0 0 68 48" width="68" height="48">
+                <path class="video-play-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.63-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path>
+                <path class="video-play-icon" d="M 45,24 27,14 27,34"></path>
+              </svg>
+              <span class="video-click-text">Vezi video pe YouTube</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Step-by-step animation -->
+        <div class="steps-animation-wrapper scroll-fade-in">
+          <div class="step-navigation">
+            <div class="step-dots" id="stepDots"></div>
+            <div class="nav-buttons">
+              <button class="nav-btn" id="prevBtn" onclick="changeStep(-1)">
+                <span>←</span> Anterior
+              </button>
+              <button class="nav-btn" id="nextBtn" onclick="changeStep(1)">
+                Următor <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="step-content">
+            <div class="progress-bar" id="progressBar"></div>
+
+            <!-- Step 1: Access Application -->
+            <div class="step-panel active" data-step="1">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-1-image">
+                  <img src="assets/demo.png" alt="Accesare aplicație"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul 1</div>
+                <h3 class="step-title">Accesează aplicația prin contul dedicat</h3>
+                <p class="step-description">
+                  Conectează-te la platforma Merlin folosind contul tău dedicat. Odată autentificat, vei avea acces la
+                  toate funcționalitățile AscultAI.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2: Choose Template -->
+            <div class="step-panel" data-step="2">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-2-image">
+                  <img src="assets/demo-step-1.png" alt="Selectare șablon"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul 2</div>
+                <h3 class="step-title">Alege un format pentru a structura informația capturată</h3>
+                <p class="step-description">
+                  Selectează din biblioteca de șabloane disponibile formatul care se potrivește cel mai bine nevoilor
+                  tale: SOAP, Scrisoare Medicală, Referat sau alte formate specializate.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3: Start Session -->
+            <div class="step-panel" data-step="3">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-3-image">
+                  <img src="assets/demo-step-2.png" alt="Start sesiune"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul 3</div>
+                <h3 class="step-title">Începe o sesiune nouă pentru orice conversație sau consultație</h3>
+                <p class="step-description">
+                  Apasă butonul "Sesiune nouă" pentru a începe înregistrarea. Aplicația este gata să captureze
+                  conversația ta cu pacientul sau orice altă consultație medicală.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4: Record & Transcribe -->
+            <div class="step-panel" data-step="4">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-4-image">
+                  <img src="assets/demo-step-3.png" alt="Înregistrare și transcriere"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul 4</div>
+                <h3 class="step-title">Ascultă conversația și generează transcrierea</h3>
+                <p class="step-description">
+                  Aplicația înregistrează conversația în timp real. Când apesi butonul Stop, sistemul va genera automat
+                  transcrierea conversației sau consultației folosind tehnologii AI avansate.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 5: Structure Information -->
+            <div class="step-panel" data-step="5">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-5-image">
+                  <img src="assets/demo-step-4.png" alt="Structurare informație"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul 5</div>
+                <h3 class="step-title">Informația va fi structurată automat pe șablonul selectat</h3>
+                <p class="step-description">
+                  Transcrierea este analizată și structurată automat conform șablonului ales. Rezultatul este un
+                  document medical complet, organizat și gata de utilizare.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 6: Copy to Portal -->
+            <div class="step-panel" data-step="6">
+              <div class="step-image-container">
+                <div class="step-image-placeholder step-6-image">
+                  <img src="assets/demo-step-5.png" alt="Copiere în portal"
+                    style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+              </div>
+              <div class="step-text-content">
+                <div class="step-number">Pasul Final</div>
+                <h3 class="step-title">Copiază informația în portalul de management pacienți</h3>
+                <p class="step-description">
+                  Documentul structurat poate fi copiat direct în portalul tău de management pacienți sau exportat ca
+                  document pentru printare sau adăugare la istoricul pacientului. Totul este gata în câteva secunde!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features grid below animation -->
+        <div class="columns-3" style="margin-top: 4rem;">
+          <!-- Funcționalități cheie -->
+          <div class="scroll-fade-in">
+            <h3 class="subsection-title">Funcționalități Cheie</h3>
+            <div class="feature-list">
+              <p><strong>Gândit pentru Limba Română:</strong> Nu doar traduce, ci înțelege nuanțele limbii române și
+                terminologia medicala.</p>
+              <p><strong>Formatare Flexibilă:</strong> Generează note în format SOAP (Subiectiv, Obiectiv, Evaluare,
+                Plan), scrisori medicale sau referate pentru pacienți.</p>
+              <p><strong>Suport Multi-Specialitate:</strong> Antrenat pentru Cardiologie, Medicină de Familie,
+                Pediatrie, Neurologie și multe altele.</p>
+            </div>
+          </div>
+
+          <!-- Siguranță și Conformitate -->
+          <div class="scroll-fade-in">
+            <h3 class="subsection-title">Siguranță și Conformitate</h3>
+            <div class="safety-list">
+              <p><strong>Medicul în Control:</strong> AscultAI este un instrument de suport administrativ; nu ia decizii
+                medicale.</p>
+              <p><strong>Arhitectură Fără Retenție:</strong> Datele audio sunt procesate și imediat după sunt șterse. Nu
+                păstrăm înregistrările sau datele pacienților tăi.</p>
+              <p><strong>Conformitate cu GDPR:</strong> Procesăm date sensibile (Art. 9 GDPR) respectând cele mai
+                stricte standarde europene.</p>
+            </div>
+          </div>
+
+          <!-- Pas cu pas -->
+          <div class="scroll-fade-in">
+            <h3 class="subsection-title">Pas cu pas</h3>
+            <div class="step-list">
+              <p><strong>Ascultă:</strong> Aplicația rulează în fundal (desktop sau mobil) și captează conversația.</p>
+              <p><strong>Înțelege:</strong> Folosind modele avansate AI și recunoaștere vocală, transformă sunetul în
+                text și extrage informațiile medicale relevante.</p>
+              <p><strong>Documentează:</strong> Generează automat nota medicală în format standard (SOAP, Scrisoare
+                Medicală, Referat) gata de copy-paste în sistemul tău.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="icon-row scroll-fade-in">
+          <img src="assets/icons-footer/gdpr.svg" alt="GDPR Compliant" class="icon-gdpr">
+          <img src="assets/icons-footer/iso.svg" alt="ISO 27001" class="icon-iso">
+          <img src="assets/icons-footer/microsoft.png" alt="Microsoft for Startups" class="icon-microsoft">
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section scroll-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item scroll-fade-in">
+            <div class="stat-number" data-target="70" data-suffix="%">0</div>
+            <div class="stat-label">timp economisit</div>
+          </div>
+          <div class="stat-item scroll-fade-in">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">ore recâștigate pe zi</div>
+          </div>
+          <div class="stat-item scroll-fade-in">
+            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-label">conformitate GDPR</div>
+          </div>
+          <div class="stat-item scroll-fade-in">
+            <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+            <div class="stat-label">disponibil</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section scroll-section">
+      <div class="container">
+        <h2 class="section-title scroll-fade-in">Despre <span class="accent">Noi</span></h2>
+
+        <div class="about-content scroll-fade-in">
+          <div class="about-text-content">
+            <p>Suntem ApolloIQ, o echipă de <strong>clinicieni dedicați</strong> cu decenii de experiență și
+              <strong>experți în tehnologie</strong>.
+            </p>
+            <p>Am văzut frustrarea clinicienilor îngropați în birocrație și vrem să folosim tehnologia pentru a o
+              elimina.</p>
+            <p><strong>Misiune:</strong> Să democratizăm accesul la Inteligență Artificială pentru fiecare clinician din
+              România.</p>
+          </div>
+
+          <div class="apolloiq-logo">
+            <img src="assets/aiq-logo.png" alt="Apolloiq" class="apolloiq-logo-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="section cta-section scroll-section">
+      <div class="container">
+        <div class="cta-content scroll-fade-in">
+          <h2 class="cta-title">Gata să îți transformi modul de lucru?</h2>
+          <p class="cta-text">Începe să economisești timp și să te concentrezi pe ceea ce contează cu adevărat:
+            pacienții tăi.</p>
+          <div class="cta-buttons">
+            <a href="pricing.html" class="btn btn-primary">Vezi Planurile</a>
+            <a href="contact.html" class="btn btn-secondary">Contactează-ne</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        © <span id="year"></span> AscultAI – Un produs ApollоIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enhanced Intersection Observer for sequential scroll animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add a small delay based on index for sequential effect
+          setTimeout(() => {
+            entry.target.classList.add('animated');
+          }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-fade-in elements
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe all elements with scroll-fade-in class
+      const scrollElements = document.querySelectorAll('.scroll-fade-in');
+
+      scrollElements.forEach((element, index) => {
+        // Add staggered delays for elements within the same section
+        const parentSection = element.closest('.scroll-section');
+        if (parentSection) {
+          const siblings = Array.from(parentSection.querySelectorAll('.scroll-fade-in'));
+          const siblingIndex = siblings.indexOf(element);
+          element.style.transitionDelay = `${siblingIndex * 0.1}s`;
+        }
+        scrollObserver.observe(element);
+      });
+
+      // Special handling for columns-3 items
+      document.querySelectorAll('.columns-3 > .scroll-fade-in').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.15}s`;
+      });
+
+      // Special handling for stats items
+      document.querySelectorAll('.stat-item.scroll-fade-in').forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+      });
+
+      // Special handling for benefit cards
+      document.querySelectorAll('.benefit-card.scroll-fade-in').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+      });
+
+      // Special handling for hero-main-words spans - delays handled in CSS
+    });
+
+    // Number counting animation for stats
+    function animateNumber(element, target, suffix = '', duration = 2000) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current) + suffix;
+        }
+      }, 16);
+    }
+
+    // Observe stat numbers for counting animation
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = parseInt(entry.target.getAttribute('data-target'));
+          const suffix = entry.target.getAttribute('data-suffix') || '';
+          animateNumber(entry.target, target, suffix);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number').forEach(stat => {
+      statObserver.observe(stat);
+    });
+
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // Step-by-step animation functionality
+    let currentStep = 1;
+    const totalSteps = 6;
+    let autoPlayInterval = null;
+    let isAutoPlaying = true; // Enabled by default
+
+    // Initialize step dots
+    function initStepDots() {
+      const dotsContainer = document.getElementById('stepDots');
+      if (!dotsContainer) return;
+
+      dotsContainer.innerHTML = '';
+
+      for (let i = 1; i <= totalSteps; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'step-dot';
+        if (i === 1) dot.classList.add('active');
+        dot.setAttribute('data-step', i);
+        dot.onclick = () => goToStep(i);
+        dotsContainer.appendChild(dot);
+
+        if (i < totalSteps) {
+          const connector = document.createElement('div');
+          connector.className = 'step-connector';
+          if (i === 1) connector.classList.add('active');
+          dotsContainer.appendChild(connector);
+        }
+      }
+    }
+
+    // Update step dots
+    function updateStepDots() {
+      const dots = document.querySelectorAll('.step-dot');
+      const connectors = document.querySelectorAll('.step-connector');
+
+      dots.forEach((dot, index) => {
+        const stepNum = index + 1;
+        dot.classList.remove('active', 'completed');
+
+        if (stepNum < currentStep) {
+          dot.classList.add('completed');
+        } else if (stepNum === currentStep) {
+          dot.classList.add('active');
+        }
+      });
+
+      connectors.forEach((connector, index) => {
+        const stepNum = index + 1;
+        connector.classList.remove('active');
+        if (stepNum < currentStep) {
+          connector.classList.add('active');
+        }
+      });
+    }
+
+    // Change step
+    function changeStep(direction) {
+      const newStep = currentStep + direction;
+      if (newStep >= 1 && newStep <= totalSteps) {
+        goToStep(newStep);
+      }
+    }
+
+    // Go to specific step
+    function goToStep(step) {
+      if (step < 1 || step > totalSteps) return;
+
+      const panels = document.querySelectorAll('.step-panel');
+      const currentPanel = document.querySelector(`.step-panel[data-step="${currentStep}"]`);
+      const newPanel = document.querySelector(`.step-panel[data-step="${step}"]`);
+
+      if (!currentPanel || !newPanel) return;
+
+      // Remove active class from current panel
+      currentPanel.classList.remove('active');
+      if (step < currentStep) {
+        currentPanel.classList.add('prev');
+      } else {
+        currentPanel.classList.remove('prev');
+      }
+
+      // Add active class to new panel
+      setTimeout(() => {
+        newPanel.classList.add('active');
+        newPanel.classList.remove('prev');
+        currentStep = step;
+        updateStepDots();
+        updateNavButtons();
+        updateProgressBar();
+      }, 100);
+    }
+
+    // Update navigation buttons
+    function updateNavButtons() {
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (prevBtn) prevBtn.disabled = currentStep === 1;
+      if (nextBtn) nextBtn.disabled = currentStep === totalSteps;
+    }
+
+    // Update progress bar
+    function updateProgressBar() {
+      const progressBar = document.getElementById('progressBar');
+      if (progressBar) {
+        const progress = (currentStep / totalSteps) * 100;
+        progressBar.style.width = `${progress}%`;
+      }
+    }
+
+    // Start auto-play
+    function startAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+      }
+      autoPlayInterval = setInterval(() => {
+        if (currentStep < totalSteps) {
+          changeStep(1);
+        } else {
+          // Loop back to step 1
+          goToStep(1);
+        }
+      }, 4000); // Change step every 4 seconds (slower)
+    }
+
+    // Stop auto-play
+    function stopAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    }
+
+    // Initialize step functionality when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      initStepDots();
+      updateNavButtons();
+      updateProgressBar();
+
+      // Start autoplay by default
+      startAutoPlay();
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        const stepContent = document.querySelector('.step-content');
+        if (!stepContent) return;
+
+        // Check if step content is in viewport
+        const rect = stepContent.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible) {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            changeStep(-1);
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            changeStep(1);
+          }
+        }
+      });
+    });
+
+    // Make functions globally available
+    window.changeStep = changeStep;
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+      let isMenuOpen = false;
+
+      function openMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.add('active');
+          menuToggle.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          isMenuOpen = true;
+        }
+      }
+
+      function closeMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = '';
+          isMenuOpen = false;
+        }
+      }
+
+      function toggleMenu() {
+        if (isMenuOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        });
+      }
+
+      if (menuClose) {
+        menuClose.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      if (menuOverlay) {
+        menuOverlay.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      // Close menu when clicking on a link
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(closeMenu, 100);
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/Logo.png" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/Logo.png" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section contact-hero scroll-section">
+      <div class="container">
+        <h1 class="section-title scroll-fade-in">Suntem aici să te <span class="accent">ajutăm</span></h1>
+
+        <div class="contact-intro scroll-fade-in">
+          <p>Ai întrebări despre cum AscultAI poate reduce birocrația în cabinetul tău? Sau reprezinți o clinică și
+            dorești o ofertă personalizată?</p>
+          <p>Echipa noastră îți stă la dispoziție pentru suport tehnic, demo-uri sau detalii comerciale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-section">
+      <div class="container contact-layout">
+        <div class="contact-info scroll-fade-in">
+          <h2 class="contact-info-title">Date de contact</h2>
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <strong>Email</strong>
+              <a href="#" id="email-link" onclick="return false;">Loading...</a>
+            </div>
+            <div class="contact-detail-item">
+              <strong>Locație</strong>
+              <span>Cluj-Napoca, Romania</span>
+            </div>
+            <div class="contact-detail-item">
+              <strong>Website</strong>
+              <span>www.ascult.ai</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form scroll-fade-in" id="contact-form" action="https://formspree.io/f/mgvblkay"
+          method="POST">
+          <h2 class="contact-form-title">Trimite-ne un mesaj</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Prenume<span class="form-required">*</span></label>
+              <input type="text" class="form-input" name="firstName" id="firstName" placeholder="Prenume" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nume<span class="form-required">*</span></label>
+              <input type="text" class="form-input" name="lastName" id="lastName" placeholder="Nume" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email<span class="form-required">*</span></label>
+            <input type="email" class="form-input" name="email" id="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Mesaj<span class="form-required">*</span></label>
+            <textarea class="form-textarea" name="message" id="message" placeholder="Scrie-ne mesajul tău..."
+              required></textarea>
+          </div>
+
+          <!-- Formspree honeypot field to prevent spam -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div id="form-message" class="form-message"></div>
+
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <span id="submit-text">Trimite mesajul</span>
+            <span id="submit-loading" style="display: none;">Se trimite...</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        © <span id="year"></span> AscultAI – Un produs ApollоIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Obfuscate email address to prevent scraping
+    // Simple base64 encoding (not secure, but makes scraping harder)
+    function decodeEmail() {
+      // Base64 encoded: contact@apolloiq.co.uk
+      const encoded = 'Y29udGFjdEBhcG9sbG9pcS5jby51aw==';
+      try {
+        return atob(encoded);
+      } catch (e) {
+        return 'contact@apolloiq.co.uk';
+      }
+    }
+
+    // Set up email link with obfuscated address
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailLink = document.getElementById('email-link');
+      if (emailLink) {
+        const email = decodeEmail();
+        emailLink.href = 'mailto:' + email;
+        emailLink.textContent = email;
+        emailLink.onclick = null; // Remove the preventDefault
+      }
+    });
+
+    // Enhanced Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animated');
+          }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollElements = document.querySelectorAll('.scroll-fade-in');
+      scrollElements.forEach((element, index) => {
+        const parentSection = element.closest('.scroll-section');
+        if (parentSection) {
+          const siblings = Array.from(parentSection.querySelectorAll('.scroll-fade-in'));
+          const siblingIndex = siblings.indexOf(element);
+          element.style.transitionDelay = `${siblingIndex * 0.1}s`;
+        }
+        scrollObserver.observe(element);
+      });
+    });
+
+    // Formspree form handling
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitLoading = document.getElementById('submit-loading');
+
+    // Check if Formspree form ID is configured
+    const formAction = form.getAttribute('action');
+    const isFormConfigured = formAction && !formAction.includes('YOUR_FORM_ID');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Clear previous messages
+      formMessage.textContent = '';
+      formMessage.className = 'form-message';
+
+      // Check if Formspree is configured
+      if (!isFormConfigured) {
+        formMessage.textContent = 'Formularul nu este configurat. Te rugăm să ne contactezi direct.';
+        formMessage.className = 'form-message form-message-error';
+        return;
+      }
+
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitLoading.style.display = 'inline';
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Add full name field for Formspree
+      const firstName = formData.get('firstName');
+      const lastName = formData.get('lastName');
+      formData.append('name', `${firstName} ${lastName}`);
+
+      try {
+        // Send form to Formspree
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Success
+          formMessage.textContent = 'Mesajul tău a fost trimis cu succes! Te vom contacta în curând.';
+          formMessage.className = 'form-message form-message-success';
+          form.reset();
+        } else {
+          // Error from Formspree
+          const data = await response.json();
+          throw new Error(data.error || 'Eroare la trimiterea mesajului');
+        }
+      } catch (error) {
+        // Error
+        console.error('Form Error:', error);
+        formMessage.textContent = 'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct.';
+        formMessage.className = 'form-message form-message-error';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitText.style.display = 'inline';
+        submitLoading.style.display = 'none';
+      }
+    });
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+      let isMenuOpen = false;
+
+      function openMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.add('active');
+          menuToggle.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          isMenuOpen = true;
+        }
+      }
+
+      function closeMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = '';
+          isMenuOpen = false;
+        }
+      }
+
+      function toggleMenu() {
+        if (isMenuOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        });
+      }
+
+      if (menuClose) {
+        menuClose.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      if (menuOverlay) {
+        menuOverlay.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(closeMenu, 100);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

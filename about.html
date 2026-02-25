@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Despre Noi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/Logo.png" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <a href="about.html" class="active">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/Logo.png" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="about.html" class="active">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about-hero scroll-section">
+      <div class="container">
+        <h1 class="section-title scroll-fade-in">Despre <span class="accent">Noi</span></h1>
+
+        <div class="about-content-mixed">
+          <div class="about-text-block scroll-fade-in">
+            <h3 class="about-section-title">Tehnologie Britanică. Dedicare pentru Medicii din România.</h3>
+            <p><strong>AscultAI</strong> este un produs al ApolloIQ, companie de tehnologie cu sediul în Marea Britanie,
+              specializată în automatizare și soluții avansate de Inteligență Artificială, RPA și Management de Baze de
+              date.</p>
+          </div>
+
+
+
+          <div class="about-text-block scroll-fade-in">
+            <h3 class="about-section-title">Povestea Noastră</h3>
+            <p>Povestea noastră a început cu o observație simplă: cei mai buni medici pierd până la <strong>70%</strong>
+              din timpul unei consultații completând formulare, în loc să se conecteze cu pacientul.</p>
+            <p>Folosind expertiza ApolloIQ în procesarea limbajului natural, am creat <strong>AscultAI</strong> – un
+              asistent digital capabil să înțeleagă subtilitățile limbii române și terminologia medicală complexă.</p>
+          </div>
+
+          <div class="about-text-block scroll-fade-in">
+            <h3 class="about-section-title">Viziunea Noastră</h3>
+            <p><strong>Misiunea noastră:</strong> Să eliminăm bariera ecranului dintre medic și pacient. Aducem rigoarea
+              britanica și inovația tehnologică direct în cabinetul tău, respectând cele mai stricte standarde de
+              securitate a datelor.</p>
+          </div>
+          <div class="about-logo-block scroll-fade-in">
+            <img src="assets/aiq-logo.png" alt="ApolloIQ" class="about-logo-img">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        © <span id="year"></span> AscultAI – Un produs ApollоIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enhanced Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animated');
+          }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollElements = document.querySelectorAll('.scroll-fade-in');
+      scrollElements.forEach((element, index) => {
+        const parentSection = element.closest('.scroll-section');
+        if (parentSection) {
+          const siblings = Array.from(parentSection.querySelectorAll('.scroll-fade-in'));
+          const siblingIndex = siblings.indexOf(element);
+          element.style.transitionDelay = `${siblingIndex * 0.1}s`;
+        }
+        scrollObserver.observe(element);
+      });
+    });
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+      let isMenuOpen = false;
+
+      function openMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.add('active');
+          menuToggle.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          isMenuOpen = true;
+        }
+      }
+
+      function closeMenu() {
+        if (mobileMenu && menuToggle) {
+          mobileMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = '';
+          isMenuOpen = false;
+        }
+      }
+
+      function toggleMenu() {
+        if (isMenuOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        });
+      }
+
+      if (menuClose) {
+        menuClose.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      if (menuOverlay) {
+        menuOverlay.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(closeMenu, 100);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
