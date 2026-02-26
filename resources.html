@@ -19,7 +19,17 @@
       <div class="navbar-links">
         <a href="index.html">Acasă</a>
         <a href="pricing.html">Planuri Tarifare</a>
-        <a href="resources.html" class="active">Resurse</a>
+        <div class="nav-dropdown">
+          <a href="resources.html" class="nav-dropdown-trigger active">Resurse
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="guides.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="dropdown-label">Ghiduri</span></a>
+            <a href="explainers.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="dropdown-label">Explicații</span></a>
+            <a href="faq.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span class="dropdown-label">Întrebări Frecvente</span></a>
+            <a href="audit.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><span class="dropdown-label">Audit Clinica</span></a>
+          </div>
+        </div>
         <a href="about.html">Despre Noi</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -68,13 +78,13 @@
           <!-- Invata -->
           <div class="category-card scroll-fade-in">
             <h3>
-              <span class="category-icon">📚</span>
+              <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
               Învață
             </h3>
             <p>Resurse educaționale pentru medici, pacienți și personal medical. Ghiduri de utilizare și materiale informative.</p>
             <div class="category-links">
               <a href="guides.html" class="category-link">
-                <span class="category-link-icon">📖</span>
+                <span class="category-link-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
                 <div class="category-link-content">
                   <h4>Ghiduri</h4>
                   <p>Tutoriale detaliate pentru utilizarea platformei</p>
@@ -82,10 +92,18 @@
                 <span class="category-link-arrow">→</span>
               </a>
               <a href="explainers.html" class="category-link">
-                <span class="category-link-icon">💡</span>
+                <span class="category-link-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
                 <div class="category-link-content">
                   <h4>Explicații</h4>
                   <p>Materiale pentru pacienți și postere pentru clinici</p>
+                </div>
+                <span class="category-link-arrow">→</span>
+              </a>
+              <a href="audit.html" class="category-link">
+                <span class="category-link-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span>
+                <div class="category-link-content">
+                  <h4>Audit Clinica</h4>
+                  <p>Evaluează eficiența clinicii tale în 3 minute</p>
                 </div>
                 <span class="category-link-arrow">→</span>
               </a>
@@ -95,13 +113,13 @@
           <!-- Date & Securitate -->
           <div class="category-card scroll-fade-in">
             <h3>
-              <span class="category-icon">🔒</span>
+              <span class="category-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
               Date & Securitate
             </h3>
             <p>Informații despre cum protejăm datele tale și ale pacienților. Conformitate GDPR și standarde de securitate.</p>
             <div class="category-links">
               <a href="contact.html" class="category-link">
-                <span class="category-link-icon">🛡️</span>
+                <span class="category-link-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
                 <div class="category-link-content">
                   <h4>Centru de Încredere</h4>
                   <p>Securitate, conformitate și certificări</p>
@@ -109,7 +127,7 @@
                 <span class="category-link-arrow">→</span>
               </a>
               <a href="faq.html" class="category-link">
-                <span class="category-link-icon">📋</span>
+                <span class="category-link-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
                 <div class="category-link-content">
                   <h4>Întrebări Frecvente</h4>
                   <p>Răspunsuri la cele mai comune întrebări</p>
@@ -126,16 +144,22 @@
           <p class="resource-section-desc">Cele mai utilizate resurse de către clinicile care folosesc AscultAI.</p>
           <div class="featured-downloads-grid">
             <div class="featured-download">
-              <div class="featured-download-icon">👤</div>
+              <div class="featured-download-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <h4>Explicație pentru Pacienți</h4>
               <p>Poster printabil care explică pacienților ce este AscultAI și cum sunt protejate datele lor.</p>
               <a href="explainers.html" class="featured-download-btn">Descarcă</a>
             </div>
             <div class="featured-download">
-              <div class="featured-download-icon">🚀</div>
+              <div class="featured-download-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
               <h4>Ghid de Pornire Rapidă</h4>
               <p>Începe să folosești AscultAI în doar 10 minute cu acest ghid pas cu pas.</p>
               <a href="guides.html" class="featured-download-btn">Descarcă</a>
+            </div>
+            <div class="featured-download">
+              <div class="featured-download-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+              <h4>Audit Clinica</h4>
+              <p>Evaluează eficiența clinicii tale cu un audit gratuit de 3 minute. Scor obiectiv pe 4 piloni.</p>
+              <a href="audit.html" class="featured-download-btn">Începe Auditul</a>
             </div>
           </div>
         </div>

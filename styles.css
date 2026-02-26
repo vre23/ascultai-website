@@ -1,3 +1,6 @@
+/* ============ Google Fonts ============ */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
 /* ============ Base ============ */
 *,
 *::before,
@@ -148,7 +151,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--color-dark);
   background-color: #ffffff;
   /* Note: Transparent PNG areas will show this background color */
@@ -156,6 +159,21 @@ body {
 
 body {
   line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-main-words span,
+.section-title,
+.subsection-title,
+.step-title,
+.stat-number,
+.stat-label,
+.cta-title,
+.navbar-links a,
+.nav-actions .btn,
+.btn,
+.step-number {
+  font-family: 'Exo 2', sans-serif;
 }
 
 /* Utility containers */
@@ -264,6 +282,99 @@ body {
   height: 2px;
   background: var(--color-primary);
   border-radius: 999px;
+}
+
+/* Nav Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.nav-dropdown-trigger .chevron {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.nav-dropdown:hover .chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 220px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateX(-50%) translateY(8px);
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-dark);
+}
+
+.nav-dropdown-menu a::after {
+  display: none !important;
+}
+
+.nav-dropdown-menu .dropdown-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-dropdown-menu .dropdown-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-dropdown-menu .dropdown-label {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
 }
 
 .nav-actions {
@@ -1080,6 +1191,8 @@ body {
   opacity: 0;
   transform: translateY(30px);
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card.scroll-fade-in.animated {
@@ -1094,14 +1207,14 @@ body {
 }
 
 .pricing-card-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .pricing-logo {
   max-width: 132px;
   width: 100%;
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pricing-card h3 {
@@ -1112,24 +1225,24 @@ body {
 }
 
 .pricing-price-wrapper {
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 0.5rem;
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  min-height: 3.5rem;
 }
 
 .pricing-price {
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 700;
   color: var(--color-primary);
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .pricing-period {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-muted);
   font-weight: 400;
 }
@@ -1137,9 +1250,10 @@ body {
 .price-note {
   font-size: 0.95rem;
   color: var(--color-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
   white-space: normal;
+  min-height: 3rem;
 }
 
 .pricing-features {
@@ -1147,6 +1261,7 @@ body {
   margin: 2rem 0;
   padding: 0;
   list-style: none;
+  flex-grow: 1;
 }
 
 .feature-item {
@@ -1161,7 +1276,7 @@ body {
 }
 
 .pricing-btn {
-  margin-top: 2rem;
+  margin-top: auto;
   width: 100%;
   padding: 1rem 2rem;
   font-size: 1rem;
@@ -2797,6 +2912,16 @@ body {
   flex-shrink: 0;
 }
 
+.category-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .category-card > p {
   color: var(--color-muted);
   margin-bottom: 1.5rem;
@@ -2836,6 +2961,16 @@ body {
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
+}
+
+.category-link-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .category-link-content h4 {
@@ -2908,6 +3043,16 @@ body {
   justify-content: center;
   font-size: 1.75rem;
   margin-bottom: 1.25rem;
+}
+
+.download-card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .download-card h3 {
@@ -3007,6 +3152,16 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.guide-card-img svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .guide-card-body {
@@ -3124,6 +3279,19 @@ body {
 .featured-download-icon {
   font-size: 1.75rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-download-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .featured-download h4 {
