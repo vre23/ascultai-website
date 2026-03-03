@@ -149,12 +149,12 @@
     // Obfuscate email address to prevent scraping
     // Simple base64 encoding (not secure, but makes scraping harder)
     function decodeEmail() {
-      // Base64 encoded: contact@apolloiq.co.uk
-      const encoded = 'Y29udGFjdEBhcG9sbG9pcS5jby51aw==';
+      // Base64 encoded: contact@ascult.ai
+      const encoded = 'Y29udGFjdEBhc2N1bHQuYWk=';
       try {
         return atob(encoded);
       } catch (e) {
-        return 'contact@apolloiq.co.uk';
+        return 'contact@ascult.ai';
       }
     }
 
