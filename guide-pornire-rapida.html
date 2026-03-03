@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Ghid de Pornire Rapidă</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <div class="nav-dropdown">
+          <a href="resources.html" class="nav-dropdown-trigger active">Centru de Ajutor
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="guides.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="dropdown-label">Ghiduri</span></a>
+            <a href="explainers.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="dropdown-label">Explicații</span></a>
+            <a href="faq.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span class="dropdown-label">Întrebări Frecvente</span></a>
+            <a href="audit.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><span class="dropdown-label">Audit Clinica</span></a>
+          </div>
+        </div>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="resources.html" class="active">Centru de Ajutor</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="resource-hero scroll-section">
+      <div class="container">
+        <div class="breadcrumb scroll-fade-in"><a href="resources.html">Centru de Ajutor</a> <span>&rarr;</span> <a href="guides.html">Ghiduri</a> <span>&rarr;</span> <span>Ghid de Pornire Rapidă</span></div>
+        <h1 class="scroll-fade-in">Ghid de <span class="accent">Pornire Rapidă</span></h1>
+        <p class="scroll-fade-in">Configurează și începe să folosești AscultAI în doar 10 minute.</p>
+      </div>
+    </section>
+
+    <!-- Guide Detail -->
+    <section class="section">
+      <div class="guide-detail-layout">
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+          <h3 class="guide-sidebar-title">Ghid de Pornire Rapidă</h3>
+          <nav class="guide-sidebar-nav">
+            <a href="#chapter-1" class="guide-sidebar-link active" data-chapter="chapter-1">
+              <span class="chapter-num">01</span> Ce este AscultAI?
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-2" class="guide-sidebar-link" data-chapter="chapter-2">
+              <span class="chapter-num">02</span> Creează-ți contul
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-3" class="guide-sidebar-link" data-chapter="chapter-3">
+              <span class="chapter-num">03</span> Configurează microfonul
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-4" class="guide-sidebar-link" data-chapter="chapter-4">
+              <span class="chapter-num">04</span> Prima ta consultație
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-5" class="guide-sidebar-link" data-chapter="chapter-5">
+              <span class="chapter-num">05</span> Editează și exportă
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-6" class="guide-sidebar-link" data-chapter="chapter-6">
+              <span class="chapter-num">06</span> Sfaturi și bune practici
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="guide-content">
+          <div class="guide-progress">
+            <span class="guide-progress-text">Capitolul <span id="currentChapter">1</span> din 6</span>
+            <div class="guide-progress-bar"><div class="guide-progress-fill" id="progressFill" style="width: 16.67%"></div></div>
+          </div>
+
+          <!-- Chapter 1 -->
+          <section class="guide-chapter active" id="chapter-1">
+            <h2>Ce este AscultAI?</h2>
+            <p>AscultAI este un asistent AI specializat care transformă conversațiile cu pacienții în note medicale structurate, în timp real. Conceput special pentru clinicienii din România, AscultAI înțelege terminologia medicală românească și generează documentație conformă cu standardele medicale locale.</p>
+            <h3>Cum funcționează?</h3>
+            <p>Procesul este simplu și se desfășoară în patru pași:</p>
+            <ol>
+              <li><strong>Pornește înregistrarea</strong> — Deschizi AscultAI în browser și apeși butonul de înregistrare.</li>
+              <li><strong>Desfășoară consultația</strong> — Vorbește natural cu pacientul. AscultAI ascultă în fundal fără să interfereze.</li>
+              <li><strong>Revizuiește nota</strong> — La final, AscultAI generează automat o notă medicală structurată pe care o poți revizui.</li>
+              <li><strong>Validează și exportă</strong> — Confirmi nota, o editezi dacă e nevoie, și o exporți în format PDF sau o copiezi.</li>
+            </ol>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              AscultAI nu este un simplu instrument de dictare — este un sistem inteligent care structurează informațiile din conversație conform template-ului medical ales de tine.
+            </div>
+            <h3>Ce poți face cu AscultAI?</h3>
+            <ul>
+              <li>Generarea automată de note SOAP din consultații</li>
+              <li>Crearea de scrisori medicale și referate</li>
+              <li>Documentarea rapidă a consultațiilor de specialitate</li>
+              <li>Reducerea timpului de documentare cu până la 70%</li>
+            </ul>
+            <p>În capitolele următoare, vei învăța cum să îți configurezi contul, să setezi microfonul și să începi prima ta consultație cu AscultAI.</p>
+          </section>
+
+          <!-- Chapter 2 -->
+          <section class="guide-chapter" id="chapter-2">
+            <h2>Creează-ți contul</h2>
+            <p>Pentru a începe să folosești AscultAI, trebuie mai întâi să îți creezi un cont. Procesul este rapid și durează mai puțin de 2 minute.</p>
+            <h3>Pași pentru crearea contului</h3>
+            <ol>
+              <li><strong>Accesează platforma</strong> — Navighează la <strong>app.ascult.ai</strong> în browserul tău preferat (Chrome, Firefox, Edge sau Safari).</li>
+              <li><strong>Alege „Creează cont"</strong> — Pe pagina de login, apasă butonul de înregistrare.</li>
+              <li><strong>Completează datele</strong> — Introdu numele, adresa de email și creează o parolă securizată.</li>
+              <li><strong>Verifică email-ul</strong> — Vei primi un email de confirmare. Apasă link-ul din email pentru a activa contul.</li>
+              <li><strong>Completează profilul</strong> — Adaugă specialitatea ta medicală și preferințele de documentare.</li>
+            </ol>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              Folosește adresa de email profesională pentru a beneficia de funcționalitățile dedicate clinicilor și spitalelor.
+            </div>
+            <h3>Alegerea specialității</h3>
+            <p>La configurarea profilului, vei fi întrebat despre specialitatea ta medicală. Aceasta ajută AscultAI să personalizeze template-urile și terminologia folosită în notele generate. Poți alege din:</p>
+            <ul>
+              <li>Medicină generală / Medicină de familie</li>
+              <li>Cardiologie</li>
+              <li>Dermatologie</li>
+              <li>Neurologie</li>
+              <li>Psihiatrie / Psihologie</li>
+              <li>Stomatologie</li>
+              <li>Și multe alte specialități</li>
+            </ul>
+            <p>Poți modifica specialitatea oricând din setările contului tău.</p>
+          </section>
+
+          <!-- Chapter 3 -->
+          <section class="guide-chapter" id="chapter-3">
+            <h2>Configurează microfonul</h2>
+            <p>Calitatea înregistrării audio este esențială pentru o transcriere precisă. În acest capitol, vei învăța cum să configurezi microfonul pentru rezultate optime.</p>
+            <h3>Permisiuni browser</h3>
+            <p>La prima utilizare, browserul va solicita permisiunea de a accesa microfonul. Este important să apeși „Permite" pentru ca AscultAI să poată asculta consultația.</p>
+            <ol>
+              <li><strong>Apasă butonul de înregistrare</strong> — Browserul va afișa un dialog de permisiune.</li>
+              <li><strong>Selectează „Permite"</strong> — Aceasta acordă acces la microfon doar pentru AscultAI.</li>
+              <li><strong>Verifică indicatorul</strong> — Vei vedea un indicator vizual că microfonul este activ.</li>
+            </ol>
+            <div class="guide-warning">
+              Dacă ai refuzat accidental permisiunea, poți să o reactivezi din setările browserului &rarr; Setări site &rarr; Microfon &rarr; Permite pentru app.ascult.ai.
+            </div>
+            <h3>Alegerea microfonului potrivit</h3>
+            <p>AscultAI funcționează cu orice microfon, dar pentru rezultate optime recomandăm:</p>
+            <ul>
+              <li><strong>Microfonul integrat al laptopului</strong> — Funcționează bine pentru consultații față în față la distanță mică.</li>
+              <li><strong>Căști cu microfon</strong> — Ideale pentru consultații telefonice sau video.</li>
+              <li><strong>Microfon USB de birou</strong> — Cea mai bună opțiune pentru cabinet, captează clar atât doctorul cât și pacientul.</li>
+            </ul>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              Dacă ai mai multe microfoane conectate, poți selecta microfonul dorit din setările AscultAI înainte de a începe înregistrarea.
+            </div>
+            <h3>Testarea microfonului</h3>
+            <p>Înainte de prima consultație, folosește funcția de test audio din AscultAI. Vorbește câteva propoziții și verifică dacă nivelul audio este adecvat — bara de nivel ar trebui să se miște în zona verde.</p>
+          </section>
+
+          <!-- Chapter 4 -->
+          <section class="guide-chapter" id="chapter-4">
+            <h2>Prima ta consultație</h2>
+            <p>Acum că ai contul configurat și microfonul pregătit, ești gata pentru prima ta consultație cu AscultAI. Urmează acești pași simpli:</p>
+            <h3>Înainte de consultație</h3>
+            <ol>
+              <li><strong>Deschide AscultAI</strong> — Accesează app.ascult.ai și asigură-te că ești autentificat.</li>
+              <li><strong>Alege template-ul</strong> — Selectează tipul de notă pe care vrei să o generezi (SOAP, scrisoare medicală, referat etc.).</li>
+              <li><strong>Verifică microfonul</strong> — Asigură-te că microfonul corect este selectat și funcțional.</li>
+            </ol>
+            <h3>În timpul consultației</h3>
+            <ol>
+              <li><strong>Apasă „Înregistrează"</strong> — Începe înregistrarea chiar înainte de a-l primi pe pacient sau la începutul conversației.</li>
+              <li><strong>Vorbește natural</strong> — Nu trebuie să schimbi nimic în modul tău de a consulta. AscultAI se adaptează la stilul tău.</li>
+              <li><strong>Monitorizează indicatorul</strong> — Un indicator discret îți confirmă că înregistrarea este activă.</li>
+            </ol>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              Nu te preocupa de zgomote de fundal moderate — AscultAI are filtre inteligente de zgomot care se concentrează pe vocea umană.
+            </div>
+            <h3>După consultație</h3>
+            <ol>
+              <li><strong>Oprește înregistrarea</strong> — Apasă butonul de stop când consultația s-a încheiat.</li>
+              <li><strong>Așteaptă procesarea</strong> — AscultAI va genera nota în câteva secunde.</li>
+              <li><strong>Revizuiește nota</strong> — Citește nota generată și verifică acuratețea informațiilor.</li>
+            </ol>
+            <p>În capitolul următor vei învăța cum să editezi și să exporți notele generate.</p>
+          </section>
+
+          <!-- Chapter 5 -->
+          <section class="guide-chapter" id="chapter-5">
+            <h2>Editează și exportă notele</h2>
+            <p>După ce AscultAI generează nota medicală, ai posibilitatea de a o revizui, edita și exporta în formatul dorit.</p>
+            <h3>Editarea notelor</h3>
+            <p>Nota generată apare într-un editor text complet funcțional. Poți:</p>
+            <ul>
+              <li><strong>Modifica textul</strong> — Click pe orice secțiune pentru a edita direct conținutul.</li>
+              <li><strong>Reorganiza secțiunile</strong> — Mută secțiunile prin drag-and-drop pentru a le aranja în ordinea dorită.</li>
+              <li><strong>Adăuga informații</strong> — Completează manual detalii pe care AscultAI nu le-a captat.</li>
+              <li><strong>Șterge secțiuni</strong> — Elimină părți irelevante din nota generată.</li>
+            </ul>
+            <div class="guide-warning">
+              Revizuiește întotdeauna nota generată înainte de a o utiliza oficial. AscultAI produce drafturi orientative — responsabilitatea finală îți aparține.
+            </div>
+            <h3>Opțiuni de export</h3>
+            <p>Odată ce nota este finalizată, ai mai multe opțiuni de export:</p>
+            <ul>
+              <li><strong>Copiere în clipboard</strong> — Copiază nota și lipește-o direct în sistemul tău informatic medical.</li>
+              <li><strong>Export PDF</strong> — Generează un document PDF profesionist, gata de printat sau atașat la fișa pacientului.</li>
+              <li><strong>Printare directă</strong> — Trimite nota direct la imprimantă din interfața AscultAI.</li>
+            </ul>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              Notele tale sunt salvate automat în contul AscultAI. Poți reveni oricând la o notă anterioară din secțiunea „Istoric".
+            </div>
+          </section>
+
+          <!-- Chapter 6 -->
+          <section class="guide-chapter" id="chapter-6">
+            <h2>Sfaturi și bune practici</h2>
+            <p>Pentru a obține cele mai bune rezultate cu AscultAI, iată câteva sfaturi bazate pe experiența utilizatorilor noștri:</p>
+            <h3>Optimizează calitatea audio</h3>
+            <ul>
+              <li><strong>Minimizează zgomotul de fundal</strong> — Închide ferestrele, oprește muzica ambientală și reduce sursele de zgomot.</li>
+              <li><strong>Poziționează microfonul corect</strong> — La 30-50 cm distanță, orientat spre zona de conversație.</li>
+              <li><strong>Vorbește clar și la un volum normal</strong> — Nu e nevoie să vorbești mai tare decât de obicei.</li>
+            </ul>
+            <h3>Folosește template-urile eficient</h3>
+            <ul>
+              <li><strong>Alege template-ul potrivit</strong> — Selectează template-ul care se potrivește cel mai bine tipului de consultație.</li>
+              <li><strong>Personalizează template-urile</strong> — Creează template-uri personalizate pentru consultațiile tale frecvente.</li>
+              <li><strong>Experimentează cu diferite formate</strong> — Încearcă SOAP, narativ sau format de scrisoare pentru a vedea ce funcționează cel mai bine.</li>
+            </ul>
+            <h3>Integrare în fluxul de lucru</h3>
+            <ul>
+              <li><strong>Folosește AscultAI pentru fiecare consultație</strong> — Cu cât îl folosești mai des, cu atât devine mai eficient.</li>
+              <li><strong>Revizuiește notele imediat</strong> — Este mai ușor să corectezi o notă cât informațiile sunt proaspete.</li>
+              <li><strong>Dă feedback</strong> — Folosește funcția de feedback pentru a ajuta AscultAI să se îmbunătățească continuu.</li>
+            </ul>
+            <div class="guide-tip">
+              <strong>Sfat</strong>
+              Clinicienii care folosesc AscultAI constant raportează o economie de până la 2 ore pe zi din timpul de documentare. Consistența este cheia!
+            </div>
+            <h3>Ai nevoie de ajutor?</h3>
+            <p>Dacă întâmpini dificultăți sau ai întrebări, echipa noastră de suport este disponibilă:</p>
+            <ul>
+              <li>Email: <strong>support@ascult.ai</strong></li>
+              <li>Pagina de <a href="faq.html" style="color: var(--color-primary); font-weight: 500;">Întrebări Frecvente</a></li>
+              <li>Chat live în aplicație (program: Luni-Vineri, 9:00-18:00)</li>
+            </ul>
+          </section>
+
+          <!-- Navigation footer -->
+          <div class="guide-nav-footer">
+            <a class="guide-nav-btn hidden" id="prevBtn">
+              <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Capitolul anterior
+            </a>
+            <span class="guide-nav-current" id="navCurrent">Capitolul 1 din 6</span>
+            <a class="guide-nav-btn" id="nextBtn">
+              Capitolul următor
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        &copy; <span id="year"></span> AscultAI – Un produs ApolloIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Guide chapter navigation
+    (() => {
+      const chapters = document.querySelectorAll('.guide-chapter');
+      const sidebarLinks = document.querySelectorAll('.guide-sidebar-link');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentEl = document.getElementById('currentChapter');
+      const navCurrentEl = document.getElementById('navCurrent');
+      const progressFill = document.getElementById('progressFill');
+      const totalChapters = chapters.length;
+      const storageKey = 'ascultai-guide-pornire-rapida-completed';
+
+      function getCompleted() {
+        try { return JSON.parse(localStorage.getItem(storageKey)) || []; }
+        catch { return []; }
+      }
+
+      function saveCompleted(arr) {
+        localStorage.setItem(storageKey, JSON.stringify(arr));
+      }
+
+      function markCompleted(chapterId) {
+        const completed = getCompleted();
+        if (!completed.includes(chapterId)) {
+          completed.push(chapterId);
+          saveCompleted(completed);
+        }
+        updateCompletedUI();
+      }
+
+      function updateCompletedUI() {
+        const completed = getCompleted();
+        sidebarLinks.forEach(link => {
+          const ch = link.dataset.chapter;
+          if (completed.includes(ch)) {
+            link.classList.add('completed');
+          } else {
+            link.classList.remove('completed');
+          }
+        });
+      }
+
+      function getActiveIndex() {
+        for (let i = 0; i < chapters.length; i++) {
+          if (chapters[i].classList.contains('active')) return i;
+        }
+        return 0;
+      }
+
+      function goToChapter(index) {
+        // Mark current chapter as completed before leaving
+        const currentIndex = getActiveIndex();
+        if (currentIndex !== index) {
+          markCompleted(chapters[currentIndex].id);
+        }
+
+        chapters.forEach(ch => ch.classList.remove('active'));
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+
+        chapters[index].classList.add('active');
+        sidebarLinks[index].classList.add('active');
+
+        // Update progress
+        currentEl.textContent = index + 1;
+        navCurrentEl.textContent = `Capitolul ${index + 1} din ${totalChapters}`;
+        progressFill.style.width = `${((index + 1) / totalChapters) * 100}%`;
+
+        // Update nav buttons
+        prevBtn.classList.toggle('hidden', index === 0);
+        nextBtn.classList.toggle('hidden', index === totalChapters - 1);
+
+        // Update URL hash
+        history.replaceState(null, '', '#' + chapters[index].id);
+
+        // Scroll to top of content
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Sidebar click handlers
+      sidebarLinks.forEach((link, i) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          goToChapter(i);
+        });
+      });
+
+      // Prev/Next buttons
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const i = getActiveIndex();
+        if (i > 0) goToChapter(i - 1);
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const i = getActiveIndex();
+        if (i < totalChapters - 1) goToChapter(i + 1);
+      });
+
+      // Load from hash
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const idx = Array.from(chapters).findIndex(ch => ch.id === hash);
+        if (idx >= 0) goToChapter(idx);
+      }
+
+      // Restore completed state
+      updateCompletedUI();
+    })();
+
+    // Scroll animations
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('animated'); }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-fade-in').forEach((el, i) => {
+        const parent = el.closest('.scroll-section');
+        if (parent) {
+          const siblings = Array.from(parent.querySelectorAll('.scroll-fade-in'));
+          el.style.transitionDelay = `${siblings.indexOf(el) * 0.1}s`;
+        }
+        scrollObserver.observe(el);
+      });
+    });
+
+    // Mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+      let isMenuOpen = false;
+      function openMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.add('active'); menuToggle.classList.add('active'); document.body.style.overflow = 'hidden'; isMenuOpen = true; } }
+      function closeMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = ''; isMenuOpen = false; } }
+      if (menuToggle) menuToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); isMenuOpen ? closeMenu() : openMenu(); });
+      if (menuClose) menuClose.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      if (menuOverlay) menuOverlay.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMenu, 100); }); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+    });
+  </script>
+</body>
+
+</html>

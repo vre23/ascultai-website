@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Optimizarea Acurateții</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasă</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <div class="nav-dropdown">
+          <a href="resources.html" class="nav-dropdown-trigger active">Centru de Ajutor
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="guides.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="dropdown-label">Ghiduri</span></a>
+            <a href="explainers.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="dropdown-label">Explicații</span></a>
+            <a href="faq.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span class="dropdown-label">Întrebări Frecvente</span></a>
+            <a href="audit.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><span class="dropdown-label">Audit Clinica</span></a>
+          </div>
+        </div>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasă</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="resources.html" class="active">Centru de Ajutor</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="resource-hero scroll-section">
+      <div class="container">
+        <div class="breadcrumb scroll-fade-in"><a href="resources.html">Centru de Ajutor</a> <span>→</span> <a href="guides.html">Ghiduri</a> <span>→</span> <span>Optimizarea Acurateții</span></div>
+        <h1 class="scroll-fade-in">Optimizarea <span class="accent">Acurateții</span></h1>
+        <p class="scroll-fade-in">Sfaturi pentru cele mai precise transcrieri și note clinice.</p>
+      </div>
+    </section>
+
+    <!-- Guide Detail -->
+    <section class="section">
+      <div class="guide-detail-layout">
+        <!-- Sidebar -->
+        <aside class="guide-sidebar">
+          <h3 class="guide-sidebar-title">Optimizarea Acurateții</h3>
+          <nav class="guide-sidebar-nav">
+            <a href="#chapter-1" class="guide-sidebar-link active" data-chapter="chapter-1">
+              <span class="chapter-num">01</span> Introducere în acuratețe
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-2" class="guide-sidebar-link" data-chapter="chapter-2">
+              <span class="chapter-num">02</span> Poziționarea microfonului
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-3" class="guide-sidebar-link" data-chapter="chapter-3">
+              <span class="chapter-num">03</span> Mediul ideal de înregistrare
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-4" class="guide-sidebar-link" data-chapter="chapter-4">
+              <span class="chapter-num">04</span> Terminologia medicală
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-5" class="guide-sidebar-link" data-chapter="chapter-5">
+              <span class="chapter-num">05</span> Folosirea template-urilor
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-6" class="guide-sidebar-link" data-chapter="chapter-6">
+              <span class="chapter-num">06</span> Tehnici de vorbire clară
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-7" class="guide-sidebar-link" data-chapter="chapter-7">
+              <span class="chapter-num">07</span> Corectarea și feedback-ul
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#chapter-8" class="guide-sidebar-link" data-chapter="chapter-8">
+              <span class="chapter-num">08</span> Setări avansate
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="guide-content">
+          <div class="guide-progress">
+            <span class="guide-progress-text">Capitolul <span id="currentChapter">1</span> din 8</span>
+            <div class="guide-progress-bar"><div class="guide-progress-fill" id="progressFill" style="width: 12.5%"></div></div>
+          </div>
+
+          <!-- Chapter 1 -->
+          <div class="guide-chapter active" id="chapter-1">
+            <h2>Introducere în acuratețe</h2>
+            <p>Acuratețea transcrierii medicale este fundamentul pe care se construiește întreaga documentație clinică generată de AscultAI. O transcriere precisă asigură faptul că nota clinică finală reflectă fidel dialogul dintre medic și pacient, reducând riscul de erori medicale și îmbunătățind calitatea actului medical. În mediul clinic românesc, unde consultațiile implică frecvent terminologie latină, acronime specifice și alternarea între limbajul medical și cel colocvial al pacientului, provocările de acuratețe sunt deosebit de complexe.</p>
+            <p>AscultAI utilizează modele de inteligență artificială antrenate special pe limbajul medical românesc, capabile să recunoască peste 50.000 de termeni medicali, denumiri comerciale de medicamente disponibile în România și coduri ICD-10 utilizate în practica curentă. Rata medie de acuratețe a sistemului depășește 96% în condiții optime, dar poate fi influențată semnificativ de factori externi pe care dumneavoastră îi puteți controla.</p>
+
+            <h3>Factori care influențează acuratețea</h3>
+            <p>Înțelegerea factorilor care afectează calitatea transcrierii este primul pas pentru optimizarea rezultatelor. Aceștia pot fi grupați în trei categorii principale:</p>
+            <ul>
+              <li><strong>Factori audio</strong> – calitatea microfonului, distanța față de vorbitor, zgomotul de fundal, reverberația încăperii și interferențele electronice.</li>
+              <li><strong>Factori lingvistici</strong> – claritatea vorbirii, ritmul dictării, utilizarea corectă a termenilor medicali, pronunția denumirilor de medicamente și structurarea logică a informațiilor.</li>
+              <li><strong>Factori de configurare</strong> – alegerea template-ului potrivit, setările de specialitate, preferințele de limbă și calibrarea profilului individual al medicului.</li>
+            </ul>
+
+            <h3>De ce contează fiecare procent</h3>
+            <p>Diferența dintre o acuratețe de 94% și una de 98% poate părea nesemnificativă, dar într-o consultație tipică de 15 minute care generează aproximativ 2.000 de cuvinte, aceasta înseamnă diferența dintre 120 de cuvinte potențial incorecte și doar 40. Într-un context medical, chiar și o singură eroare la nivelul dozajului unui medicament sau al unui diagnostic poate avea consecințe majore.</p>
+
+            <div class="guide-tip">
+              <strong>Sfat:</strong> Parcurgeți toate capitolele acestui ghid și aplicați recomandările pas cu pas. Majoritatea utilizatorilor raportează o creștere de 2-4% a acurateții după implementarea sfaturilor din primele trei capitole.
+            </div>
+          </div>
+
+          <!-- Chapter 2 -->
+          <div class="guide-chapter" id="chapter-2">
+            <h2>Poziționarea microfonului</h2>
+            <p>Calitatea semnalului audio capturat de microfon este cel mai important factor tehnic care influențează acuratețea transcrierii. Un microfon poziționat corect poate face diferența între o transcriere excelentă și una plină de erori. Indiferent dacă utilizați microfonul integrat al laptopului, un microfon extern USB sau o cască cu microfon, poziționarea corectă este esențială.</p>
+            <p>Regula generală este simplă: cu cât microfonul este mai aproape de sursa vocii și mai departe de sursele de zgomot, cu atât rezultatul va fi mai bun. Totuși, există nuanțe importante în funcție de tipul consultației și de configurația cabinetului.</p>
+
+            <h3>Consultații la birou</h3>
+            <p>Pentru consultațiile standard, în care medicul și pacientul se află față în față la birou, poziționarea optimă a microfonului depinde de tipul dispozitivului:</p>
+            <ul>
+              <li><strong>Microfon extern USB de birou</strong> – Așezați-l la 30-50 cm distanță de dumneavoastră, pe birou, orientat spre zona centrală dintre medic și pacient. Microfonul trebuie să fie pe o suprafață stabilă, preferabil pe un suport anti-vibrații sau pe un prosop pliat pentru a reduce vibrațiile transmise prin masă.</li>
+              <li><strong>Microfon lavalieră (de tip clips)</strong> – Fixați-l pe rever, la aproximativ 15-20 cm de gură. Aceasta este opțiunea ideală pentru captarea clară a vocii medicului, mai ales în cabinete zgomotoase.</li>
+              <li><strong>Laptopul pe birou</strong> – Dacă utilizați microfonul integrat al laptopului, asigurați-vă că laptopul este deschis la un unghi de 90-120 de grade și că nu există obstacole între microfon și vorbitor. Distanța ideală este de 40-60 cm.</li>
+            </ul>
+
+            <h3>Vizite la domiciliu</h3>
+            <p>La vizitele la domiciliu, controlul mediului acustic este limitat. În aceste situații, recomandăm utilizarea unui microfon lavalieră conectat la telefonul mobil sau la tabletă. Poziționați dispozitivul de înregistrare pe o suprafață stabilă, nu pe genunchi sau pe patul pacientului, unde mișcările pot genera zgomot de impact.</p>
+
+            <h3>Teleconsultații</h3>
+            <p>Pentru consultațiile online, AscultAI poate captura audio direct din sesiunea de videoconferință. Este important ca atât medicul, cât și pacientul, să utilizeze căști cu microfon pentru a evita efectul de ecou. Activați funcția de captare audio a sistemului din setările AscultAI și asigurați-vă că aplicația are permisiunile necesare.</p>
+
+            <h3>Captarea ambilor vorbitori</h3>
+            <p>AscultAI diferențiază automat vocile medicului și pacientului. Pentru o separare optimă a vorbitorilor, este ideal ca microfonul să fie poziționat echidistant față de ambii participanți sau să utilizați un microfon omnidirecțional. Dacă un vorbitor este semnificativ mai departe de microfon decât celălalt, vocea acestuia va fi captată la un nivel mai scăzut, ceea ce poate reduce acuratețea transcrierii pentru acel vorbitor.</p>
+
+            <div class="guide-tip">
+              <strong>Sfat:</strong> Faceți un test de 30 de secunde înainte de fiecare sesiune de consultații. Înregistrați o frază scurtă și verificați în previzualizarea AscultAI dacă transcrierea este corectă. Acest obicei de 30 de secunde vă poate economisi minute de corectări ulterioare.
+            </div>
+          </div>
+
+          <!-- Chapter 3 -->
+          <div class="guide-chapter" id="chapter-3">
+            <h2>Mediul ideal de înregistrare</h2>
+            <p>Mediul acustic al cabinetului medical joacă un rol critic în calitatea înregistrării audio și, implicit, în acuratețea transcrierii. Zgomotul de fundal, reverberația și interferențele sunt inamicii principali ai unei transcrieri precise. Din fericire, majoritatea acestor probleme pot fi atenuate cu ajustări simple și accesibile.</p>
+            <p>Studiile noastre interne arată că optimizarea mediului acustic poate îmbunătăți acuratețea transcrierii cu 3-7%, o diferență semnificativă care se traduce în economii reale de timp la revizuirea notelor clinice.</p>
+
+            <h3>Reducerea zgomotului de fundal</h3>
+            <p>Zgomotul de fundal este cel mai frecvent factor care afectează negativ transcrierea. Iată sursele comune de zgomot și soluțiile recomandate:</p>
+            <ol>
+              <li><strong>Aparatura de climatizare</strong> – Aerul condiționat și ventilatoarele generează un zgomot constant de frecvență joasă. Dacă este posibil, opriți unitatea în timpul consultației sau reduceți viteza la minimum. Alternativ, poziționați microfonul cât mai departe de unitatea de AC.</li>
+              <li><strong>Zgomotul din sala de așteptare</strong> – Conversațiile, televizorul sau muzica din holul clinicii pot pătrunde prin ușă. Asigurați-vă că ușa cabinetului este complet închisă. O garnitură de etanșare pe cadrul ușii reduce semnificativ zgomotul transmis.</li>
+              <li><strong>Echipamentul medical</strong> – Aparatele de monitorizare, nebulizatoarele sau sterilizatoarele pot genera zgomote periodice. Programați utilizarea acestor echipamente în afara perioadelor de înregistrare, când este posibil.</li>
+              <li><strong>Notificările telefonului</strong> – Sunetele de notificare și vibratiile telefonului pe birou pot interfera cu înregistrarea. Activați modul silențios pe telefon în timpul consultațiilor.</li>
+            </ol>
+
+            <h3>Îmbunătățiri acustice pentru cabinet</h3>
+            <p>Reverberația (ecoul) în camerele cu pereți netezi și podele dure poate face vorbirea mai puțin inteligibilă pentru algoritmul de transcriere. Câteva măsuri simple pot îmbunătăți semnificativ acustica:</p>
+            <ul>
+              <li>Adăugați un covor sau un prelunitor de covor în zona de consultație – aceasta reduce reverberația de la podea.</li>
+              <li>Perdelele groase la ferestre absorb undele sonore și reduc ecoul.</li>
+              <li>Biblioteca cu cărți pe unul dintre pereți servește ca un difuzor acustic natural excelent.</li>
+              <li>Panourile acustice decorative, disponibile în multiple culori și forme, pot fi integrate estetic în designul cabinetului.</li>
+            </ul>
+
+            <h3>Situații de evitat</h3>
+            <p>Există anumite scenarii care compromit sever acuratețea transcrierii și care ar trebui evitate complet:</p>
+            <ul>
+              <li>Înregistrarea în spații deschise cu mai multe conversații simultane (de exemplu, camere de gardă aglomerate).</li>
+              <li>Plasarea microfonului lângă fereastra deschisă spre o stradă cu trafic intens.</li>
+              <li>Utilizarea dispozitivului pe hol sau în zone de tranzit.</li>
+              <li>Înregistrarea în timpul unor proceduri medicale zgomotoase (aspirator chirurgical, aparat de electrochirurgie).</li>
+            </ul>
+
+            <div class="guide-warning">
+              <strong>Atenție:</strong> Nu încercați să compensați zgomotul ambiental vorbind mai tare. Vocea ridicată distorsionează sunetul și poate reduce acuratețea. Este întotdeauna mai eficient să reduceți zgomotul la sursă decât să ridicați volumul vocii.
+            </div>
+          </div>
+
+          <!-- Chapter 4 -->
+          <div class="guide-chapter" id="chapter-4">
+            <h2>Terminologia medicală</h2>
+            <p>AscultAI a fost dezvoltat cu un vocabular medical extins, adaptat specificului practicii medicale din România. Motorul de recunoaștere vocală este antrenat pe corpusuri de text medical românesc și poate recunoaște cu precizie terminologia medicală latină, denumirile comerciale ale medicamentelor disponibile pe piața românească și codurile de clasificare utilizate în sistemul de sănătate din România.</p>
+            <p>Cu toate acestea, vocabularul medical evoluează constant – apar medicamente noi, se actualizează ghidurile terapeutice și fiecare specialitate are particularitățile sale terminologice. Înțelegerea modului în care AscultAI procesează terminologia medicală vă va ajuta să obțineți transcrieri mai precise.</p>
+
+            <h3>Cum procesează AscultAI termenii medicali</h3>
+            <p>Sistemul utilizează un model lingvistic specializat care combină recunoașterea acustică cu contextul medical. Acest lucru înseamnă că, atunci când pronunțați un cuvânt ambiguu, algoritmul ia în considerare cuvintele din jur pentru a alege interpretarea corectă. De exemplu:</p>
+            <ul>
+              <li><strong>„ser fiziologic"</strong> va fi recunoscut corect în context medical, și nu confundat cu alte interpretări ale cuvântului „ser".</li>
+              <li><strong>„Metformin 850 mg"</strong> – sistemul recunoaște contextul dozajului și formatează automat mg, g, ml și alte unități de măsură.</li>
+              <li><strong>Codurile ICD-10</strong> – când dictați „I25.1" sau „J18.9", sistemul le recunoaște ca coduri de diagnostic și le formatează corespunzător.</li>
+            </ul>
+
+            <h3>Abrevierile și acronimele</h3>
+            <p>Abrevierile medicale sunt recunoscute automat de AscultAI. Puteți dicta abrevierile în mod natural, iar sistemul le va transcrie în forma corectă:</p>
+            <ol>
+              <li><strong>TA</strong> – tensiune arterială, recunoscută când este urmată de valori numerice (de exemplu, „TA 130 peste 85").</li>
+              <li><strong>AV</strong> – alură ventriculară, recunoscută în context cardiovascular.</li>
+              <li><strong>EKG / ECG</strong> – electrocardiogramă, recunoscută în ambele forme de pronunție.</li>
+              <li><strong>VSH, TGO, TGP, HLG</strong> – abrevierile de laborator sunt recunoscute automat în contextul analizelor medicale.</li>
+            </ol>
+
+            <h3>Denumirile medicamentelor</h3>
+            <p>Baza de date AscultAI conține peste 8.000 de denumiri comerciale și substanțe active disponibile în România, actualizată trimestrial conform Catalogului Național al Prețurilor Medicamentelor. Pentru rezultate optime:</p>
+            <ul>
+              <li>Pronunțați denumirile de medicamente clar, cu pauză înainte și după denumire.</li>
+              <li>Specificați forma farmaceutică (comprimate, capsule, soluție injectabilă) – acest context ajută la recunoașterea corectă.</li>
+              <li>Pentru medicamente cu denumiri similare (de exemplu, Losartan vs. Lisinopril), enunțați clar fiecare silabă.</li>
+            </ul>
+
+            <h3>Îmbunătățirea recunoașterii terminologice</h3>
+            <p>AscultAI oferă posibilitatea de a adăuga termeni personalizați în dicționarul propriu. Această funcție este utilă pentru:</p>
+            <ul>
+              <li>Terminologie specifică unor sub-specialități mai rare.</li>
+              <li>Denumiri de dispozitive medicale sau implanturi specifice.</li>
+              <li>Abrevieri și acronime proprii cabinetului sau clinicii dumneavoastră.</li>
+              <li>Denumiri de protocoale terapeutice interne.</li>
+            </ul>
+
+            <div class="guide-tip">
+              <strong>Sfat:</strong> Accesați secțiunea „Dicționar personalizat" din setările contului pentru a adăuga termeni noi. Fiecare termen adăugat va fi disponibil imediat în transcrierile ulterioare și va fi asociat cu profilul dumneavoastră de vorbire.
+            </div>
+          </div>
+
+          <!-- Chapter 5 -->
+          <div class="guide-chapter" id="chapter-5">
+            <h2>Folosirea template-urilor</h2>
+            <p>Template-urile (șabloanele) sunt unul dintre cele mai puternice instrumente pentru îmbunătățirea acurateții în AscultAI. Un template nu este doar o structură vizuală pentru nota clinică – el ghidează activ algoritmul de inteligență artificială, oferindu-i contextul necesar pentru a interpreta corect informațiile din consultație și pentru a le organiza în secțiunile relevante.</p>
+            <p>Atunci când selectați un template potrivit tipului de consultație, AscultAI știe la ce tip de informații să se aștepte. De exemplu, un template de consultație cardiologică va acorda prioritate recunoașterii termenilor cardiovasculari, a valorilor tensionale și a frecvenței cardiace, în timp ce un template de dermatologie va fi optimizat pentru descrierea leziunilor și a localizărilor anatomice.</p>
+
+            <h3>Cum îmbunătățesc template-urile acuratețea</h3>
+            <p>Mecanismul prin care template-urile cresc precizia transcrierii funcționează pe mai multe niveluri:</p>
+            <ul>
+              <li><strong>Context specializat</strong> – Fiecare template activează un vocabular preferențial specific specialității. Termenii medicali relevanți primesc un scor de probabilitate mai mare, reducând confuziile de transcriere.</li>
+              <li><strong>Structură predictibilă</strong> – Când algoritmul știe că urmează secțiunea de „Examen obiectiv", se așteaptă la termeni descriptivi și valori numerice, nu la informații anamnestice.</li>
+              <li><strong>Separarea informațiilor</strong> – Template-ul ghidează clasificarea automată a informațiilor dictate în secțiunile corecte (motive de prezentare, istoric, examen clinic, diagnostic, plan terapeutic).</li>
+              <li><strong>Formatare automată</strong> – Valorile, dozele și parametrii sunt formatate automat conform convențiilor secțiunii respective.</li>
+            </ul>
+
+            <h3>Alegerea template-ului potrivit</h3>
+            <p>AscultAI oferă template-uri predefinite pentru cele mai frecvente tipuri de consultații. Alegerea corectă a template-ului este esențială:</p>
+            <ol>
+              <li><strong>Consultație de specialitate</strong> – Selectați template-ul corespunzător specialității dumneavoastră (cardiologie, pneumologie, gastroenterologie etc.). Acestea conțin secțiuni specifice și vocabular optimizat.</li>
+              <li><strong>Consultație de medicină de familie</strong> – Utilizați template-ul general de medicină de familie, care este conceput pentru o paletă largă de patologii și este mai flexibil.</li>
+              <li><strong>Control periodic</strong> – Template-ul de control este simplificat și se concentrează pe evoluția față de consultația anterioară.</li>
+              <li><strong>Urgență</strong> – Template-ul de urgență pune accent pe triaj, semne vitale și conduita terapeutică imediată.</li>
+            </ol>
+
+            <h3>Crearea de template-uri personalizate</h3>
+            <p>Dacă nici un template predefinit nu corespunde nevoilor dumneavoastră, puteți crea unul personalizat. Accesați secțiunea „Template-uri" din tabloul de bord și apăsați „Crează template nou". Definiți secțiunile dorite, ordinea lor și cuvintele cheie asociate fiecărei secțiuni. Template-urile personalizate pot fi partajate cu colegii din aceeași clinică.</p>
+            <p>La crearea unui template personalizat, includeți instrucțiuni clare pentru fiecare secțiune – de exemplu, „Această secțiune conține semnele vitale: TA, puls, temperatură, saturație O2, greutate". Aceste instrucțiuni nu vor apărea în nota finală, dar vor ghida algoritmul în clasificarea corectă a informațiilor.</p>
+
+            <div class="guide-warning">
+              <strong>Atenție:</strong> Utilizarea unui template nepotrivit pentru tipul de consultație poate reduce acuratețea. De exemplu, un template de oftalmologie utilizat pentru o consultație de medicină internă va prioritiza vocabularul oftalmologic și poate interpreta greșit termeni din alte specialități.
+            </div>
+          </div>
+
+          <!-- Chapter 6 -->
+          <div class="guide-chapter" id="chapter-6">
+            <h2>Tehnici de vorbire clară</h2>
+            <p>Modul în care vorbiți în timpul consultației influențează direct calitatea transcrierii. Nu este necesar să vă modificați stilul natural de comunicare cu pacientul, dar câteva ajustări subtile pot face o diferență semnificativă în acuratețea recunoașterii vocale. Aceste tehnici devin rapide reflexe după doar câteva zile de practică.</p>
+            <p>Este important de subliniat că AscultAI este proiectat să funcționeze cu vorbirea naturală – nu trebuie să dictați ca un robot sau să vorbiți anormal de încet. Scopul este să evitați câteva capcane comune care pot crea dificultăți oricărui sistem de recunoaștere vocală.</p>
+
+            <h3>Ritmul și pauzele</h3>
+            <p>Ritmul vorbirii este un factor crucial. Iată recomandările noastre:</p>
+            <ul>
+              <li><strong>Ritm conversațional normal</strong> – Vorbiți într-un ritm natural, similar celui pe care l-ați folosi la telefon cu un coleg. Nu este nevoie să vorbiți excesiv de încet.</li>
+              <li><strong>Pauze scurte la tranziții</strong> – Când treceți de la o secțiune la alta (de exemplu, de la anamneză la examen obiectiv), faceți o pauză de 1-2 secunde. Aceasta ajută algoritmul să identifice tranziția.</li>
+              <li><strong>Evitați vorbirea precipitată</strong> – Momentele în care vorbiți foarte rapid (de exemplu, când enumerați medicamente) sunt cele mai predispuse la erori. Încetiniți ușor ritmul la enumerări.</li>
+            </ul>
+
+            <h3>Dictarea numerelor și dozelor</h3>
+            <p>Valorile numerice – doze de medicamente, valori tensionale, rezultate de laborator – sunt informații critice care trebuie transcrise cu precizie absolută. Pentru acuratețe maximă:</p>
+            <ol>
+              <li>Dictați cifrele individual pentru numere compuse: „unu doi cinci" în loc de „o sută douăzeci și cinci" pentru valoarea tensională de 125 mmHg.</li>
+              <li>Specificați unitatea de măsură imediat după valoare: „Metformin, opt sute cincizeci de miligrame".</li>
+              <li>Pentru valori tensionale, folosiți formula: „tensiunea arterială, unu trei zero pe opt cinci".</li>
+              <li>Pentru valori cu zecimale, spuneți explicit „virgulă": „creatinina, unu virgulă doi miligrame pe decilitru".</li>
+            </ol>
+
+            <h3>Gestionarea întreruperilor pacientului</h3>
+            <p>În consultația reală, pacienții vorbesc adesea în același timp cu medicul. AscultAI poate gestiona suprapunerile de voce în mare parte, dar acuratețea scade în aceste momente. Strategii utile:</p>
+            <ul>
+              <li>Lăsați pacientul să termine de vorbit înainte de a rezuma informațiile importante.</li>
+              <li>Repetați scurt informațiile cheie spuse de pacient – „Deci durerea a început acum trei zile" – aceasta servește și ca confirmare pentru pacient și asigură transcrierea corectă.</li>
+              <li>Dacă trebuie să dictați o informație importantă în timp ce pacientul vorbește, așteptați o pauză naturală.</li>
+            </ul>
+
+            <div class="guide-tip">
+              <strong>Sfat:</strong> Repetarea rezumativă a informațiilor cheie ale pacientului nu doar că îmbunătățește transcrierea, dar este și o practică excelentă de comunicare medic-pacient, demonstrând ascultare activă și empatie.
+            </div>
+          </div>
+
+          <!-- Chapter 7 -->
+          <div class="guide-chapter" id="chapter-7">
+            <h2>Corectarea și feedback-ul</h2>
+            <p>Nicio transcriere automată nu este perfectă în 100% din cazuri. AscultAI oferă un sistem intuitiv de corectare care vă permite să identificați și să remediați rapid eventualele erori. Mai important, fiecare corectare pe care o faceți contribuie activ la îmbunătățirea sistemului, deoarece feedback-ul dumneavoastră este utilizat pentru a rafina modelul de recunoaștere vocală pentru profilul dumneavoastră specific.</p>
+            <p>Procesul de corectare în AscultAI a fost proiectat pentru a fi rapid și intuitiv. În medie, revizuirea și corectarea unei consultații de 15 minute necesită între 1 și 3 minute – considerabil mai puțin decât redactarea manuală a aceleiași note clinice.</p>
+
+            <h3>Tipuri de erori și cum să le corectați</h3>
+            <p>Erorile de transcriere se încadrează în câteva categorii principale, fiecare cu metoda de corecție optimă:</p>
+            <ul>
+              <li><strong>Erori de recunoaștere a cuvintelor</strong> – Cuvinte transcrise greșit din cauza pronunției neclare sau a zgomotului ambiental. Faceți clic pe cuvântul incorect, iar sistemul va afișa alternative sugerate. Selectați varianta corectă sau tastați manual cuvântul dorit.</li>
+              <li><strong>Erori de segmentare a vorbitorilor</strong> – Ocazional, o replică a medicului poate fi atribuită pacientului sau invers. Utilizați funcția de „Schimbare vorbitor" făcând clic pe pictograma de schimb de lângă replica respectivă.</li>
+              <li><strong>Erori de formatare</strong> – Valori numerice formatate incorect (de exemplu, „1 virgulă 5" în loc de „1,5") sau abrevieri ne-recunoscute. Editați direct în text și marcați corecția.</li>
+              <li><strong>Informații lipsă</strong> – Fragmente de vorbire care nu au fost captate, de obicei din cauza volumului scăzut sau a suprapunerii vocilor. Adăugați manual informația lipsă în secțiunea corespunzătoare.</li>
+            </ul>
+
+            <h3>Sistemul de feedback</h3>
+            <p>AscultAI implementează un mecanism de învățare continuă bazat pe corecțiile dumneavoastră. Acest sistem funcționează astfel:</p>
+            <ol>
+              <li><strong>Corectare locală</strong> – Fiecare corecție este salvată și asociată cu semnătura acustică a segmentului respectiv.</li>
+              <li><strong>Adaptare la profilul vocal</strong> – După aproximativ 20-30 de consultații corectate, modelul dezvoltă un profil de vorbire personalizat care recunoaște mai bine particularitățile vocii dumneavoastră.</li>
+              <li><strong>Îmbunătățire a vocabularului</strong> – Termenii pe care îi corectați frecvent sunt adăugați automat la lista de priorități pentru profilul dumneavoastră.</li>
+              <li><strong>Feedback agregat</strong> – Corectările anonimizate contribuie la îmbunătățirea modelului general, beneficiind toți utilizatorii.</li>
+            </ol>
+
+            <h3>Practici optime de corectare</h3>
+            <p>Pentru a maximiza beneficiul corecțiilor dumneavoastră și a accelera procesul de adaptare al sistemului, vă recomandăm:</p>
+            <ul>
+              <li>Corectați nota clinică imediat după consultație, cât informațiile sunt proaspete în memorie.</li>
+              <li>Utilizați funcția de „Marcați ca greșit" chiar și pentru erori minore – fiecare marcare ajută sistemul să învețe.</li>
+              <li>Fiți consecvenți în corectări – dacă preferați „HTA" în loc de „hipertensiune arterială", corectați de fiecare dată în același mod.</li>
+              <li>Verificați cu atenție valorile numerice, dozele de medicamente și diagnosticele – acestea sunt zonele critice.</li>
+            </ul>
+
+            <div class="guide-tip">
+              <strong>Sfat:</strong> Dedicați primele 2-3 săptămâni de utilizare a AscultAI pentru corectări atente și complete. Acest efort inițial va fi răsplătit cu o creștere vizibilă a acurateții pe termen lung, pe măsură ce sistemul se adaptează la vocea și stilul dumneavoastră de dictare.
+            </div>
+          </div>
+
+          <!-- Chapter 8 -->
+          <div class="guide-chapter" id="chapter-8">
+            <h2>Setări avansate</h2>
+            <p>AscultAI oferă o serie de setări avansate care vă permit să personalizați în detaliu modul în care funcționează transcrierea și generarea notelor clinice. Aceste setări sunt accesibile din meniul „Setări" al contului dumneavoastră și pot fi ajustate oricând. Deși valorile implicite sunt optimizate pentru majoritatea utilizatorilor, ajustarea fină a acestor parametri poate aduce îmbunătățiri suplimentare pentru cazuri specifice.</p>
+            <p>Vă recomandăm să modificați aceste setări treptat, una câte una, și să evaluați impactul fiecărei modificări pe parcursul a cel puțin 5-10 consultații înainte de a face alte ajustări.</p>
+
+            <h3>Setări de calitate audio</h3>
+            <p>Calitatea captării audio poate fi ajustată din secțiunea „Audio" a setărilor:</p>
+            <ul>
+              <li><strong>Rata de eșantionare</strong> – Implicit setată la 44.1 kHz, poate fi redusă la 16 kHz pentru dispozitive cu capacitate de procesare limitată. O rată de eșantionare mai mare înseamnă calitate audio superioară, dar și fișiere mai mari.</li>
+              <li><strong>Filtrarea zgomotului</strong> – Activată implicit, reduce zgomotul de fundal constant. Poate fi dezactivată dacă observați că și vorbirea este afectată (în cazuri rare, filtrul poate atenua și frecvențe vocale).</li>
+              <li><strong>Detectarea automată a pauzelor</strong> – Controlează cât timp de tăcere trebuie să treacă pentru ca sistemul să considere că o propoziție s-a încheiat. Valoarea implicită este de 1,5 secunde. Reduceți la 0,8 secunde pentru dictare rapidă sau creșteți la 2,5 secunde dacă faceți pauze lungi de gândire.</li>
+            </ul>
+
+            <h3>Preferințe lingvistice</h3>
+            <p>Setările de limbă permit personalizarea modului în care AscultAI procesează textul:</p>
+            <ol>
+              <li><strong>Limba principală</strong> – Română (implicit). AscultAI suportă și dictarea mixtă română-engleză, utilă pentru termeni medicali care nu au echivalent consacrat în română.</li>
+              <li><strong>Stil de formatare medicală</strong> – Alegeți între formatarea conform standardelor românești (virgulă pentru zecimale, unități SI) sau formatarea internațională.</li>
+              <li><strong>Abrevieri preferate</strong> – Configurați dacă doriți ca termenii să fie transcrisi integral (de exemplu, „hipertensiune arterială") sau abreviat („HTA"). Această setare se aplică la nivelul notei finale, nu la nivelul transcrierii brute.</li>
+            </ol>
+
+            <h3>Vocabular specific specialității</h3>
+            <p>Fiecare specialitate medicală are un vocabular specific care poate fi activat pentru a îmbunătăți recunoașterea. Din secțiunea „Specialitate", puteți:</p>
+            <ul>
+              <li>Selecta specialitatea principală și până la două sub-specialități.</li>
+              <li>Activa pachete de vocabular suplimentare (de exemplu, „Chirurgie bariatrică" sau „Cardiologie intervențională").</li>
+              <li>Importa liste de termeni dintr-un fișier CSV – util pentru clinicile care au propriile protocoale și terminologie internă.</li>
+              <li>Partaja vocabularul personalizat cu colegii din aceeași organizație.</li>
+            </ul>
+
+            <h3>Sensibilitatea microfonului</h3>
+            <p>Ajustarea sensibilității microfonului poate rezolva probleme specifice de captare audio:</p>
+            <ul>
+              <li><strong>Sensibilitate ridicată</strong> – Utilă când vorbitorul este la distanță mai mare de microfon sau vorbește cu voce scăzută. Atenție: crește și nivelul zgomotului de fundal captat.</li>
+              <li><strong>Sensibilitate standard</strong> – Setarea recomandată pentru majoritatea situațiilor, optimizată pentru distanțe de 30-60 cm.</li>
+              <li><strong>Sensibilitate redusă</strong> – Potrivită pentru medii foarte zgomotoase, unde doriți să captați doar vocea de aproape a medicului. Necesită ca microfonul să fie la mai puțin de 30 cm de vorbitor.</li>
+            </ul>
+
+            <h3>Setări de export și integrare</h3>
+            <p>Parametrii de export influențează formatul final al notei clinice și pot fi ajustați pentru a se potrivi cu cerințele sistemului informatic al clinicii dumneavoastră:</p>
+            <ul>
+              <li>Formatul de export: PDF, DOCX, HL7 FHIR sau text simplu.</li>
+              <li>Includerea automată a codurilor ICD-10 sugerate.</li>
+              <li>Semnătura digitală a medicului pe documentul exportat.</li>
+              <li>Integrarea directă cu sistemele informatice medicale (HIS) compatibile.</li>
+            </ul>
+
+            <div class="guide-warning">
+              <strong>Atenție:</strong> Modificarea setărilor avansate poate afecta acuratețea în moduri neașteptate. Vă recomandăm să notați setările anterioare înainte de a face schimbări și să reveniți la valorile implicite dacă observați o scădere a calității transcrierii.
+            </div>
+          </div>
+
+          <!-- Navigation footer -->
+          <div class="guide-nav-footer">
+            <a class="guide-nav-btn hidden" id="prevBtn">
+              <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Capitolul anterior
+            </a>
+            <span class="guide-nav-current" id="navCurrent">Capitolul 1 din 8</span>
+            <a class="guide-nav-btn" id="nextBtn">
+              Capitolul următor
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        &copy; <span id="year"></span> AscultAI &ndash; Un produs ApolloIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Guide chapter navigation
+    (() => {
+      const chapters = document.querySelectorAll('.guide-chapter');
+      const sidebarLinks = document.querySelectorAll('.guide-sidebar-link');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentEl = document.getElementById('currentChapter');
+      const navCurrentEl = document.getElementById('navCurrent');
+      const progressFill = document.getElementById('progressFill');
+      const totalChapters = chapters.length;
+      const storageKey = 'ascultai-guide-optimizarea-acuratetii-completed';
+
+      function getCompleted() {
+        try { return JSON.parse(localStorage.getItem(storageKey)) || []; }
+        catch { return []; }
+      }
+
+      function saveCompleted(arr) {
+        localStorage.setItem(storageKey, JSON.stringify(arr));
+      }
+
+      function markCompleted(chapterId) {
+        const completed = getCompleted();
+        if (!completed.includes(chapterId)) {
+          completed.push(chapterId);
+          saveCompleted(completed);
+        }
+        updateCompletedUI();
+      }
+
+      function updateCompletedUI() {
+        const completed = getCompleted();
+        sidebarLinks.forEach(link => {
+          const ch = link.dataset.chapter;
+          if (completed.includes(ch)) {
+            link.classList.add('completed');
+          } else {
+            link.classList.remove('completed');
+          }
+        });
+      }
+
+      function getActiveIndex() {
+        for (let i = 0; i < chapters.length; i++) {
+          if (chapters[i].classList.contains('active')) return i;
+        }
+        return 0;
+      }
+
+      function goToChapter(index) {
+        const currentIndex = getActiveIndex();
+        if (currentIndex !== index) {
+          markCompleted(chapters[currentIndex].id);
+        }
+
+        chapters.forEach(ch => ch.classList.remove('active'));
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+
+        chapters[index].classList.add('active');
+        sidebarLinks[index].classList.add('active');
+
+        currentEl.textContent = index + 1;
+        navCurrentEl.textContent = `Capitolul ${index + 1} din ${totalChapters}`;
+        progressFill.style.width = `${((index + 1) / totalChapters) * 100}%`;
+
+        prevBtn.classList.toggle('hidden', index === 0);
+        nextBtn.classList.toggle('hidden', index === totalChapters - 1);
+
+        history.replaceState(null, '', '#' + chapters[index].id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      sidebarLinks.forEach((link, i) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          goToChapter(i);
+        });
+      });
+
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const i = getActiveIndex();
+        if (i > 0) goToChapter(i - 1);
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const i = getActiveIndex();
+        if (i < totalChapters - 1) goToChapter(i + 1);
+      });
+
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const idx = Array.from(chapters).findIndex(ch => ch.id === hash);
+        if (idx >= 0) goToChapter(idx);
+      }
+
+      updateCompletedUI();
+    })();
+
+    // Scroll animations
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -100px 0px' };
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('animated'); }, index * 50);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.scroll-fade-in').forEach((el, i) => {
+        const parent = el.closest('.scroll-section');
+        if (parent) {
+          const siblings = Array.from(parent.querySelectorAll('.scroll-fade-in'));
+          el.style.transitionDelay = `${siblings.indexOf(el) * 0.1}s`;
+        }
+        scrollObserver.observe(el);
+      });
+    });
+
+    // Mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuClose = document.getElementById('mobileMenuClose');
+      const menuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+      let isMenuOpen = false;
+      function openMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.add('active'); menuToggle.classList.add('active'); document.body.style.overflow = 'hidden'; isMenuOpen = true; } }
+      function closeMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = ''; isMenuOpen = false; } }
+      if (menuToggle) menuToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); isMenuOpen ? closeMenu() : openMenu(); });
+      if (menuClose) menuClose.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      if (menuOverlay) menuOverlay.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+      mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMenu, 100); }); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+    });
+  </script>
+</body>
+</html>
