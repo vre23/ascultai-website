@@ -923,12 +923,21 @@ h1, h2, h3, h4, h5, h6,
   color: var(--color-dark);
 }
 
+.columns-3 > .scroll-fade-in,
+.columns-3 > .animate-on-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
 .step-list,
 .feature-list,
 .safety-list {
   font-size: 0.95rem;
   color: var(--color-muted);
   line-height: 1.7;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  flex: 1;
 }
 
 .step-list p,
