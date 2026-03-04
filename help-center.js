@@ -32,7 +32,7 @@
       prefix: 'oa',
       sectionId: 'section-optimizare',
       storageKey: 'ascultai-guide-optimizarea-acuratetii-completed',
-      totalChapters: 8,
+      totalChapters: 7,
       hashSegment: 'optimizare'
     }
   };
