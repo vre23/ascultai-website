@@ -377,7 +377,8 @@
 /* ==========  12. Content Area  ========== */
 .hc-content {
   flex: 1;
-  max-width: 840px;
+  max-width: 900px;
+  margin: 0 auto;                           /* center content in available space */
   padding: 40px 48px 80px;
   min-width: 0;                             /* prevent flex blowout */
 }
