@@ -325,13 +325,12 @@
         <div class="guide-chapter active" id="oa-chapter-1">
           <h2>Introducere in acuratete</h2>
           <p>Acuratetea transcrierii medicale este fundamentul pe care se construieste intreaga documentatie clinica generata de AscultAI. O transcriere precisa asigura faptul ca nota clinica finala reflecta fidel dialogul dintre medic si pacient, reducand riscul de erori medicale si imbunatatind calitatea actului medical. In mediul clinic romanesc, unde consultatiile implica frecvent terminologie latina, acronime specifice si alternarea intre limbajul medical si cel colocvial al pacientului, provocarile de acuratete sunt deosebit de complexe.</p>
-          <p>AscultAI utilizeaza modele de inteligenta artificiala antrenate special pe limbajul medical romanesc, capabile sa recunoasca peste 50.000 de termeni medicali, denumiri comerciale de medicamente disponibile in Romania si coduri ICD-10 utilizate in practica curenta. Rata medie de acuratete a sistemului depaseste 96% in conditii optime, dar poate fi influentata semnificativ de factori externi pe care dumneavoastra ii puteti controla.</p>
+          <p>AscultAI utilizeaza modele de inteligenta artificiala antrenate special pe limbajul medical romanesc, capabile sa recunoasca peste 50.000 de termeni medicali, denumiri comerciale de medicamente disponibile in Romania. Rata medie de acuratete a sistemului depaseste 96% in conditii optime, dar poate fi influentata semnificativ de factori externi pe care dumneavoastra ii puteti controla.</p>
           <h3>Factori care influenteaza acuratetea</h3>
           <p>Intelegerea factorilor care afecteaza calitatea transcrierii este primul pas pentru optimizarea rezultatelor. Acestia pot fi grupati in trei categorii principale:</p>
           <ul>
             <li><strong>Factori audio</strong> &ndash; calitatea microfonului, distanta fata de vorbitor, zgomotul de fundal, reverberatia incaperii si interferentele electronice.</li>
             <li><strong>Factori lingvistici</strong> &ndash; claritatea vorbirii, ritmul dictarii, utilizarea corecta a termenilor medicali, pronuntia denumirilor de medicamente si structurarea logica a informatiilor.</li>
-            <li><strong>Factori de configurare</strong> &ndash; alegerea template-ului potrivit, setarile de specialitate, preferintele de limba si calibrarea profilului individual al medicului.</li>
           </ul>
           <h3>De ce conteaza fiecare procent</h3>
           <p>Diferenta dintre o acuratete de 94% si una de 98% poate parea nesemnificativa, dar intr-o consultatie tipica de 15 minute care genereaza aproximativ 2.000 de cuvinte, aceasta inseamna diferenta dintre 120 de cuvinte potential incorecte si doar 40. Intr-un context medical, chiar si o singura eroare la nivelul dozajului unui medicament sau al unui diagnostic poate avea consecinte majore.</p>
@@ -354,8 +353,6 @@
           </ul>
           <h3>Vizite la domiciliu</h3>
           <p>La vizitele la domiciliu, controlul mediului acustic este limitat. In aceste situatii, recomandam utilizarea unui microfon lavaliera conectat la telefonul mobil sau la tableta. Pozitionati dispozitivul de inregistrare pe o suprafata stabila, nu pe genunchi sau pe patul pacientului, unde miscarile pot genera zgomot de impact.</p>
-          <h3>Teleconsiltatii</h3>
-          <p>Pentru consultatiile online, AscultAI poate captura audio direct din sesiunea de videoconferinta. Este important ca atat medicul, cat si pacientul, sa utilizeze casti cu microfon pentru a evita efectul de ecou. Activati functia de captare audio a sistemului din setarile AscultAI si asigurati-va ca aplicatia are permisiunile necesare.</p>
           <h3>Captarea ambilor vorbitori</h3>
           <p>AscultAI diferentiaza automat vocile medicului si pacientului. Pentru o separare optima a vorbitorilor, este ideal ca microfonul sa fie pozitionat echidistant fata de ambii participanti sau sa utilizati un microfon omnidirectional. Daca un vorbitor este semnificativ mai departe de microfon decat celalalt, vocea acestuia va fi captata la un nivel mai scazut, ceea ce poate reduce acuratetea transcrierii pentru acel vorbitor.</p>
           <div class="guide-tip">
@@ -407,7 +404,6 @@
           <ul>
             <li><strong>&bdquo;ser fiziologic&rdquo;</strong> va fi recunoscut corect in context medical, si nu confundat cu alte interpretari ale cuvantului &bdquo;ser&rdquo;.</li>
             <li><strong>&bdquo;Metformin 850 mg&rdquo;</strong> &ndash; sistemul recunoaste contextul dozajului si formateaza automat mg, g, ml si alte unitati de masura.</li>
-            <li><strong>Codurile ICD-10</strong> &ndash; cand dictati &bdquo;I25.1&rdquo; sau &bdquo;J18.9&rdquo;, sistemul le recunoaste ca coduri de diagnostic si le formateaza corespunzator.</li>
           </ul>
           <h3>Abrevierile si acronimele</h3>
           <p>Abrevierile medicale sunt recunoscute automat de AscultAI. Puteti dicta abrevierile in mod natural, iar sistemul le va transcrie in forma corecta:</p>
@@ -418,23 +414,12 @@
             <li><strong>VSH, TGO, TGP, HLG</strong> &ndash; abrevierile de laborator sunt recunoscute automat in contextul analizelor medicale.</li>
           </ol>
           <h3>Denumirile medicamentelor</h3>
-          <p>Baza de date AscultAI contine peste 8.000 de denumiri comerciale si substante active disponibile in Romania, actualizata trimestrial conform Catalogului National al Preturilor Medicamentelor. Pentru rezultate optime:</p>
+          <p>Baza de date AscultAI contine peste 8.000 de denumiri comerciale si substante active disponibile in Romania, actualizata conform <a href="https://nomenclator.anm.ro/medicamente" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 500;">Nomenclatorului ANMDMR</a> (Agentia Nationala a Medicamentului si Dispozitivelor Medicale din Romania). Pentru rezultate optime:</p>
           <ul>
             <li>Pronuntati denumirile de medicamente clar, cu pauza inainte si dupa denumire.</li>
             <li>Specificati forma farmaceutica (comprimate, capsule, solutie injectabila) &ndash; acest context ajuta la recunoasterea corecta.</li>
             <li>Pentru medicamente cu denumiri similare (de exemplu, Losartan vs. Lisinopril), enuntati clar fiecare silaba.</li>
           </ul>
-          <h3>Imbunatatirea recunoasterii terminologice</h3>
-          <p>AscultAI ofera posibilitatea de a adauga termeni personalizati in dictionarul propriu. Aceasta functie este utila pentru:</p>
-          <ul>
-            <li>Terminologie specifica unor sub-specialitati mai rare.</li>
-            <li>Denumiri de dispozitive medicale sau implanturi specifice.</li>
-            <li>Abrevieri si acronime proprii cabinetului sau clinicii dumneavoastra.</li>
-            <li>Denumiri de protocoale terapeutice interne.</li>
-          </ul>
-          <div class="guide-tip">
-            <strong>Sfat:</strong> Accesati sectiunea &bdquo;Dictionar personalizat&rdquo; din setarile contului pentru a adauga termeni noi. Fiecare termen adaugat va fi disponibil imediat in transcrierile ulterioare si va fi asociat cu profilul dumneavoastra de vorbire.
-          </div>
         </div>
 
         <!-- oa-chapter-5 -->
@@ -570,7 +555,6 @@
           <p>Parametrii de export influenteaza formatul final al notei clinice si pot fi ajustati pentru a se potrivi cu cerintele sistemului informatic al clinicii dumneavoastra:</p>
           <ul>
             <li>Formatul de export: PDF, DOCX, HL7 FHIR sau text simplu.</li>
-            <li>Includerea automata a codurilor ICD-10 sugerate.</li>
             <li>Semnatura digitala a medicului pe documentul exportat.</li>
             <li>Integrarea directa cu sistemele informatice medicale (HIS) compatibile.</li>
           </ul>
