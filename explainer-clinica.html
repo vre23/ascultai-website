@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AscultAI — Ghid Implementare Clinica</title>
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --color-primary: #00c896;
+      --color-primary-dark: #00a87d;
+      --color-primary-soft: #e6fbf4;
+      --color-dark: #111111;
+      --color-muted: #666666;
+      --color-border: #e5e5e5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--color-dark);
+      background: #f5f5f5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media screen {
+      .page {
+        margin: 20px auto;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        border-radius: 4px;
+      }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .print-btn { display: none !important; }
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #fff;
+      padding: 4px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-logo {
+      height: 72px;
+    }
+
+    .header-badge {
+      background: var(--color-primary);
+      color: #fff;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, #f0fdf9 100%);
+      padding: 10px 40px 8px;
+      border-bottom: 3px solid var(--color-primary);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 2px;
+    }
+
+    .hero p {
+      font-size: 12px;
+      color: var(--color-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* ── Content ── */
+    .content {
+      padding: 12px 40px 8px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 5px;
+    }
+
+    .section-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--color-primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .section-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    .section-header h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-dark);
+      line-height: 1.5;
+    }
+
+    .section-body {
+      margin-left: 40px;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #333;
+    }
+
+    .section-body p {
+      margin-bottom: 3px;
+    }
+
+    .section-body strong {
+      color: var(--color-dark);
+      font-weight: 600;
+    }
+
+    .section-body .highlight {
+      color: var(--color-primary-dark);
+      font-weight: 600;
+    }
+
+    .section-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section-body ul li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 2px;
+    }
+
+    .section-body ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin: 0 0 10px 40px;
+    }
+
+    /* ── GDPR box ── */
+    .gdpr-box {
+      background: #f8fffe;
+      border: 1.5px solid var(--color-primary);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-top: 4px;
+    }
+
+    .gdpr-box h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 3px;
+    }
+
+    .gdpr-box p {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .gdpr-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gdpr-box ul li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 1px;
+    }
+
+    .gdpr-box ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #fff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    .footer-text a {
+      color: var(--color-primary-dark);
+      text-decoration: none;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    .footer-contact a {
+      color: var(--color-primary-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* ── Print button ── */
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,200,150,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 100;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,200,150,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <!-- Header -->
+  <div class="header">
+    <img src="assets/logo-horizontal.svg" alt="AscultAI" class="header-logo">
+    <span class="header-badge">Ghid Clinica</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Ghid de Implementare AscultAI</h1>
+    <p>Tot ce trebuie sa stiti pentru a integra AscultAI in clinica dumneavoastra.</p>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Section 1: Beneficii -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        </div>
+        <h2>Beneficiile AscultAI pentru clinica</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li><strong>Reducerea timpului de documentare</strong> — Medicii se concentreaza pe pacient, nu pe completarea documentelor. AscultAI capteaza automat informatiile relevante din consultatie.</li>
+          <li><strong>Documentatie medicala completa si precisa</strong> — Toate detaliile consultatiei sunt inregistrate corect, reducand riscul omisiunilor sau erorilor de transcriere manuala.</li>
+          <li><strong>Eficienta operationala crescuta</strong> — Mai putin timp petrecut pe administratie inseamna mai multe consultatii si o experienta mai buna atat pentru medici, cat si pentru pacienti.</li>
+          <li><strong>Integrare cu sistemul clinicii</strong> — Notele generate pot fi salvate direct in fisa electronica de sanatate a pacientului, in sistemul de management al clinicii.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+
+    <!-- Section 2: Configurare -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        </div>
+        <h2>Configurarea AscultAI</h2>
+      </div>
+      <div class="section-body">
+        <ul>
+          <li><strong>Crearea conturilor</strong> — Accesati <span class="highlight">app.ascult.ai</span> si creati conturi pentru fiecare medic care va utiliza platforma.</li>
+          <li><strong>Selectarea template-urilor</strong> — Alegeti sabloanele de consultatie potrivite specialitatii clinicii (medicina generala, dermatologie, cardiologie etc.).</li>
+          <li><strong>Configurarea echipamentului</strong> — Asigurati-va ca fiecare cabinet dispune de un microfon functional. Recomandam microfoane de birou sau cele integrate in laptop/tableta.</li>
+          <li><strong>Instruirea echipei</strong> — Prezentati medicilor fluxul de lucru: pornirea inregistrarii, revizuirea notelor si salvarea in sistemul clinicii.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+
+    <!-- Section 3: GDPR -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <h2>Conformitate GDPR — Ce trebuie actualizat</h2>
+      </div>
+      <div class="section-body">
+        <p>Pentru a utiliza AscultAI in conformitate cu legislatia europeana, clinica trebuie sa actualizeze cateva documente interne:</p>
+
+        <div class="gdpr-box">
+          <h3>1. Actualizarea Politicii de Confidentialitate</h3>
+          <p>Adaugati o mentiune privind utilizarea AscultAI ca <strong>procesor de date</strong> in Politica de Confidentialitate a clinicii. Specificati:</p>
+          <ul>
+            <li>Scopul utilizarii (asistenta la documentarea consultatiilor)</li>
+            <li>Tipul datelor procesate (transcrieri ale consultatiilor medicale)</li>
+            <li>Locatia stocarii datelor (<strong>Uniunea Europeana</strong>)</li>
+            <li>Certificarea de securitate (<strong>ISO 27001</strong>)</li>
+          </ul>
+        </div>
+
+        <div class="gdpr-box" style="margin-top: 5px;">
+          <h3>2. Obtinerea Consimtamantului Pacientilor</h3>
+          <p>Inainte de utilizarea AscultAI, obtineti consimtamantul informat al pacientului. Puteti folosi <span class="highlight">formularul de consimtamant AscultAI</span> disponibil in Centrul de Resurse.</p>
+          <ul>
+            <li>Pacientul poate refuza sau retrage consimtamantul in orice moment</li>
+            <li>Refuzul nu afecteaza calitatea ingrijirii medicale primite</li>
+          </ul>
+        </div>
+
+        <div class="gdpr-box" style="margin-top: 5px;">
+          <h3>3. Informatii cheie despre securitatea datelor</h3>
+          <ul>
+            <li>Toate datele sunt stocate in <strong>Uniunea Europeana</strong></li>
+            <li>Sistemele sunt certificate <strong>ISO 27001</strong></li>
+            <li><strong>Nicio inregistrare audio</strong> nu este stocata — doar transcrierile text</li>
+            <li>Datele sunt criptate si supuse auditurilor periodice</li>
+            <li>Suport si contact DPO: <span class="highlight">contact@ascult.ai</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      &copy; 2025 AscultAI — Apollo IQ S.R.L.<br>
+      <a href="https://ascult.ai">ascult.ai</a>
+    </div>
+    <div class="footer-contact">
+      Intrebari? Contactati-ne:<br>
+      <a href="mailto:contact@ascult.ai">contact@ascult.ai</a>
+    </div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">&#128424; Printeaza / Salveaza PDF</button>
+
+</body>
+</html>

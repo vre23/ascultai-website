@@ -3094,6 +3094,8 @@ h1, h2, h3, h4, h5, h6,
   padding: 2rem;
   border: 2px solid var(--color-border);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .download-card:hover {
@@ -3171,6 +3173,7 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   justify-content: center;
   transition: background 0.2s;
+  margin-top: auto;
 }
 
 .download-btn:hover {
