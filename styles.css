@@ -660,7 +660,7 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-subtitle {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto 0.75rem;
   font-size: 1.1rem;
   color: var(--color-muted);
   line-height: 1.7;
@@ -869,6 +869,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 3rem;
   color: var(--color-dark);
   transition: all 0.6s ease-out;
+  text-align: center;
 }
 
 .section-title.animate-on-scroll {
@@ -966,12 +967,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .icon-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
   margin-top: 3rem;
-  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
 }
 
 .icon-row img {
@@ -1041,6 +1042,7 @@ h1, h2, h3, h4, h5, h6,
 /* ============ About Section ============ */
 .about-section {
   background: #ffffff;
+  text-align: center;
 }
 
 .about-content {
@@ -1295,6 +1297,58 @@ h1, h2, h3, h4, h5, h6,
   display: inline-block;
 }
 
+/* Discount / Offer styles */
+.pricing-offer-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #00c896 0%, #00b386 100%);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.offer-icon {
+  font-size: 1.3rem;
+}
+
+.offer-text strong {
+  font-weight: 700;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(0, 200, 150, 0.25); }
+}
+
+.discount-badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: linear-gradient(135deg, #ff6b35 0%, #e84118 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+  border-radius: 0 22px 0 16px;
+  z-index: 1;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(232, 65, 24, 0.3);
+}
+
+.pricing-price-old {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--color-muted);
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-bottom: 0.15rem;
+}
+
 /* ============ About page ============ */
 
 .about-hero {
@@ -1343,11 +1397,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .about-content-mixed {
-  max-width: 1000px;
+  max-width: 700px;
   margin: 4rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  text-align: center;
 }
 
 .about-text-block {
@@ -1896,9 +1951,9 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .icon-row {
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
-    flex-wrap: wrap;
   }
 
   .icon-row .icon-gdpr,
