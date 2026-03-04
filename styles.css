@@ -1608,6 +1608,23 @@ h1, h2, h3, h4, h5, h6,
   gap: 1.5rem;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
 /* ============ Responsive ============ */
 
 @media (max-width: 960px) {
