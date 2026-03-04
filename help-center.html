@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Centru de Ajutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="help-center.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasa</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <div class="nav-dropdown">
+          <a href="help-center.html" class="nav-dropdown-trigger active">Centru de Ajutor
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="help-center.html#ghiduri/pornire-rapida"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="dropdown-label">Ghiduri</span></a>
+            <a href="help-center.html#explicatii"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="dropdown-label">Explicatii</span></a>
+            <a href="help-center.html#faq"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span class="dropdown-label">Intrebari Frecvente</span></a>
+            <a href="audit.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><span class="dropdown-label">Audit Clinica</span></a>
+          </div>
+        </div>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasa</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="help-center.html" class="active">Centru de Ajutor</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="hc-layout">
+    <!-- Sidebar -->
+    <aside class="hc-sidebar">
+      <div class="hc-sidebar-header">
+        <h2 class="hc-sidebar-title">Centru de Ajutor</h2>
+        <button class="hc-sidebar-close" aria-label="Inchide">&times;</button>
+      </div>
+      <nav class="hc-sidebar-nav">
+        <!-- CATEGORY: Ghiduri -->
+        <div class="hc-category open" data-category="ghiduri">
+          <button class="hc-category-header" data-category="ghiduri">
+            <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="hc-nav-label">Ghiduri</span>
+            <span class="hc-nav-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="hc-category-content">
+            <a href="#ghiduri/pornire-rapida" class="hc-sidebar-link active" data-guide-link="pr" data-section="section-pornire-rapida">
+              <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+              Pornire Rapida
+            </a>
+            <a href="#ghiduri/optimizare" class="hc-sidebar-link" data-guide-link="oa" data-section="section-optimizare">
+              <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></span>
+              Optimizarea Acuratetii
+            </a>
+          </div>
+        </div>
+
+        <!-- CATEGORY: FAQ -->
+        <div class="hc-category" data-category="faq">
+          <button class="hc-category-header" data-category="faq">
+            <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+            <span class="hc-nav-label">Intrebari Frecvente</span>
+            <span class="hc-nav-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="hc-category-content">
+            <a href="#faq/despre" class="hc-sidebar-link" data-faq-category="despre" data-section="section-faq">Despre AscultAI</a>
+            <a href="#faq/functionare" class="hc-sidebar-link" data-faq-category="functionare" data-section="section-faq">Cum functioneaza</a>
+            <a href="#faq/securitate" class="hc-sidebar-link" data-faq-category="securitate" data-section="section-faq">Securitate</a>
+            <a href="#faq/consimtamant" class="hc-sidebar-link" data-faq-category="consimtamant" data-section="section-faq">Consimtamant</a>
+            <a href="#faq/precizie" class="hc-sidebar-link" data-faq-category="precizie" data-section="section-faq">Precizie si limite</a>
+            <a href="#faq/functionalitati" class="hc-sidebar-link" data-faq-category="functionalitati" data-section="section-faq">Functionalitati</a>
+            <a href="#faq/tehnic" class="hc-sidebar-link" data-faq-category="tehnic" data-section="section-faq">Cerinte tehnice</a>
+            <a href="#faq/onboarding" class="hc-sidebar-link" data-faq-category="onboarding" data-section="section-faq">Onboarding</a>
+            <a href="#faq/conformitate" class="hc-sidebar-link" data-faq-category="conformitate" data-section="section-faq">Conformitate</a>
+            <a href="#faq/suport" class="hc-sidebar-link" data-faq-category="suport" data-section="section-faq">Suport</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY: Explicatii -->
+        <div class="hc-category" data-category="explicatii">
+          <button class="hc-category-header" data-category="explicatii">
+            <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+            <span class="hc-nav-label">Explicatii &amp; Materiale</span>
+            <span class="hc-nav-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="hc-category-content">
+            <a href="#explicatii/pacienti" class="hc-sidebar-link" data-explainer="pacienti" data-section="section-explicatii">Pentru Pacienti</a>
+            <a href="#explicatii/clinici" class="hc-sidebar-link" data-explainer="clinici" data-section="section-explicatii">Pentru Clinici</a>
+            <a href="#explicatii/medici" class="hc-sidebar-link" data-explainer="medici" data-section="section-explicatii">Pentru Medici</a>
+          </div>
+        </div>
+
+        <!-- SEPARATOR + EXTERNAL: Audit -->
+        <div class="hc-nav-separator"></div>
+        <a href="audit.html" class="hc-nav-external">
+          <span class="hc-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span>
+          <span class="hc-nav-label">Audit Clinica</span>
+          <span class="hc-nav-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Mobile overlay -->
+    <div class="hc-sidebar-overlay"></div>
+
+    <!-- Content -->
+    <div class="hc-content">
+      <!-- Mobile toggle -->
+      <button class="hc-sidebar-toggle"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+      <!-- ============================================================= -->
+      <!-- Section: Pornire Rapida                                       -->
+      <!-- ============================================================= -->
+      <div class="hc-section active" id="section-pornire-rapida">
+        <div class="hc-section-header">
+          <h1>Ghid de Pornire Rapida</h1>
+          <p>Configureaza si incepe sa folosesti AscultAI in doar 10 minute.</p>
+        </div>
+
+        <div class="guide-progress">
+          <span class="guide-progress-text">Capitolul <span id="pr-currentChapter">1</span> din 6</span>
+          <div class="guide-progress-bar"><div class="guide-progress-fill" id="pr-progressFill" style="width:16.67%"></div></div>
+        </div>
+
+        <!-- pr-chapter-1 -->
+        <section class="guide-chapter active" id="pr-chapter-1">
+          <h2>Ce este AscultAI?</h2>
+          <p>AscultAI este un asistent AI specializat care transforma conversatiile cu pacientii in note medicale structurate, in timp real. Conceput special pentru clinicienii din Romania, AscultAI intelege terminologia medicala romaneasca si genereaza documentatie conforma cu standardele medicale locale.</p>
+          <h3>Cum functioneaza?</h3>
+          <p>Procesul este simplu si se desfasoara in patru pasi:</p>
+          <ol>
+            <li><strong>Porneste inregistrarea</strong> &mdash; Deschizi AscultAI in browser si apesi butonul de inregistrare.</li>
+            <li><strong>Desfasoara consultatia</strong> &mdash; Vorbesti natural cu pacientul. AscultAI asculta in fundal fara sa interfereze.</li>
+            <li><strong>Revizuieste nota</strong> &mdash; La final, AscultAI genereaza automat o nota medicala structurata pe care o poti revizui.</li>
+            <li><strong>Valideaza si exporta</strong> &mdash; Confirmi nota, o editezi daca e nevoie, si o exporti in format PDF sau o copiezi.</li>
+          </ol>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            AscultAI nu este un simplu instrument de dictare &mdash; este un sistem inteligent care structureaza informatiile din conversatie conform template-ului medical ales de tine.
+          </div>
+          <h3>Ce poti face cu AscultAI?</h3>
+          <ul>
+            <li>Generarea automata de note SOAP din consultatii</li>
+            <li>Crearea de scrisori medicale si referate</li>
+            <li>Documentarea rapida a consultatiilor de specialitate</li>
+            <li>Reducerea timpului de documentare cu pana la 70%</li>
+          </ul>
+          <p>In capitolele urmatoare, vei invata cum sa iti configurezi contul, sa setezi microfonul si sa incepi prima ta consultatie cu AscultAI.</p>
+        </section>
+
+        <!-- pr-chapter-2 -->
+        <section class="guide-chapter" id="pr-chapter-2">
+          <h2>Creeaza-ti contul</h2>
+          <p>Pentru a incepe sa folosesti AscultAI, trebuie mai intai sa iti creezi un cont. Procesul este rapid si dureaza mai putin de 2 minute.</p>
+          <h3>Pasi pentru crearea contului</h3>
+          <ol>
+            <li><strong>Acceseaza platforma</strong> &mdash; Navigheaza la <strong>app.ascult.ai</strong> in browserul tau preferat (Chrome, Firefox, Edge sau Safari).</li>
+            <li><strong>Alege &bdquo;Creeaza cont&rdquo;</strong> &mdash; Pe pagina de login, apasa butonul de inregistrare.</li>
+            <li><strong>Completeaza datele</strong> &mdash; Introdu numele, adresa de email si creeaza o parola securizata.</li>
+            <li><strong>Verifica email-ul</strong> &mdash; Vei primi un email de confirmare. Apasa link-ul din email pentru a activa contul.</li>
+            <li><strong>Completeaza profilul</strong> &mdash; Adauga specialitatea ta medicala si preferintele de documentare.</li>
+          </ol>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            Foloseste adresa de email profesionala pentru a beneficia de functionalitatile dedicate clinicilor si spitalelor.
+          </div>
+          <h3>Alegerea specialitatii</h3>
+          <p>La configurarea profilului, vei fi intrebat despre specialitatea ta medicala. Aceasta ajuta AscultAI sa personalizeze template-urile si terminologia folosita in notele generate. Poti alege din:</p>
+          <ul>
+            <li>Medicina generala / Medicina de familie</li>
+            <li>Cardiologie</li>
+            <li>Dermatologie</li>
+            <li>Neurologie</li>
+            <li>Psihiatrie / Psihologie</li>
+            <li>Stomatologie</li>
+            <li>Si multe alte specialitati</li>
+          </ul>
+          <p>Poti modifica specialitatea oricand din setarile contului tau.</p>
+        </section>
+
+        <!-- pr-chapter-3 -->
+        <section class="guide-chapter" id="pr-chapter-3">
+          <h2>Configureaza microfonul</h2>
+          <p>Calitatea inregistrarii audio este esentiala pentru o transcriere precisa. In acest capitol, vei invata cum sa configurezi microfonul pentru rezultate optime.</p>
+          <h3>Permisiuni browser</h3>
+          <p>La prima utilizare, browserul va solicita permisiunea de a accesa microfonul. Este important sa apesi &bdquo;Permite&rdquo; pentru ca AscultAI sa poata asculta consultatia.</p>
+          <ol>
+            <li><strong>Apasa butonul de inregistrare</strong> &mdash; Browserul va afisa un dialog de permisiune.</li>
+            <li><strong>Selecteaza &bdquo;Permite&rdquo;</strong> &mdash; Aceasta acorda acces la microfon doar pentru AscultAI.</li>
+            <li><strong>Verifica indicatorul</strong> &mdash; Vei vedea un indicator vizual ca microfonul este activ.</li>
+          </ol>
+          <div class="guide-warning">
+            Daca ai refuzat accidental permisiunea, poti sa o reactivezi din setarile browserului &rarr; Setari site &rarr; Microfon &rarr; Permite pentru app.ascult.ai.
+          </div>
+          <h3>Alegerea microfonului potrivit</h3>
+          <p>AscultAI functioneaza cu orice microfon, dar pentru rezultate optime recomandam:</p>
+          <ul>
+            <li><strong>Microfonul integrat al laptopului</strong> &mdash; Functioneaza bine pentru consultatii fata in fata la distanta mica.</li>
+            <li><strong>Casti cu microfon</strong> &mdash; Ideale pentru consultatii telefonice sau video.</li>
+            <li><strong>Microfon USB de birou</strong> &mdash; Cea mai buna optiune pentru cabinet, capteaza clar atat doctorul cat si pacientul.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            Daca ai mai multe microfoane conectate, poti selecta microfonul dorit din setarile AscultAI inainte de a incepe inregistrarea.
+          </div>
+          <h3>Testarea microfonului</h3>
+          <p>Inainte de prima consultatie, foloseste functia de test audio din AscultAI. Vorbeste cateva propozitii si verifica daca nivelul audio este adecvat &mdash; bara de nivel ar trebui sa se miste in zona verde.</p>
+        </section>
+
+        <!-- pr-chapter-4 -->
+        <section class="guide-chapter" id="pr-chapter-4">
+          <h2>Prima ta consultatie</h2>
+          <p>Acum ca ai contul configurat si microfonul pregatit, esti gata pentru prima ta consultatie cu AscultAI. Urmeaza acesti pasi simpli:</p>
+          <h3>Inainte de consultatie</h3>
+          <ol>
+            <li><strong>Deschide AscultAI</strong> &mdash; Acceseaza app.ascult.ai si asigura-te ca esti autentificat.</li>
+            <li><strong>Alege template-ul</strong> &mdash; Selecteaza tipul de nota pe care vrei sa o generezi (SOAP, scrisoare medicala, referat etc.).</li>
+            <li><strong>Verifica microfonul</strong> &mdash; Asigura-te ca microfonul corect este selectat si functional.</li>
+          </ol>
+          <h3>In timpul consultatiei</h3>
+          <ol>
+            <li><strong>Apasa &bdquo;Inregistreaza&rdquo;</strong> &mdash; Incepe inregistrarea chiar inainte de a-l primi pe pacient sau la inceputul conversatiei.</li>
+            <li><strong>Vorbeste natural</strong> &mdash; Nu trebuie sa schimbi nimic in modul tau de a consulta. AscultAI se adapteaza la stilul tau.</li>
+            <li><strong>Monitorizeaza indicatorul</strong> &mdash; Un indicator discret iti confirma ca inregistrarea este activa.</li>
+          </ol>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            Nu te preocupa de zgomote de fundal moderate &mdash; AscultAI are filtre inteligente de zgomot care se concentreaza pe vocea umana.
+          </div>
+          <h3>Dupa consultatie</h3>
+          <ol>
+            <li><strong>Opreste inregistrarea</strong> &mdash; Apasa butonul de stop cand consultatia s-a incheiat.</li>
+            <li><strong>Asteapta procesarea</strong> &mdash; AscultAI va genera nota in cateva secunde.</li>
+            <li><strong>Revizuieste nota</strong> &mdash; Citeste nota generata si verifica acuratetea informatiilor.</li>
+          </ol>
+          <p>In capitolul urmator vei invata cum sa editezi si sa exporti notele generate.</p>
+        </section>
+
+        <!-- pr-chapter-5 -->
+        <section class="guide-chapter" id="pr-chapter-5">
+          <h2>Editeaza si exporta notele</h2>
+          <p>Dupa ce AscultAI genereaza nota medicala, ai posibilitatea de a o revizui, edita si exporta in formatul dorit.</p>
+          <h3>Editarea notelor</h3>
+          <p>Nota generata apare intr-un editor text complet functional. Poti:</p>
+          <ul>
+            <li><strong>Modifica textul</strong> &mdash; Click pe orice sectiune pentru a edita direct continutul.</li>
+            <li><strong>Reorganiza sectiunile</strong> &mdash; Muta sectiunile prin drag-and-drop pentru a le aranja in ordinea dorita.</li>
+            <li><strong>Adauga informatii</strong> &mdash; Completeaza manual detalii pe care AscultAI nu le-a captat.</li>
+            <li><strong>Sterge sectiuni</strong> &mdash; Elimina parti irelevante din nota generata.</li>
+          </ul>
+          <div class="guide-warning">
+            Revizuieste intotdeauna nota generata inainte de a o utiliza oficial. AscultAI produce drafturi orientative &mdash; responsabilitatea finala iti apartine.
+          </div>
+          <h3>Optiuni de export</h3>
+          <p>Odata ce nota este finalizata, ai mai multe optiuni de export:</p>
+          <ul>
+            <li><strong>Copiere in clipboard</strong> &mdash; Copiaza nota si lipeste-o direct in sistemul tau informatic medical.</li>
+            <li><strong>Export PDF</strong> &mdash; Genereaza un document PDF profesionist, gata de printat sau atasat la fisa pacientului.</li>
+            <li><strong>Printare directa</strong> &mdash; Trimite nota direct la imprimanta din interfata AscultAI.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            Notele tale sunt salvate automat in contul AscultAI. Poti reveni oricand la o nota anterioara din sectiunea &bdquo;Istoric&rdquo;.
+          </div>
+        </section>
+
+        <!-- pr-chapter-6 -->
+        <section class="guide-chapter" id="pr-chapter-6">
+          <h2>Sfaturi si bune practici</h2>
+          <p>Pentru a obtine cele mai bune rezultate cu AscultAI, iata cateva sfaturi bazate pe experienta utilizatorilor nostri:</p>
+          <h3>Optimizeaza calitatea audio</h3>
+          <ul>
+            <li><strong>Minimizeaza zgomotul de fundal</strong> &mdash; Inchide ferestrele, opreste muzica ambientala si reduce sursele de zgomot.</li>
+            <li><strong>Pozitioneaza microfonul corect</strong> &mdash; La 30-50 cm distanta, orientat spre zona de conversatie.</li>
+            <li><strong>Vorbeste clar si la un volum normal</strong> &mdash; Nu e nevoie sa vorbesti mai tare decat de obicei.</li>
+          </ul>
+          <h3>Foloseste template-urile eficient</h3>
+          <ul>
+            <li><strong>Alege template-ul potrivit</strong> &mdash; Selecteaza template-ul care se potriveste cel mai bine tipului de consultatie.</li>
+            <li><strong>Personalizeaza template-urile</strong> &mdash; Creeaza template-uri personalizate pentru consultatiile tale frecvente.</li>
+            <li><strong>Experimenteaza cu diferite formate</strong> &mdash; Incearca SOAP, narativ sau format de scrisoare pentru a vedea ce functioneaza cel mai bine.</li>
+          </ul>
+          <h3>Integrare in fluxul de lucru</h3>
+          <ul>
+            <li><strong>Foloseste AscultAI pentru fiecare consultatie</strong> &mdash; Cu cat il folosesti mai des, cu atat devine mai eficient.</li>
+            <li><strong>Revizuieste notele imediat</strong> &mdash; Este mai usor sa corectezi o nota cat informatiile sunt proaspete.</li>
+            <li><strong>Da feedback</strong> &mdash; Foloseste functia de feedback pentru a ajuta AscultAI sa se imbunatateasca continuu.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat</strong>
+            Clinicienii care folosesc AscultAI constant raporteaza o economie de pana la 2 ore pe zi din timpul de documentare. Consistenta este cheia!
+          </div>
+          <h3>Ai nevoie de ajutor?</h3>
+          <p>Daca intampini dificultati sau ai intrebari, echipa noastra de suport este disponibila:</p>
+          <ul>
+            <li>Email: <strong>support@ascult.ai</strong></li>
+            <li>Pagina de <a href="help-center.html#faq" style="color: var(--color-primary); font-weight: 500;">Intrebari Frecvente</a></li>
+            <li>Chat live in aplicatie (program: Luni-Vineri, 9:00-18:00)</li>
+          </ul>
+        </section>
+
+        <!-- Navigation footer -->
+        <div class="guide-nav-footer">
+          <a class="guide-nav-btn hidden" id="pr-prevBtn">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Capitolul anterior
+          </a>
+          <span class="guide-nav-current" id="pr-navCurrent">Capitolul 1 din 6</span>
+          <a class="guide-nav-btn" id="pr-nextBtn">
+            Capitolul urmator
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- Section: Optimizare                                           -->
+      <!-- ============================================================= -->
+      <div class="hc-section" id="section-optimizare">
+        <div class="hc-section-header">
+          <h1>Optimizarea Acuratetii</h1>
+          <p>Sfaturi pentru cele mai precise transcrieri si note clinice.</p>
+        </div>
+
+        <div class="guide-progress">
+          <span class="guide-progress-text">Capitolul <span id="oa-currentChapter">1</span> din 8</span>
+          <div class="guide-progress-bar"><div class="guide-progress-fill" id="oa-progressFill" style="width:12.5%"></div></div>
+        </div>
+
+        <!-- oa-chapter-1 -->
+        <div class="guide-chapter active" id="oa-chapter-1">
+          <h2>Introducere in acuratete</h2>
+          <p>Acuratetea transcrierii medicale este fundamentul pe care se construieste intreaga documentatie clinica generata de AscultAI. O transcriere precisa asigura faptul ca nota clinica finala reflecta fidel dialogul dintre medic si pacient, reducand riscul de erori medicale si imbunatatind calitatea actului medical. In mediul clinic romanesc, unde consultatiile implica frecvent terminologie latina, acronime specifice si alternarea intre limbajul medical si cel colocvial al pacientului, provocarile de acuratete sunt deosebit de complexe.</p>
+          <p>AscultAI utilizeaza modele de inteligenta artificiala antrenate special pe limbajul medical romanesc, capabile sa recunoasca peste 50.000 de termeni medicali, denumiri comerciale de medicamente disponibile in Romania si coduri ICD-10 utilizate in practica curenta. Rata medie de acuratete a sistemului depaseste 96% in conditii optime, dar poate fi influentata semnificativ de factori externi pe care dumneavoastra ii puteti controla.</p>
+          <h3>Factori care influenteaza acuratetea</h3>
+          <p>Intelegerea factorilor care afecteaza calitatea transcrierii este primul pas pentru optimizarea rezultatelor. Acestia pot fi grupati in trei categorii principale:</p>
+          <ul>
+            <li><strong>Factori audio</strong> &ndash; calitatea microfonului, distanta fata de vorbitor, zgomotul de fundal, reverberatia incaperii si interferentele electronice.</li>
+            <li><strong>Factori lingvistici</strong> &ndash; claritatea vorbirii, ritmul dictarii, utilizarea corecta a termenilor medicali, pronuntia denumirilor de medicamente si structurarea logica a informatiilor.</li>
+            <li><strong>Factori de configurare</strong> &ndash; alegerea template-ului potrivit, setarile de specialitate, preferintele de limba si calibrarea profilului individual al medicului.</li>
+          </ul>
+          <h3>De ce conteaza fiecare procent</h3>
+          <p>Diferenta dintre o acuratete de 94% si una de 98% poate parea nesemnificativa, dar intr-o consultatie tipica de 15 minute care genereaza aproximativ 2.000 de cuvinte, aceasta inseamna diferenta dintre 120 de cuvinte potential incorecte si doar 40. Intr-un context medical, chiar si o singura eroare la nivelul dozajului unui medicament sau al unui diagnostic poate avea consecinte majore.</p>
+          <div class="guide-tip">
+            <strong>Sfat:</strong> Parcurgeti toate capitolele acestui ghid si aplicati recomandarile pas cu pas. Majoritatea utilizatorilor raporteaza o crestere de 2-4% a acuratetii dupa implementarea sfaturilor din primele trei capitole.
+          </div>
+        </div>
+
+        <!-- oa-chapter-2 -->
+        <div class="guide-chapter" id="oa-chapter-2">
+          <h2>Pozitionarea microfonului</h2>
+          <p>Calitatea semnalului audio capturat de microfon este cel mai important factor tehnic care influenteaza acuratetea transcrierii. Un microfon pozitionat corect poate face diferenta intre o transcriere excelenta si una plina de erori. Indiferent daca utilizati microfonul integrat al laptopului, un microfon extern USB sau o casca cu microfon, pozitionarea corecta este esentiala.</p>
+          <p>Regula generala este simpla: cu cat microfonul este mai aproape de sursa vocii si mai departe de sursele de zgomot, cu atat rezultatul va fi mai bun. Totusi, exista nuante importante in functie de tipul consultatiei si de configuratia cabinetului.</p>
+          <h3>Consultatii la birou</h3>
+          <p>Pentru consultatiile standard, in care medicul si pacientul se afla fata in fata la birou, pozitionarea optima a microfonului depinde de tipul dispozitivului:</p>
+          <ul>
+            <li><strong>Microfon extern USB de birou</strong> &ndash; Asezati-l la 30-50 cm distanta de dumneavoastra, pe birou, orientat spre zona centrala dintre medic si pacient. Microfonul trebuie sa fie pe o suprafata stabila, preferabil pe un suport anti-vibratii sau pe un prosop pliat pentru a reduce vibratiile transmise prin masa.</li>
+            <li><strong>Microfon lavaliera (de tip clips)</strong> &ndash; Fixati-l pe rever, la aproximativ 15-20 cm de gura. Aceasta este optiunea ideala pentru captarea clara a vocii medicului, mai ales in cabinete zgomotoase.</li>
+            <li><strong>Laptopul pe birou</strong> &ndash; Daca utilizati microfonul integrat al laptopului, asigurati-va ca laptopul este deschis la un unghi de 90-120 de grade si ca nu exista obstacole intre microfon si vorbitor. Distanta ideala este de 40-60 cm.</li>
+          </ul>
+          <h3>Vizite la domiciliu</h3>
+          <p>La vizitele la domiciliu, controlul mediului acustic este limitat. In aceste situatii, recomandam utilizarea unui microfon lavaliera conectat la telefonul mobil sau la tableta. Pozitionati dispozitivul de inregistrare pe o suprafata stabila, nu pe genunchi sau pe patul pacientului, unde miscarile pot genera zgomot de impact.</p>
+          <h3>Teleconsiltatii</h3>
+          <p>Pentru consultatiile online, AscultAI poate captura audio direct din sesiunea de videoconferinta. Este important ca atat medicul, cat si pacientul, sa utilizeze casti cu microfon pentru a evita efectul de ecou. Activati functia de captare audio a sistemului din setarile AscultAI si asigurati-va ca aplicatia are permisiunile necesare.</p>
+          <h3>Captarea ambilor vorbitori</h3>
+          <p>AscultAI diferentiaza automat vocile medicului si pacientului. Pentru o separare optima a vorbitorilor, este ideal ca microfonul sa fie pozitionat echidistant fata de ambii participanti sau sa utilizati un microfon omnidirectional. Daca un vorbitor este semnificativ mai departe de microfon decat celalalt, vocea acestuia va fi captata la un nivel mai scazut, ceea ce poate reduce acuratetea transcrierii pentru acel vorbitor.</p>
+          <div class="guide-tip">
+            <strong>Sfat:</strong> Faceti un test de 30 de secunde inainte de fiecare sesiune de consultatii. Inregistrati o fraza scurta si verificati in previzualizarea AscultAI daca transcrierea este corecta. Acest obicei de 30 de secunde va poate economisi minute de corectari ulterioare.
+          </div>
+        </div>
+
+        <!-- oa-chapter-3 -->
+        <div class="guide-chapter" id="oa-chapter-3">
+          <h2>Mediul ideal de inregistrare</h2>
+          <p>Mediul acustic al cabinetului medical joaca un rol critic in calitatea inregistrarii audio si, implicit, in acuratetea transcrierii. Zgomotul de fundal, reverberatia si interferentele sunt inamicii principali ai unei transcrieri precise. Din fericire, majoritatea acestor probleme pot fi atenuate cu ajustari simple si accesibile.</p>
+          <p>Studiile noastre interne arata ca optimizarea mediului acustic poate imbunatati acuratetea transcrierii cu 3-7%, o diferenta semnificativa care se traduce in economii reale de timp la revizuirea notelor clinice.</p>
+          <h3>Reducerea zgomotului de fundal</h3>
+          <p>Zgomotul de fundal este cel mai frecvent factor care afecteaza negativ transcrierea. Iata sursele comune de zgomot si solutiile recomandate:</p>
+          <ol>
+            <li><strong>Aparatura de climatizare</strong> &ndash; Aerul conditionat si ventilatoarele genereaza un zgomot constant de frecventa joasa. Daca este posibil, opriti unitatea in timpul consultatiei sau reduceti viteza la minimum. Alternativ, pozitionati microfonul cat mai departe de unitatea de AC.</li>
+            <li><strong>Zgomotul din sala de asteptare</strong> &ndash; Conversatiile, televizorul sau muzica din holul clinicii pot patrunde prin usa. Asigurati-va ca usa cabinetului este complet inchisa. O garnitura de etansare pe cadrul usii reduce semnificativ zgomotul transmis.</li>
+            <li><strong>Echipamentul medical</strong> &ndash; Aparatele de monitorizare, nebulizatoarele sau sterilizatoarele pot genera zgomote periodice. Programati utilizarea acestor echipamente in afara perioadelor de inregistrare, cand este posibil.</li>
+            <li><strong>Notificarile telefonului</strong> &ndash; Sunetele de notificare si vibratiile telefonului pe birou pot interfera cu inregistrarea. Activati modul silentios pe telefon in timpul consultatiilor.</li>
+          </ol>
+          <h3>Imbunatatiri acustice pentru cabinet</h3>
+          <p>Reverberatia (ecoul) in camerele cu pereti netezi si podele dure poate face vorbirea mai putin inteligibila pentru algoritmul de transcriere. Cateva masuri simple pot imbunatati semnificativ acustica:</p>
+          <ul>
+            <li>Adaugati un covor sau un prelunitor de covor in zona de consultatie &ndash; aceasta reduce reverberatia de la podea.</li>
+            <li>Perdelele groase la ferestre absorb undele sonore si reduc ecoul.</li>
+            <li>Biblioteca cu carti pe unul dintre pereti serveste ca un difuzor acustic natural excelent.</li>
+            <li>Panourile acustice decorative, disponibile in multiple culori si forme, pot fi integrate estetic in designul cabinetului.</li>
+          </ul>
+          <h3>Situatii de evitat</h3>
+          <p>Exista anumite scenarii care compromit sever acuratetea transcrierii si care ar trebui evitate complet:</p>
+          <ul>
+            <li>Inregistrarea in spatii deschise cu mai multe conversatii simultane (de exemplu, camere de garda aglomerate).</li>
+            <li>Plasarea microfonului langa fereastra deschisa spre o strada cu trafic intens.</li>
+            <li>Utilizarea dispozitivului pe hol sau in zone de tranzit.</li>
+            <li>Inregistrarea in timpul unor proceduri medicale zgomotoase (aspirator chirurgical, aparat de electrochirurgie).</li>
+          </ul>
+          <div class="guide-warning">
+            <strong>Atentie:</strong> Nu incercati sa compensati zgomotul ambiental vorbind mai tare. Vocea ridicata distorsioneaza sunetul si poate reduce acuratetea. Este intotdeauna mai eficient sa reduceti zgomotul la sursa decat sa ridicati volumul vocii.
+          </div>
+        </div>
+
+        <!-- oa-chapter-4 -->
+        <div class="guide-chapter" id="oa-chapter-4">
+          <h2>Terminologia medicala</h2>
+          <p>AscultAI a fost dezvoltat cu un vocabular medical extins, adaptat specificului practicii medicale din Romania. Motorul de recunoastere vocala este antrenat pe corpusuri de text medical romanesc si poate recunoaste cu precizie terminologia medicala latina, denumirile comerciale ale medicamentelor disponibile pe piata romaneasca si codurile de clasificare utilizate in sistemul de sanatate din Romania.</p>
+          <p>Cu toate acestea, vocabularul medical evolueaza constant &ndash; apar medicamente noi, se actualizeaza ghidurile terapeutice si fiecare specialitate are particularitatile sale terminologice. Intelegerea modului in care AscultAI proceseaza terminologia medicala va va ajuta sa obtineti transcrieri mai precise.</p>
+          <h3>Cum proceseaza AscultAI termenii medicali</h3>
+          <p>Sistemul utilizeaza un model lingvistic specializat care combina recunoasterea acustica cu contextul medical. Acest lucru inseamna ca, atunci cand pronuntati un cuvant ambiguu, algoritmul ia in considerare cuvintele din jur pentru a alege interpretarea corecta. De exemplu:</p>
+          <ul>
+            <li><strong>&bdquo;ser fiziologic&rdquo;</strong> va fi recunoscut corect in context medical, si nu confundat cu alte interpretari ale cuvantului &bdquo;ser&rdquo;.</li>
+            <li><strong>&bdquo;Metformin 850 mg&rdquo;</strong> &ndash; sistemul recunoaste contextul dozajului si formateaza automat mg, g, ml si alte unitati de masura.</li>
+            <li><strong>Codurile ICD-10</strong> &ndash; cand dictati &bdquo;I25.1&rdquo; sau &bdquo;J18.9&rdquo;, sistemul le recunoaste ca coduri de diagnostic si le formateaza corespunzator.</li>
+          </ul>
+          <h3>Abrevierile si acronimele</h3>
+          <p>Abrevierile medicale sunt recunoscute automat de AscultAI. Puteti dicta abrevierile in mod natural, iar sistemul le va transcrie in forma corecta:</p>
+          <ol>
+            <li><strong>TA</strong> &ndash; tensiune arteriala, recunoscuta cand este urmata de valori numerice (de exemplu, &bdquo;TA 130 peste 85&rdquo;).</li>
+            <li><strong>AV</strong> &ndash; alura ventriculara, recunoscuta in context cardiovascular.</li>
+            <li><strong>EKG / ECG</strong> &ndash; electrocardiograma, recunoscuta in ambele forme de pronuntie.</li>
+            <li><strong>VSH, TGO, TGP, HLG</strong> &ndash; abrevierile de laborator sunt recunoscute automat in contextul analizelor medicale.</li>
+          </ol>
+          <h3>Denumirile medicamentelor</h3>
+          <p>Baza de date AscultAI contine peste 8.000 de denumiri comerciale si substante active disponibile in Romania, actualizata trimestrial conform Catalogului National al Preturilor Medicamentelor. Pentru rezultate optime:</p>
+          <ul>
+            <li>Pronuntati denumirile de medicamente clar, cu pauza inainte si dupa denumire.</li>
+            <li>Specificati forma farmaceutica (comprimate, capsule, solutie injectabila) &ndash; acest context ajuta la recunoasterea corecta.</li>
+            <li>Pentru medicamente cu denumiri similare (de exemplu, Losartan vs. Lisinopril), enuntati clar fiecare silaba.</li>
+          </ul>
+          <h3>Imbunatatirea recunoasterii terminologice</h3>
+          <p>AscultAI ofera posibilitatea de a adauga termeni personalizati in dictionarul propriu. Aceasta functie este utila pentru:</p>
+          <ul>
+            <li>Terminologie specifica unor sub-specialitati mai rare.</li>
+            <li>Denumiri de dispozitive medicale sau implanturi specifice.</li>
+            <li>Abrevieri si acronime proprii cabinetului sau clinicii dumneavoastra.</li>
+            <li>Denumiri de protocoale terapeutice interne.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat:</strong> Accesati sectiunea &bdquo;Dictionar personalizat&rdquo; din setarile contului pentru a adauga termeni noi. Fiecare termen adaugat va fi disponibil imediat in transcrierile ulterioare si va fi asociat cu profilul dumneavoastra de vorbire.
+          </div>
+        </div>
+
+        <!-- oa-chapter-5 -->
+        <div class="guide-chapter" id="oa-chapter-5">
+          <h2>Folosirea template-urilor</h2>
+          <p>Template-urile (sabloanele) sunt unul dintre cele mai puternice instrumente pentru imbunatatirea acuratetii in AscultAI. Un template nu este doar o structura vizuala pentru nota clinica &ndash; el ghideaza activ algoritmul de inteligenta artificiala, oferindu-i contextul necesar pentru a interpreta corect informatiile din consultatie si pentru a le organiza in sectiunile relevante.</p>
+          <p>Atunci cand selectati un template potrivit tipului de consultatie, AscultAI stie la ce tip de informatii sa se astepte. De exemplu, un template de consultatie cardiologica va acorda prioritate recunoasterii termenilor cardiovasculari, a valorilor tensionale si a frecventei cardiace, in timp ce un template de dermatologie va fi optimizat pentru descrierea leziunilor si a localizarilor anatomice.</p>
+          <h3>Cum imbunatatesc template-urile acuratetea</h3>
+          <p>Mecanismul prin care template-urile cresc precizia transcrierii functioneaza pe mai multe niveluri:</p>
+          <ul>
+            <li><strong>Context specializat</strong> &ndash; Fiecare template activeaza un vocabular preferential specific specialitatii. Termenii medicali relevanti primesc un scor de probabilitate mai mare, reducand confuziile de transcriere.</li>
+            <li><strong>Structura predictibila</strong> &ndash; Cand algoritmul stie ca urmeaza sectiunea de &bdquo;Examen obiectiv&rdquo;, se asteapta la termeni descriptivi si valori numerice, nu la informatii anamnestice.</li>
+            <li><strong>Separarea informatiilor</strong> &ndash; Template-ul ghideaza clasificarea automata a informatiilor dictate in sectiunile corecte (motive de prezentare, istoric, examen clinic, diagnostic, plan terapeutic).</li>
+            <li><strong>Formatare automata</strong> &ndash; Valorile, dozele si parametrii sunt formatate automat conform conventiilor sectiunii respective.</li>
+          </ul>
+          <h3>Alegerea template-ului potrivit</h3>
+          <p>AscultAI ofera template-uri predefinite pentru cele mai frecvente tipuri de consultatii. Alegerea corecta a template-ului este esentiala:</p>
+          <ol>
+            <li><strong>Consultatie de specialitate</strong> &ndash; Selectati template-ul corespunzator specialitatii dumneavoastra (cardiologie, pneumologie, gastroenterologie etc.). Acestea contin sectiuni specifice si vocabular optimizat.</li>
+            <li><strong>Consultatie de medicina de familie</strong> &ndash; Utilizati template-ul general de medicina de familie, care este conceput pentru o paleta larga de patologii si este mai flexibil.</li>
+            <li><strong>Control periodic</strong> &ndash; Template-ul de control este simplificat si se concentreaza pe evolutia fata de consultatia anterioara.</li>
+            <li><strong>Urgenta</strong> &ndash; Template-ul de urgenta pune accent pe triaj, semne vitale si conduita terapeutica imediata.</li>
+          </ol>
+          <h3>Crearea de template-uri personalizate</h3>
+          <p>Daca nici un template predefinit nu corespunde nevoilor dumneavoastra, puteti crea unul personalizat. Accesati sectiunea &bdquo;Template-uri&rdquo; din tabloul de bord si apasati &bdquo;Creaza template nou&rdquo;. Definiti sectiunile dorite, ordinea lor si cuvintele cheie asociate fiecarei sectiuni. Template-urile personalizate pot fi partajate cu colegii din aceeasi clinica.</p>
+          <p>La crearea unui template personalizat, includeti instructiuni clare pentru fiecare sectiune &ndash; de exemplu, &bdquo;Aceasta sectiune contine semnele vitale: TA, puls, temperatura, saturatie O2, greutate&rdquo;. Aceste instructiuni nu vor aparea in nota finala, dar vor ghida algoritmul in clasificarea corecta a informatiilor.</p>
+          <div class="guide-warning">
+            <strong>Atentie:</strong> Utilizarea unui template nepotrivit pentru tipul de consultatie poate reduce acuratetea. De exemplu, un template de oftalmologie utilizat pentru o consultatie de medicina interna va prioritiza vocabularul oftalmologic si poate interpreta gresit termeni din alte specialitati.
+          </div>
+        </div>
+
+        <!-- oa-chapter-6 -->
+        <div class="guide-chapter" id="oa-chapter-6">
+          <h2>Tehnici de vorbire clara</h2>
+          <p>Modul in care vorbiti in timpul consultatiei influenteaza direct calitatea transcrierii. Nu este necesar sa va modificati stilul natural de comunicare cu pacientul, dar cateva ajustari subtile pot face o diferenta semnificativa in acuratetea recunoasterii vocale. Aceste tehnici devin rapide reflexe dupa doar cateva zile de practica.</p>
+          <p>Este important de subliniat ca AscultAI este proiectat sa functioneze cu vorbirea naturala &ndash; nu trebuie sa dictati ca un robot sau sa vorbiti anormal de incet. Scopul este sa evitati cateva capcane comune care pot crea dificultati oricarui sistem de recunoastere vocala.</p>
+          <h3>Ritmul si pauzele</h3>
+          <p>Ritmul vorbirii este un factor crucial. Iata recomandarile noastre:</p>
+          <ul>
+            <li><strong>Ritm conversational normal</strong> &ndash; Vorbiti intr-un ritm natural, similar celui pe care l-ati folosi la telefon cu un coleg. Nu este nevoie sa vorbiti excesiv de incet.</li>
+            <li><strong>Pauze scurte la tranzitii</strong> &ndash; Cand treceti de la o sectiune la alta (de exemplu, de la anamneza la examen obiectiv), faceti o pauza de 1-2 secunde. Aceasta ajuta algoritmul sa identifice tranzitia.</li>
+            <li><strong>Evitati vorbirea precipitata</strong> &ndash; Momentele in care vorbiti foarte rapid (de exemplu, cand enumerati medicamente) sunt cele mai predispuse la erori. Incetiniti usor ritmul la enumerari.</li>
+          </ul>
+          <h3>Dictarea numerelor si dozelor</h3>
+          <p>Valorile numerice &ndash; doze de medicamente, valori tensionale, rezultate de laborator &ndash; sunt informatii critice care trebuie transcrise cu precizie absoluta. Pentru acuratete maxima:</p>
+          <ol>
+            <li>Dictati cifrele individual pentru numere compuse: &bdquo;unu doi cinci&rdquo; in loc de &bdquo;o suta douazeci si cinci&rdquo; pentru valoarea tensionala de 125 mmHg.</li>
+            <li>Specificati unitatea de masura imediat dupa valoare: &bdquo;Metformin, opt sute cincizeci de miligrame&rdquo;.</li>
+            <li>Pentru valori tensionale, folositi formula: &bdquo;tensiunea arteriala, unu trei zero pe opt cinci&rdquo;.</li>
+            <li>Pentru valori cu zecimale, spuneti explicit &bdquo;virgula&rdquo;: &bdquo;creatinina, unu virgula doi miligrame pe decilitru&rdquo;.</li>
+          </ol>
+          <h3>Gestionarea intreruperilor pacientului</h3>
+          <p>In consultatia reala, pacientii vorbesc adesea in acelasi timp cu medicul. AscultAI poate gestiona suprapunerile de voce in mare parte, dar acuratetea scade in aceste momente. Strategii utile:</p>
+          <ul>
+            <li>Lasati pacientul sa termine de vorbit inainte de a rezuma informatiile importante.</li>
+            <li>Repetati scurt informatiile cheie spuse de pacient &ndash; &bdquo;Deci durerea a inceput acum trei zile&rdquo; &ndash; aceasta serveste si ca confirmare pentru pacient si asigura transcrierea corecta.</li>
+            <li>Daca trebuie sa dictati o informatie importanta in timp ce pacientul vorbeste, asteptati o pauza naturala.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat:</strong> Repetarea rezumativa a informatiilor cheie ale pacientului nu doar ca imbunatateste transcrierea, dar este si o practica excelenta de comunicare medic-pacient, demonstrand ascultare activa si empatie.
+          </div>
+        </div>
+
+        <!-- oa-chapter-7 -->
+        <div class="guide-chapter" id="oa-chapter-7">
+          <h2>Corectarea si feedback-ul</h2>
+          <p>Nicio transcriere automata nu este perfecta in 100% din cazuri. AscultAI ofera un sistem intuitiv de corectare care va permite sa identificati si sa remediati rapid eventualele erori. Mai important, fiecare corectare pe care o faceti contribuie activ la imbunatatirea sistemului, deoarece feedback-ul dumneavoastra este utilizat pentru a rafina modelul de recunoastere vocala pentru profilul dumneavoastra specific.</p>
+          <p>Procesul de corectare in AscultAI a fost proiectat pentru a fi rapid si intuitiv. In medie, revizuirea si corectarea unei consultatii de 15 minute necesita intre 1 si 3 minute &ndash; considerabil mai putin decat redactarea manuala a aceleiasi note clinice.</p>
+          <h3>Tipuri de erori si cum sa le corectati</h3>
+          <p>Erorile de transcriere se incadreaza in cateva categorii principale, fiecare cu metoda de correctie optima:</p>
+          <ul>
+            <li><strong>Erori de recunoastere a cuvintelor</strong> &ndash; Cuvinte transcrise gresit din cauza pronuntiei neclare sau a zgomotului ambiental. Faceti clic pe cuvantul incorect, iar sistemul va afisa alternative sugerate. Selectati varianta corecta sau tastati manual cuvantul dorit.</li>
+            <li><strong>Erori de segmentare a vorbitorilor</strong> &ndash; Ocazional, o replica a medicului poate fi atribuita pacientului sau invers. Utilizati functia de &bdquo;Schimbare vorbitor&rdquo; facand clic pe pictograma de schimb de langa replica respectiva.</li>
+            <li><strong>Erori de formatare</strong> &ndash; Valori numerice formatate incorect (de exemplu, &bdquo;1 virgula 5&rdquo; in loc de &bdquo;1,5&rdquo;) sau abrevieri ne-recunoscute. Editati direct in text si marcati corectia.</li>
+            <li><strong>Informatii lipsa</strong> &ndash; Fragmente de vorbire care nu au fost captate, de obicei din cauza volumului scazut sau a suprapunerii vocilor. Adaugati manual informatia lipsa in sectiunea corespunzatoare.</li>
+          </ul>
+          <h3>Sistemul de feedback</h3>
+          <p>AscultAI implementeaza un mecanism de invatare continua bazat pe corectiile dumneavoastra. Acest sistem functioneaza astfel:</p>
+          <ol>
+            <li><strong>Corectare locala</strong> &ndash; Fiecare corectie este salvata si asociata cu semnatura acustica a segmentului respectiv.</li>
+            <li><strong>Adaptare la profilul vocal</strong> &ndash; Dupa aproximativ 20-30 de consultatii corectate, modelul dezvolta un profil de vorbire personalizat care recunoaste mai bine particularitatile vocii dumneavoastra.</li>
+            <li><strong>Imbunatatire a vocabularului</strong> &ndash; Termenii pe care ii corectati frecvent sunt adaugati automat la lista de prioritati pentru profilul dumneavoastra.</li>
+            <li><strong>Feedback agregat</strong> &ndash; Corectarile anonimizate contribuie la imbunatatirea modelului general, beneficiind toti utilizatorii.</li>
+          </ol>
+          <h3>Practici optime de corectare</h3>
+          <p>Pentru a maximiza beneficiul corectiilor dumneavoastra si a accelera procesul de adaptare al sistemului, va recomandam:</p>
+          <ul>
+            <li>Corectati nota clinica imediat dupa consultatie, cat informatiile sunt proaspete in memorie.</li>
+            <li>Utilizati functia de &bdquo;Marcati ca gresit&rdquo; chiar si pentru erori minore &ndash; fiecare marcare ajuta sistemul sa invete.</li>
+            <li>Fiti consecventi in corectari &ndash; daca preferati &bdquo;HTA&rdquo; in loc de &bdquo;hipertensiune arteriala&rdquo;, corectati de fiecare data in acelasi mod.</li>
+            <li>Verificati cu atentie valorile numerice, dozele de medicamente si diagnosticele &ndash; acestea sunt zonele critice.</li>
+          </ul>
+          <div class="guide-tip">
+            <strong>Sfat:</strong> Dedicati primele 2-3 saptamani de utilizare a AscultAI pentru corectari atente si complete. Acest efort initial va fi rasplatit cu o crestere vizibila a acuratetii pe termen lung, pe masura ce sistemul se adapteaza la vocea si stilul dumneavoastra de dictare.
+          </div>
+        </div>
+
+        <!-- oa-chapter-8 -->
+        <div class="guide-chapter" id="oa-chapter-8">
+          <h2>Setari avansate</h2>
+          <p>AscultAI ofera o serie de setari avansate care va permit sa personalizati in detaliu modul in care functioneaza transcrierea si generarea notelor clinice. Aceste setari sunt accesibile din meniul &bdquo;Setari&rdquo; al contului dumneavoastra si pot fi ajustate oricand. Desi valorile implicite sunt optimizate pentru majoritatea utilizatorilor, ajustarea fina a acestor parametri poate aduce imbunatatiri suplimentare pentru cazuri specifice.</p>
+          <p>Va recomandam sa modificati aceste setari treptat, una cate una, si sa evaluati impactul fiecarei modificari pe parcursul a cel putin 5-10 consultatii inainte de a face alte ajustari.</p>
+          <h3>Setari de calitate audio</h3>
+          <p>Calitatea captarii audio poate fi ajustata din sectiunea &bdquo;Audio&rdquo; a setarilor:</p>
+          <ul>
+            <li><strong>Rata de esantionare</strong> &ndash; Implicit setata la 44.1 kHz, poate fi redusa la 16 kHz pentru dispozitive cu capacitate de procesare limitata. O rata de esantionare mai mare inseamna calitate audio superioara, dar si fisiere mai mari.</li>
+            <li><strong>Filtrarea zgomotului</strong> &ndash; Activata implicit, reduce zgomotul de fundal constant. Poate fi dezactivata daca observati ca si vorbirea este afectata (in cazuri rare, filtrul poate atenua si frecvente vocale).</li>
+            <li><strong>Detectarea automata a pauzelor</strong> &ndash; Controleaza cat timp de tacere trebuie sa treaca pentru ca sistemul sa considere ca o propozitie s-a incheiat. Valoarea implicita este de 1,5 secunde. Reduceti la 0,8 secunde pentru dictare rapida sau cresteti la 2,5 secunde daca faceti pauze lungi de gandire.</li>
+          </ul>
+          <h3>Preferinte lingvistice</h3>
+          <p>Setarile de limba permit personalizarea modului in care AscultAI proceseaza textul:</p>
+          <ol>
+            <li><strong>Limba principala</strong> &ndash; Romana (implicit). AscultAI suporta si dictarea mixta romana-engleza, utila pentru termeni medicali care nu au echivalent consacrat in romana.</li>
+            <li><strong>Stil de formatare medicala</strong> &ndash; Alegeti intre formatarea conform standardelor romanesti (virgula pentru zecimale, unitati SI) sau formatarea internationala.</li>
+            <li><strong>Abrevieri preferate</strong> &ndash; Configurati daca doriti ca termenii sa fie transcrisi integral (de exemplu, &bdquo;hipertensiune arteriala&rdquo;) sau abreviat (&bdquo;HTA&rdquo;). Aceasta setare se aplica la nivelul notei finale, nu la nivelul transcrierii brute.</li>
+          </ol>
+          <h3>Vocabular specific specialitatii</h3>
+          <p>Fiecare specialitate medicala are un vocabular specific care poate fi activat pentru a imbunatati recunoasterea. Din sectiunea &bdquo;Specialitate&rdquo;, puteti:</p>
+          <ul>
+            <li>Selecta specialitatea principala si pana la doua sub-specialitati.</li>
+            <li>Activa pachete de vocabular suplimentare (de exemplu, &bdquo;Chirurgie bariatrica&rdquo; sau &bdquo;Cardiologie interventionala&rdquo;).</li>
+            <li>Importa liste de termeni dintr-un fisier CSV &ndash; util pentru clinicile care au propriile protocoale si terminologie interna.</li>
+            <li>Partaja vocabularul personalizat cu colegii din aceeasi organizatie.</li>
+          </ul>
+          <h3>Sensibilitatea microfonului</h3>
+          <p>Ajustarea sensibilitatii microfonului poate rezolva probleme specifice de captare audio:</p>
+          <ul>
+            <li><strong>Sensibilitate ridicata</strong> &ndash; Utila cand vorbitorul este la distanta mai mare de microfon sau vorbeste cu voce scazuta. Atentie: creste si nivelul zgomotului de fundal captat.</li>
+            <li><strong>Sensibilitate standard</strong> &ndash; Setarea recomandata pentru majoritatea situatiilor, optimizata pentru distante de 30-60 cm.</li>
+            <li><strong>Sensibilitate redusa</strong> &ndash; Potrivita pentru medii foarte zgomotoase, unde doriti sa captati doar vocea de aproape a medicului. Necesita ca microfonul sa fie la mai putin de 30 cm de vorbitor.</li>
+          </ul>
+          <h3>Setari de export si integrare</h3>
+          <p>Parametrii de export influenteaza formatul final al notei clinice si pot fi ajustati pentru a se potrivi cu cerintele sistemului informatic al clinicii dumneavoastra:</p>
+          <ul>
+            <li>Formatul de export: PDF, DOCX, HL7 FHIR sau text simplu.</li>
+            <li>Includerea automata a codurilor ICD-10 sugerate.</li>
+            <li>Semnatura digitala a medicului pe documentul exportat.</li>
+            <li>Integrarea directa cu sistemele informatice medicale (HIS) compatibile.</li>
+          </ul>
+          <div class="guide-warning">
+            <strong>Atentie:</strong> Modificarea setarilor avansate poate afecta acuratetea in moduri neasteptate. Va recomandam sa notati setarile anterioare inainte de a face schimbari si sa reveniti la valorile implicite daca observati o scadere a calitatii transcrierii.
+          </div>
+        </div>
+
+        <!-- Navigation footer -->
+        <div class="guide-nav-footer">
+          <a class="guide-nav-btn hidden" id="oa-prevBtn">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Capitolul anterior
+          </a>
+          <span class="guide-nav-current" id="oa-navCurrent">Capitolul 1 din 8</span>
+          <a class="guide-nav-btn" id="oa-nextBtn">
+            Capitolul urmator
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================= -->
+      <!-- Section: FAQ                                                  -->
+      <!-- ============================================================= -->
+      <div class="hc-section" id="section-faq">
+        <div class="hc-section-header">
+          <h1>Intrebari Frecvente</h1>
+          <p>Raspunsuri la cele mai comune intrebari despre AscultAI.</p>
+        </div>
+
+        <!-- 1. Despre AscultAI -->
+        <div class="faq-category" id="despre">
+          <h2 class="faq-category-title">1. Despre AscultAI</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este un instrument de productivitate bazat pe inteligenta artificiala care te ajuta sa documentezi mai rapid. Asculta conversatiile tale profesionale (consultatii, intalniri, sedinte), le transcrie automat si genereaza drafturi structurate pe care le poti revizui, edita si valida inainte de utilizare.</p>
+              <p>AscultAI este o aplicatie web (webapp) care functioneaza direct din browser, pe orice dispozitiv cu conexiune la internet. Nu este necesara instalarea niciunei aplicatii.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cine foloseste AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este folosit de profesionisti care au nevoie sa documenteze conversatii: medici (de familie, specialisti, psihologi, stomatologi), avocati, consultanti si alti profesionisti din domenii unde documentatia precisa este esentiala.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este AscultAI un AI generic, precum ChatGPT sau Copilot?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI nu este un generator de continut creativ si nu este un chatbot. Este un sistem specializat, optimizat exclusiv pentru documentarea si structurarea informatiilor din conversatii profesionale.</p>
+              <p>Spre deosebire de asistentii AI generali, AscultAI intelege terminologia de specialitate, genereaza documente structurate conform sabloanelor tale si respecta standarde stricte de confidentialitate si securitate a datelor.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este AscultAI doar o aplicatie de dictare?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. Aplicatiile de dictare clasice produc text brut care necesita editare masiva. AscultAI face un pas in plus: dupa transcriere, analizeaza continutul si genereaza un draft structurat conform sablonului ales de tine &mdash; gata de revizuit si validat, fara rescriere manuala.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce problema rezolva AscultAI, concret?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Rezolva &bdquo;latenta administrativa&rdquo; &mdash; timpul si efortul cognitiv consumate intre finalizarea unei conversatii (de exemplu, o consultatie) si finalizarea documentatiei aferente. In loc sa scrii sau sa dictezi manual dupa fiecare pacient, AscultAI genereaza un draft structurat in secunde. Tu revizuiesti, corectezi daca e nevoie, si validezi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Cum functioneaza -->
+        <div class="faq-category" id="functionare">
+          <h2 class="faq-category-title">2. Cum functioneaza</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Care este fluxul de lucru cu AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Procesul este simplu si se desfasoara in patru pasi:</p>
+              <ul>
+                <li><strong>Pasul 1 &ndash; Porneste:</strong> Deschizi AscultAI in browser si apesi &bdquo;Inregistreaza&rdquo;. AscultAI incepe sa asculte conversatia.</li>
+                <li><strong>Pasul 2 &ndash; Converseaza:</strong> Desfasoara-ti consultatia normal. AscultAI lucreaza in fundal, fara sa interfere.</li>
+                <li><strong>Pasul 3 &ndash; Revizuieste:</strong> La final, AscultAI genereaza un draft structurat pe baza conversatiei. Revizuiesti continutul, corectezi ce e necesar.</li>
+                <li><strong>Pasul 4 &ndash; Valideaza si exporta:</strong> Dupa ce confirmi ca documentul este corect, il poti copia, printa sau exporta in format PDF.</li>
+              </ul>
+              <div class="faq-warning">Documentele generate de AscultAI sunt drafturi orientative. Ai obligatia profesionala sa revizuiesti si sa validezi fiecare document inainte de a-l utiliza oficial.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum functioneaza transcrierea?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI foloseste modele avansate de recunoastere vocala (ASR) optimizate pentru terminologie profesionala romaneasca. Sistemul asculta conversatia, o transcrie, apoi analizeaza continutul pentru a genera un draft structurat conform sablonului ales. Transcrierea si structurarea se fac in timp aproape real.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Poate AscultAI sa ia decizii sau sa faca recomandari?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI nu ofera diagnostice, nu propune tratamente si nu substituie judecata profesionala a utilizatorului. Rolul sau este strict de suport pentru documentare: asculta, transcrie si structureaza. Decizia clinica sau profesionala iti apartine in totalitate.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI intelege mai multi vorbitori in aceeasi conversatie?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Sistemul este proiectat sa functioneze in conversatii intre doua sau mai multe persoane. Totusi, pentru rezultate optime, recomandam un mediu cu zgomot de fond minim si o distanta rezonabila fata de microfon.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce sfaturi exista pentru o calitate optima a transcrierii?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li>Foloseste un mediu cat mai linistit (fara muzica, televizor sau conversatii suprapuse).</li>
+                <li>Aseaza dispozitivul la o distanta rezonabila &mdash; nu in buzunar sau sub documente.</li>
+                <li>Vorbeste natural, cu un ritm normal. Nu e nevoie sa dictezi.</li>
+                <li>Daca folosesti telefonul, activeaza microfonul integrat sau foloseste casti cu microfon.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Securitate si confidentialitate -->
+        <div class="faq-category" id="securitate">
+          <h2 class="faq-category-title">3. Securitate si confidentialitate</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Este sigur sa folosesc AscultAI cu date sensibile?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Securitatea datelor este centrala in arhitectura AscultAI. Toate datele sunt criptate atat in tranzit (TLS 1.2+) cat si la stocare (AES-256), si sunt procesate exclusiv in centre de date din Uniunea Europeana (Microsoft Azure, regiunea North Europe &mdash; Irlanda). Datele nu parasesc niciodata Spatiul Economic European (SEE).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Se stocheaza inregistrarile audio?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>In mod implicit, nu. Aplicam principiul &bdquo;stocare zero&rdquo; (zero-retention): datele audio sunt procesate in timp real pentru generarea draftului, apoi sterse automat. Nu pastram inregistrari audio dupa finalizarea procesului.</p>
+              <p>La cererea explicita a clinicii, putem activa stocarea inregistrarilor ca serviciu aditional (contra cost), cu respectarea termenilor din Acordul de Prelucrare a Datelor (DPA).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cine are acces la documentatia generata?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Doar tu si persoanele carora le acorzi explicit acces. Echipa AscultAI nu are acces la continutul documentelor tale. Accesul este securizat prin protocoale de autentificare si criptare. Poti sterge orice document din sistem in orice moment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Unde sunt stocate datele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Toate datele sunt stocate si procesate exclusiv in Uniunea Europeana (Microsoft Azure, regiunea North Europe &mdash; Irlanda), in conformitate deplina cu GDPR. Nu transferam date in afara SEE.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Sunt datele folosite pentru antrenarea modelelor AI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. Datele tale nu sunt niciodata folosite pentru antrenarea, reantrenarea sau imbunatatirea modelelor de inteligenta artificiala. Acest lucru este garantat contractual prin Termenii de Utilizare si Acordul de Prelucrare a Datelor (DPA).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Consimtamantul pacientului -->
+        <div class="faq-category" id="consimtamant">
+          <h2 class="faq-category-title">4. Consimtamantul pacientului</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Trebuie consimtamantul pacientului?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Legislatia romaneasca (inclusiv Legea 46/2003 &mdash; Drepturile pacientului si Art. 226 Cod Penal) impune informarea si obtinerea consimtamantului persoanei inainte de inregistrarea conversatiei. Pacientul trebuie sa stie:</p>
+              <ul>
+                <li>Ca conversatia va fi inregistrata (audio captat de microfon);</li>
+                <li>De ce se face inregistrarea (pentru generarea automata a documentatiei);</li>
+                <li>Cine proceseaza datele si unde sunt stocate;</li>
+                <li>Ca poate refuza fara nicio consecinta asupra calitatii serviciului medical primit.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum obtin consimtamantul?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Exista doua variante:</p>
+              <ul>
+                <li><strong>Consimtamant scris:</strong> Pacientul semneaza un formular dedicat. Oferim un model de formular pe care il poti personaliza.</li>
+                <li><strong>Consimtamant verbal documentat:</strong> Acceptabil daca este consemnat in fisa pacientului. Recomandam formularea: &bdquo;Va informez ca voi folosi un asistent digital care transcrie conversatia pentru a genera documentatia. Sunteti de acord?&rdquo;</li>
+              </ul>
+              <div class="faq-tip">Buna practica: Afiseaza in sala de asteptare un afis informativ care anunta utilizarea AscultAI. Oferim materiale printabile gratuit pe pagina de <a href="help-center.html#explicatii">Explicatii</a>.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce se intampla daca pacientul refuza?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Consultatia se desfasoara normal, fara AscultAI. Refuzul nu afecteaza in niciun fel calitatea serviciului medical. Documentezi manual, ca de obicei.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Precizie, limite si validarea umana -->
+        <div class="faq-category" id="precizie">
+          <h2 class="faq-category-title">5. Precizie, limite si validare umana</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cat de precisa este transcrierea?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI atinge rate de acuratete ridicate pentru terminologia profesionala romaneasca in conditii optime de inregistrare. Performanta variaza in functie de: calitatea microfonului, nivelul de zgomot ambient, claritatea vorbirii si complexitatea terminologiei folosite.</p>
+              <div class="faq-warning">Indiferent de rata de acuratete, fiecare document generat trebuie revizuit si validat de tine inainte de utilizare.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Poate AscultAI sa greseasca?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Ca orice tehnologie bazata pe procesare de limbaj natural, pot aparea:</p>
+              <ul>
+                <li><strong>Erori de transcriere (ASR):</strong> cuvinte similare fonetic pot fi confundate;</li>
+                <li><strong>Erori de interpretare contextuala:</strong> AI-ul poate structura o informatie intr-o sectiune gresita a sablonului;</li>
+                <li><strong>Omisiuni:</strong> unele detalii mentionate in conversatie pot lipsi din draftul generat;</li>
+                <li><strong>Halucinatii AI:</strong> in cazuri rare, AI-ul poate genera informatii care nu au fost mentionate explicit in conversatie.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este &bdquo;Validarea Umana Obligatorie&rdquo;?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI opereaza pe principiul &bdquo;Human-in-the-loop&rdquo;: AI-ul este un instrument de suport, nu un autor. Fiecare document generat are caracter de draft orientativ. Tu, ca profesionist, ai obligatia legala si profesionala de a:</p>
+              <ul>
+                <li>Citi integral draftul generat;</li>
+                <li>Corecta orice eroare identificata;</li>
+                <li>Valida documentul inainte de a-l printa, exporta sau include in dosarul pacientului.</li>
+              </ul>
+              <div class="faq-warning">Nu printa si nu folosi oficial niciun document generat de AscultAI fara sa-l fi citit si validat personal. Responsabilitatea pentru continutul final iti apartine.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>De ce este important sa validez intotdeauna?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Draftul generat poate contine erori. Daca un document cu erori ajunge in dosarul pacientului fara validare, responsabilitatea profesionala si legala iti revine. AscultAI iti economiseste timpul de redactare, nu iti transfera responsabilitatea de verificare.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Functionalitati si personalizari -->
+        <div class="faq-category" id="functionalitati">
+          <h2 class="faq-category-title">6. Functionalitati si personalizari</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot personaliza sabloanele de documente?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI ofera sabloane complet personalizabile. Poti crea sabloane proprii sau adapta cele existente pentru a se potrivi stilului tau de documentare si cerintelor specifice ale practicii tale. Oferim sabloane prestabilite pentru specialitati frecvente (medicina de familie, psihologie, dermatologie, stomatologie si altele).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum export documentele generate?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Copiate</strong> &mdash; cu un click, copii continutul si il lipezi in orice sistem (EHR, Word, email);</li>
+                <li><strong>Exportate in PDF</strong> &mdash; format profesional, personalizabil cu logo-ul si datele clinicii tale;</li>
+                <li><strong>Printate direct</strong> &mdash; foaia printata include antetul si datele clinicii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Se poate integra AscultAI cu sistemul meu de evidenta electronica (EHR)?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>La cerere, putem explora posibilitatea de integrare cu sistemul tau de evidenta electronica. Totusi, cea mai mare parte din timpul economisit provine din generarea automata a drafturilor &mdash; indiferent de integrare, poti copia documentele direct in EHR-ul tau in cateva secunde.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>In ce limbi functioneaza AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este optimizat pentru limba romana, inclusiv terminologia medicala specifica. Sistemul poate procesa si conversatii in alte limbi (engleza, franceza s.a.), dar performanta optima este pentru romana.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot folosi AscultAI pentru teleconsiltatii?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI functioneaza atat pentru consultatii fata in fata, cat si pentru consultatii video sau telefonice. In cazul teleconsultatiilor, deschizi AscultAI pe acelasi dispozitiv de pe care desfasori consultatia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pot sterge datele mele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. Poti sterge orice document generat in orice moment. De asemenea, in conformitate cu GDPR, poti solicita stergerea integrala a tuturor datelor tale asociate contului.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Cerinte tehnice si compatibilitate -->
+        <div class="faq-category" id="tehnic">
+          <h2 class="faq-category-title">7. Cerinte tehnice si compatibilitate</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Pe ce dispozitive pot folosi AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>AscultAI este o aplicatie web care functioneaza in orice browser modern &mdash; Chrome, Firefox, Safari sau Edge. Poti accesa platforma de pe computer, laptop, tableta sau telefon.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Trebuie sa instalez ceva?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI functioneaza integral din browser. Nu este necesara instalarea niciunei aplicatii, extensii sau software suplimentar.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce conexiune la internet am nevoie?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>O conexiune stabila la internet este necesara pe durata inregistrarii. Recomandam minim 2 Mbps upload pentru o transcriere fluenta. Conexiunea Wi-Fi din cabinet este de obicei suficienta.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce tip de microfon recomandati?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Microfonul integrat al laptopului sau telefonului functioneaza bine in cele mai multe situatii. Pentru cabinete cu zgomot de fond sau conversatii la distanta, recomandam un microfon extern de birou sau casti cu microfon.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Onboarding si primii pasi -->
+        <div class="faq-category" id="onboarding">
+          <h2 class="faq-category-title">8. Onboarding si primii pasi</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum incep sa folosesc AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Pasul 1:</strong> Discutie initiala si evaluarea nevoilor &mdash; intelegem volumul si specificul activitatii tale.</li>
+                <li><strong>Pasul 2:</strong> Configurarea contului si sabloanelor &mdash; adaptam platforma la specialitatea si preferintele tale.</li>
+                <li><strong>Pasul 3:</strong> Sesiune de training (15&ndash;20 minute) &mdash; iti aratam cum sa folosesti eficient platforma.</li>
+                <li><strong>Pasul 4:</strong> Utilizare si suport continuu &mdash; echipa noastra e disponibila pentru orice intrebare.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cat dureaza pana incep sa economisesc timp?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>De la prima consultatie. Dupa sesiunea de training de 15&ndash;20 minute, poti folosi AscultAI imediat. Cele mai multe cabinete raporteaza o reducere semnificativa a timpului de documentare din prima zi de utilizare.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce se intampla daca decid sa nu continui?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Datele raman ale tale. La incetarea colaborarii, poti exporta toate documentele generate, iar noi stergem datele tale conform prevederilor GDPR si ale Acordului de Prelucrare a Datelor.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Conformitate si reglementari -->
+        <div class="faq-category" id="conformitate">
+          <h2 class="faq-category-title">9. Conformitate si reglementari</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI respecta GDPR?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Da. AscultAI este conform cu Regulamentul General privind Protectia Datelor (GDPR &mdash; Reg. UE 2016/679) si cu Legea 190/2018 (legea romaneasca de punere in aplicare a GDPR).</p>
+              <p>Relatia juridica: cabinetul/clinica ta este Operatorul de date (data controller), iar ApolloIQ SRL este Procesatorul (data processor). Aceasta relatie este formalizata printr-un Acord de Prelucrare a Datelor (DPA) semnat la activarea contului.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce drepturi am ca utilizator in legatura cu datele?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Conform GDPR, ai dreptul de:</p>
+              <ul>
+                <li><strong>Acces</strong> &mdash; sa stii ce date sunt procesate;</li>
+                <li><strong>Rectificare</strong> &mdash; sa corectezi date incorecte;</li>
+                <li><strong>Stergere</strong> &mdash; sa soliciti stergerea datelor (&bdquo;dreptul de a fi uitat&rdquo;);</li>
+                <li><strong>Portabilitate</strong> &mdash; sa primesti datele intr-un format structurat;</li>
+                <li><strong>Opozitie</strong> &mdash; sa te opui prelucrarii in anumite conditii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce obligatii am eu, ca utilizator, fata de pacientii mei?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Ca operator de date cu caracter personal (data controller), ai urmatoarele obligatii:</p>
+              <ul>
+                <li>Sa obtii consimtamantul pacientului inainte de inregistrare;</li>
+                <li>Sa informezi pacientul despre scopul si modalitatea de prelucrare;</li>
+                <li>Sa validezi personal fiecare document inainte de utilizare;</li>
+                <li>Sa pastrezi confidentialitatea datelor medicale conform legii.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>AscultAI este un dispozitiv medical?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nu. AscultAI este un instrument de suport administrativ pentru documentare si productivitate profesionala. Nu este un dispozitiv medical in sensul Regulamentului (UE) 2017/745 si nu a fost proiectat, evaluat sau certificat ca atare.</p>
+              <p>AscultAI nu ofera diagnostice, nu propune tratamente, nu interpreteaza rezultate clinice si nu substituie in niciun fel judecata profesionala a utilizatorului.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce este Regulamentul AI Act si cum afecteaza AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Regulamentul UE privind Inteligenta Artificiala (Reg. 2024/1689 &mdash; AI Act) clasificia sistemele AI pe niveluri de risc. AscultAI respecta obligatiile de transparenta ale AI Act: te informam clar ca documentele sunt generate de AI si necesita validare umana.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Suport si contact -->
+        <div class="faq-category" id="suport">
+          <h2 class="faq-category-title">10. Suport si contact</h2>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum pot contacta echipa AscultAI?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>Email:</strong> support@ascult.ai</li>
+                <li><strong>Chat in platforma:</strong> disponibil in interfata AscultAI</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Ce fac daca intampin o problema tehnica?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Contacteaza-ne prin oricare dintre canalele de mai sus. Echipa noastra de suport raspunde in timpul programului de lucru (L&ndash;V, 9:00&ndash;18:00). Pentru probleme urgente legate de pierderea accesului la date, raspundem in maxim 24 de ore.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Cum raportez o eroare de transcriere?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" width="24" height="24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Direct din interfata AscultAI, poti marca orice sectiune ca &bdquo;eroare&rdquo;. Feedback-ul tau ne ajuta sa imbunatatim continuu calitatea serviciului.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="faq-disclaimer">
+          <p>AscultAI este un instrument de suport pentru documentare, produs al ApolloIQ SRL. Documentele generate sunt drafturi orientative create cu ajutorul inteligentei artificiale si necesita verificarea si validarea de catre utilizator. AscultAI nu substituie judecata profesionala.</p>
+          <p>Ultima actualizare: Februarie 2026 &bull; &copy; 2026 ApolloIQ SRL</p>
+        </div>
+      </div>
+      <!-- ============================================================= -->
+      <!-- Section: Explicatii                                           -->
+      <!-- ============================================================= -->
+      <div class="hc-section" id="section-explicatii">
+        <div class="hc-section-header">
+          <h1>Explicatii si Materiale</h1>
+          <p>Materiale printabile pentru pacienti, postere pentru clinici si resurse informative.</p>
+        </div>
+
+        <!-- Pentru Pacienti -->
+        <div id="pacienti">
+          <h2 class="resource-section-title"><svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--color-primary);stroke-width:1.5;fill:none;vertical-align:-4px;stroke-linecap:round;stroke-linejoin:round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Pentru Pacienti</h2>
+          <p class="resource-section-desc">Materiale care explica pacientilor ce este AscultAI si cum sunt protejate datele lor.</p>
+          <div class="downloads-grid">
+            <div class="download-card patient">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <h3>Explicatie pentru Pacienti</h3>
+              <p>Fisa printabila A4 care explica pacientilor ce este AscultAI, cum functioneaza si cum sunt protejate datele lor.</p>
+              <div class="download-meta"><span>1 pagina</span><span>Print-ready</span></div>
+              <a href="assets/downloads/AscultAI_Explainer_Pacient_A4.pdf" class="download-btn" download>Descarca PDF</a>
+              <div class="download-formats">
+                <h4>Formate disponibile:</h4>
+                <div class="formats-list">
+                  <span class="format-tag">PDF A4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="download-card patient">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+              <h3>Formular Consimtamant</h3>
+              <p>Formular optional de consimtamant GDPR pentru pacienti. Editabil in Word sau PDF.</p>
+              <div class="download-meta"><span>1 pagina</span><span>Editabil</span></div>
+              <a href="#" class="download-btn">Descarca Pachet</a>
+              <div class="download-formats">
+                <h4>Formate disponibile:</h4>
+                <div class="formats-list">
+                  <span class="format-tag">PDF</span>
+                  <span class="format-tag">DOCX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pentru Clinici -->
+        <div id="clinici">
+          <h2 class="resource-section-title"><svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--color-primary);stroke-width:1.5;fill:none;vertical-align:-4px;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg> Pentru Clinici</h2>
+          <p class="resource-section-desc">Postere si materiale pentru sala de asteptare, receptie si ecrane TV.</p>
+          <div class="downloads-grid">
+            <div class="download-card clinic">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <h3>Poster Sala de Asteptare</h3>
+              <p>Poster A4 sau A3 pentru afisare in sala de asteptare. Design profesional care inspira incredere.</p>
+              <div class="download-meta"><span>Print-ready</span><span>A4 / A3</span></div>
+              <a href="assets/downloads/AscultAI_Poster_Clinica_Pacient.pdf" class="download-btn" download>Descarca PDF</a>
+            </div>
+
+            <div class="download-card clinic">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg></div>
+              <h3>Display TV</h3>
+              <p>Imagine 16:9 (1920x1080) pentru ecranele TV din sala de asteptare sau receptie.</p>
+              <div class="download-meta"><span>1920x1080</span><span>PNG</span></div>
+              <a href="assets/downloads/AscultAI_Poster_Pacient_TV.png" class="download-btn" download>Descarca PNG</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pentru Medici -->
+        <div id="medici">
+          <h2 class="resource-section-title"><svg viewBox="0 0 24 24" style="width:24px;height:24px;stroke:var(--color-primary);stroke-width:1.5;fill:none;vertical-align:-4px;stroke-linecap:round;stroke-linejoin:round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg> Pentru Medici</h2>
+          <p class="resource-section-desc">Materiale informative despre functionalitati si beneficii pentru profesionistii medicali.</p>
+          <div class="downloads-grid">
+            <div class="download-card medic">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+              <h3>Prezentare AscultAI</h3>
+              <p>Prezentare completa cu functionalitati, beneficii si studii de caz. Perfecta pentru a convinge colegii.</p>
+              <div class="download-meta"><span>15 slide-uri</span><span>PPT / PDF</span></div>
+              <a href="#" class="download-btn">Descarca</a>
+            </div>
+
+            <div class="download-card medic">
+              <div class="download-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <h3>Studiu ROI</h3>
+              <p>Analiza detaliata a economiilor de timp si bani cu AscultAI. Include calculator personalizabil.</p>
+              <div class="download-meta"><span>8 pagini</span><span>Excel inclus</span></div>
+              <a href="#" class="download-btn">Descarca</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="resource-cta">
+        <h2>Nu gasesti ce cauti?</h2>
+        <p>Echipa noastra de suport este pregatita sa te ajute cu orice intrebare.</p>
+        <a href="contact.html" class="btn btn-primary">Contacteaza-ne</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        &copy; <span id="year"></span> AscultAI &ndash; Un produs ApolloIQ.
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="help-center.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuClose = document.getElementById('mobileMenuClose');
+  const menuOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileMenuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+  let isMenuOpen = false;
+  function openMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.add('active'); menuToggle.classList.add('active'); document.body.style.overflow = 'hidden'; isMenuOpen = true; } }
+  function closeMenu() { if (mobileMenu && menuToggle) { mobileMenu.classList.remove('active'); menuToggle.classList.remove('active'); document.body.style.overflow = ''; isMenuOpen = false; } }
+  if (menuToggle) menuToggle.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); isMenuOpen ? closeMenu() : openMenu(); });
+  if (menuClose) menuClose.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+  if (menuOverlay) menuOverlay.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); });
+  mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMenu, 100); }); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && isMenuOpen) closeMenu(); });
+});
+  </script>
+</body>
+</html>

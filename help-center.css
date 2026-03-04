@@ -1,0 +1,552 @@
+/* ============================================================
+   Help Center – Sidebar Navigation & Layout
+   Ascult AI  ·  Appilix SaaS Design
+   ============================================================ */
+
+/* ---------- keyframes ---------- */
+@keyframes hcFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========  1. Layout  ========== */
+.hc-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);          /* below navbar */
+  position: relative;
+}
+
+/* ==========  2. Sidebar  ========== */
+.hc-sidebar {
+  width: 300px;
+  min-width: 300px;
+  background: #ffffff;
+  border-right: 1px solid var(--color-border);
+  position: sticky;
+  top: 80px;                                /* navbar height */
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 0 40px;
+  z-index: 10;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.hc-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hc-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hc-sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+/* ==========  3. Sidebar Header  ========== */
+.hc-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 20px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 12px;
+}
+
+.hc-sidebar-header h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.hc-sidebar-close {
+  display: none;                            /* shown on mobile */
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hc-sidebar-close:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-dark);
+}
+
+/* ==========  4. Category Buttons  ========== */
+.hc-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hc-category-header:hover {
+  background: var(--color-primary-soft);
+}
+
+.hc-category-header .hc-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.hc-category-header .hc-nav-icon svg,
+.hc-subgroup-header .hc-nav-icon svg,
+.hc-nav-external .hc-nav-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hc-nav-chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hc-nav-check svg {
+  width: 10px;
+  height: 10px;
+}
+
+.hc-category-header:hover .hc-nav-icon {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.hc-category-header .hc-nav-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========  5. Category Items Container (collapsible)  ========== */
+.hc-category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hc-category.open > .hc-category-content {
+  max-height: 2000px;                      /* large enough for any content */
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========  6. Sub-group (nested collapsible for guide chapters)  ========== */
+.hc-subgroup {
+  padding-left: 0;
+}
+
+.hc-subgroup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 24px 9px 62px;              /* indent: icon-width + gap + parent pad */
+  border: none;
+  background: transparent;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hc-subgroup-header:hover {
+  background: var(--color-primary-soft);
+}
+
+.hc-subgroup-header .hc-nav-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hc-subgroup-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hc-subgroup.open > .hc-subgroup-content {
+  max-height: 1500px;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========  7. Leaf Items  ========== */
+.hc-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 24px 8px 76px;              /* deeper indent */
+  border: none;
+  border-left: 3px solid transparent;
+  background: transparent;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.835rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.hc-sidebar-link:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-dark);
+}
+
+/* Active state */
+.hc-sidebar-link.active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Completed state – shows the check icon */
+.hc-sidebar-link.completed {
+  color: var(--color-muted);
+}
+
+.hc-sidebar-link.completed .hc-nav-check {
+  display: inline-flex;
+}
+
+/* Items directly under category (no subgroup) */
+.hc-category-content > .hc-sidebar-link {
+  padding-left: 44px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-dark);
+}
+
+.hc-sidebar-link .hc-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.hc-sidebar-link .hc-nav-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ==========  8. Chapter Number  ========== */
+.hc-nav-num {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  opacity: 0.7;
+  min-width: 18px;
+  flex-shrink: 0;
+}
+
+/* ==========  9. Check Icon  ========== */
+.hc-nav-check {
+  display: none;                            /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ==========  10. Chevron  ========== */
+.hc-nav-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  margin-left: auto;
+}
+
+/* Rotate when parent is open */
+.hc-category.open > .hc-category-header .hc-nav-chevron,
+.hc-subgroup.open > .hc-subgroup-header .hc-nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* ==========  10b. Nav Separator  ========== */
+.hc-nav-separator {
+  height: 1px;
+  background: var(--color-border);
+  margin: 12px 24px;
+}
+
+/* ==========  11. External Link  ========== */
+.hc-nav-external {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.hc-nav-external:hover {
+  background: var(--color-primary-soft);
+}
+
+.hc-nav-external .hc-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.hc-nav-external .hc-nav-arrow {
+  margin-left: auto;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hc-nav-external:hover .hc-nav-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* ==========  12. Content Area  ========== */
+.hc-content {
+  flex: 1;
+  max-width: 840px;
+  padding: 40px 48px 80px;
+  min-width: 0;                             /* prevent flex blowout */
+}
+
+/* ==========  13. Sections  ========== */
+.hc-section {
+  display: none;
+}
+
+.hc-section.active {
+  display: block;
+  animation: hcFadeIn 0.35s ease-out both;
+}
+
+/* ==========  13b. All guide chapters visible (no step-by-step)  ========== */
+.hc-section .guide-chapter {
+  display: block !important;
+  animation: none;
+}
+
+.hc-section .guide-chapter + .guide-chapter {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Hide progress bar and nav footer inside help center */
+.hc-section .guide-progress,
+.hc-section .guide-nav-footer {
+  display: none !important;
+}
+
+/* ==========  14. Mobile Sidebar Toggle  ========== */
+.hc-sidebar-toggle {
+  display: none;                            /* hidden on desktop */
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 200, 150, 0.35);
+  z-index: 100;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hc-sidebar-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0, 200, 150, 0.45);
+}
+
+/* ==========  15. Mobile Overlay  ========== */
+.hc-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 199;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hc-sidebar-overlay.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* ============================================================
+   16. Responsive – Mobile  (<=960px)
+   ============================================================ */
+@media (max-width: 960px) {
+
+  /* Show toggle */
+  .hc-sidebar-toggle {
+    display: flex;
+  }
+
+  /* Show close button inside sidebar */
+  .hc-sidebar-close {
+    display: flex;
+  }
+
+  /* Off-canvas sidebar */
+  .hc-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 300px;
+    min-width: 300px;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    padding-top: 0;
+  }
+
+  .hc-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Sidebar header sticks at top on mobile */
+  .hc-sidebar-header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 2;
+    padding-top: 20px;
+  }
+
+  /* Content fills full width */
+  .hc-content {
+    padding: 32px 20px 80px;
+    max-width: 100%;
+  }
+}
+
+/* Extra-small screens */
+@media (max-width: 480px) {
+  .hc-sidebar {
+    width: 85vw;
+    min-width: 260px;
+  }
+
+  .hc-content {
+    padding: 24px 16px 80px;
+  }
+
+  .hc-sidebar-link {
+    padding-left: 56px;
+  }
+
+  .hc-category-content > .hc-sidebar-link {
+    padding-left: 48px;
+  }
+
+  .hc-subgroup-header {
+    padding-left: 48px;
+  }
+}
+
+/* ============================================================
+   Desktop – ensure sidebar is always visible
+   ============================================================ */
+@media (min-width: 961px) {
+  .hc-sidebar-toggle {
+    display: none !important;
+  }
+
+  .hc-sidebar-overlay {
+    display: none !important;
+  }
+
+  .hc-sidebar {
+    transform: none !important;
+  }
+
+  .hc-sidebar-close {
+    display: none !important;
+  }
+}
