@@ -25,7 +25,7 @@
       prefix: 'pr',
       sectionId: 'section-pornire-rapida',
       storageKey: 'ascultai-guide-pornire-rapida-completed',
-      totalChapters: 6,
+      totalChapters: 9,
       hashSegment: 'pornire-rapida'
     },
     oa: {
@@ -219,6 +219,24 @@
     // Ensure this guide's section is visible
     showSection(guide.sectionId);
 
+    // Toggle active chapter (show/hide)
+    chapters.forEach(function (ch) { ch.classList.remove('active'); });
+    chapters[chapterIndex].classList.add('active');
+
+    // Update progress bar
+    var progressFill = $(guidePrefix + '-progressFill');
+    var currentChapterEl = $(guidePrefix + '-currentChapter');
+    var navCurrentEl = $(guidePrefix + '-navCurrent');
+    if (progressFill) progressFill.style.width = ((chapterIndex + 1) / total * 100) + '%';
+    if (currentChapterEl) currentChapterEl.textContent = chapterIndex + 1;
+    if (navCurrentEl) navCurrentEl.textContent = 'Pasul ' + (chapterIndex + 1) + ' din ' + total;
+
+    // Show/hide prev/next buttons
+    var prevBtn = $(guidePrefix + '-prevBtn');
+    var nextBtn = $(guidePrefix + '-nextBtn');
+    if (prevBtn) prevBtn.classList.toggle('hidden', chapterIndex === 0);
+    if (nextBtn) nextBtn.classList.toggle('hidden', chapterIndex === total - 1);
+
     // Update sidebar links within this guide's subgroup
     var sidebarLinks = $$('.hc-sidebar-link[data-guide="' + guidePrefix + '"]');
     sidebarLinks.forEach(function (link) {
@@ -237,14 +255,8 @@
     // Auto-expand the correct sidebar category and subgroup
     autoExpandSidebar(guidePrefix);
 
-    // Scroll to the chapter (or top if chapter 0)
-    if (chapterIndex === 0) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      setTimeout(function () {
-        chapters[chapterIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   /** Wire prev/next buttons for a guide. */
@@ -898,8 +910,10 @@
     // ---- Wire sidebar toggles ----
     wireCategoryToggles();
 
-    // ---- Wire guide links ----
+    // ---- Wire guide links & nav buttons ----
     wireGuideLinks();
+    wireGuideNavButtons('pr');
+    wireGuideNavButtons('oa');
 
     // ---- Wire FAQ ----
     initFaqAccordion();
