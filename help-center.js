@@ -50,8 +50,8 @@
     }
   })();
 
-  /** Mobile breakpoint (matches CSS). */
-  var MOBILE_BP = 1024;
+  /** Mobile breakpoint (matches CSS @media max-width: 960px). */
+  var MOBILE_BP = 960;
 
   // =====================================================================
   //  UTILITY HELPERS
@@ -886,6 +886,12 @@
   // =====================================================================
 
   function init() {
+    // ---- Prevent browser scroll restoration (forces top on reload) ----
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // ---- Migrate old localStorage data ----
     migrateOldProgress();
 

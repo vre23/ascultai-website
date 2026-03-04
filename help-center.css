@@ -449,7 +449,8 @@
   transition: opacity 0.3s ease;
 }
 
-.hc-sidebar-overlay.visible {
+.hc-sidebar-overlay.visible,
+.hc-sidebar-overlay.active {
   display: block;
   opacity: 1;
 }
