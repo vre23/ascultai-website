@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>AscultAI – Calculator ROI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Hero ── */
+    .roi-hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2.5rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .roi-hero .tag {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+    .roi-hero h1 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .roi-hero p {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Calculator Section ── */
+    .roi-section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .roi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── Sliders Panel ── */
+    .roi-inputs {
+      background: #fff;
+      border: 2px solid var(--color-border);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+    .roi-inputs h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 2rem;
+    }
+    .slider-group {
+      margin-bottom: 2rem;
+    }
+    .slider-group:last-child {
+      margin-bottom: 0;
+    }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+    .slider-label span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-dark);
+    }
+    .slider-value {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      min-width: 100px;
+      text-align: right;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,200,150,0.3);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,200,150,0.3);
+    }
+    .slider-range-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--color-muted);
+    }
+
+    /* ── Results Panel ── */
+    .roi-results {
+      position: sticky;
+      top: 100px;
+    }
+    .roi-results-card {
+      background: var(--color-dark);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      color: #fff;
+    }
+    .roi-results-card h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    .result-item {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .result-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .result-number {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .result-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .result-highlight {
+      background: var(--color-primary);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .result-highlight .result-number {
+      color: #fff;
+      font-size: 2rem;
+    }
+    .result-highlight .result-label {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    /* ── Key Metrics Bar ── */
+    .roi-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1120px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .metric-card {
+      background: var(--color-primary-soft);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .metric-card .metric-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .metric-card .metric-value {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 0.25rem;
+    }
+    .metric-card .metric-desc {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    /* ── Case Study ── */
+    .case-study {
+      max-width: 1120px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .case-study-card {
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, #fff 100%);
+      border: 2px solid var(--color-primary);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .case-study-card h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 0.5rem;
+    }
+    .case-study-card .case-tag {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .case-study-card p {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+    .case-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .case-stat {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    .case-stat-value {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+    .case-stat-label {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* ── FAQ ── */
+    .roi-faq {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .roi-faq h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--color-dark);
+    }
+    .faq-item {
+      border: 2px solid var(--color-border);
+      border-radius: 1rem;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open {
+      border-color: var(--color-primary);
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      background: #fff;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: var(--color-primary-soft);
+    }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: var(--color-muted);
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--color-primary);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 1.5rem 1.5rem;
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .roi-cta {
+      background: var(--color-dark);
+      text-align: center;
+      padding: 4rem 1.5rem;
+      margin: 0 auto 4rem;
+      max-width: 1120px;
+      border-radius: 1.5rem;
+    }
+    .roi-cta h2 {
+      font-family: 'Exo 2', sans-serif;
+      color: #fff;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .roi-cta p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .roi-cta .btn-cta {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.85rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .roi-cta .btn-cta:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .roi-hero h1 { font-size: 1.75rem; }
+      .roi-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .roi-results { position: static; }
+      .roi-metrics { grid-template-columns: 1fr 1fr; }
+      .case-study-card { grid-template-columns: 1fr; }
+      .case-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .roi-metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-img">
+        </a>
+      </div>
+      <div class="navbar-links">
+        <a href="index.html">Acasa</a>
+        <a href="pricing.html">Planuri Tarifare</a>
+        <div class="nav-dropdown">
+          <a href="help-center.html" class="nav-dropdown-trigger">Centru de Ajutor
+            <svg class="chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="help-center.html#ghiduri/pornire-rapida"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="dropdown-label">Ghiduri</span></a>
+            <a href="help-center.html#explicatii"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="dropdown-label">Explicatii</span></a>
+            <a href="help-center.html#faq"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span class="dropdown-label">Intrebari Frecvente</span></a>
+            <a href="audit.html"><span class="dropdown-icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><span class="dropdown-label">Audit Clinica</span></a>
+          </div>
+        </div>
+        <a href="about.html">Despre Noi</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.ascult.ai/login" class="btn">Log in Ascult.AI</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="assets/logo-horizontal.svg" alt="AscultAI" class="mobile-logo">
+          <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="index.html">Acasa</a>
+          <a href="pricing.html">Planuri Tarifare</a>
+          <a href="help-center.html">Centru de Ajutor</a>
+          <a href="about.html">Despre Noi</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://app.ascult.ai/login" class="mobile-menu-btn">Log in Ascult.AI</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="roi-hero">
+    <span class="tag">Calculator ROI</span>
+    <h1>Cat economisesti cu AscultAI?</h1>
+    <p>Calculeaza in timp real economiile de timp si bani pe care clinica ta le poate obtine cu documentarea medicala automata.</p>
+  </section>
+
+  <!-- ── Calculator ── -->
+  <section class="roi-section">
+    <div class="roi-grid">
+      <!-- Inputs -->
+      <div class="roi-inputs">
+        <h2>Configureaza clinica ta</h2>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Medici in echipa</span>
+            <span class="slider-value" id="val-doctors">5</span>
+          </div>
+          <input type="range" id="slider-doctors" min="1" max="100" value="5" step="1">
+          <div class="slider-range-labels"><span>1</span><span>100</span></div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Salariu mediu net / luna (RON)</span>
+            <span class="slider-value" id="val-salary">9.000</span>
+          </div>
+          <input type="range" id="slider-salary" min="4000" max="20000" value="9000" step="500">
+          <div class="slider-range-labels"><span>4.000</span><span>20.000</span></div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Pacienti pe zi / medic</span>
+            <span class="slider-value" id="val-patients">15</span>
+          </div>
+          <input type="range" id="slider-patients" min="5" max="30" value="15" step="1">
+          <div class="slider-range-labels"><span>5</span><span>30</span></div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="roi-results">
+        <div class="roi-results-card">
+          <h2>Economiile tale lunare</h2>
+
+          <div class="result-item">
+            <div class="result-number" id="res-min-day">1.125</div>
+            <div class="result-label">minute economisite / zi</div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-number" id="res-hours-month">412</div>
+            <div class="result-label">ore economisite / luna</div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-number" id="res-extra-consult">+15</div>
+            <div class="result-label">consultatii in plus / zi</div>
+          </div>
+
+          <div class="result-item">
+            <div class="result-number" id="res-money">23.438 RON</div>
+            <div class="result-label">valoare timp recuperat / luna</div>
+          </div>
+
+          <div class="result-highlight">
+            <div class="result-number" id="res-roi">ROI din ziua 1</div>
+            <div class="result-label">Investitia se recupereaza dupa 5 pacienti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Key Metrics ── -->
+  <section class="roi-metrics">
+    <div class="metric-card">
+      <div class="metric-icon">&#9201;</div>
+      <div class="metric-value">15 min</div>
+      <div class="metric-desc">economisiti per consultatie</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">&#128200;</div>
+      <div class="metric-value">+3</div>
+      <div class="metric-desc">consultatii in plus pe zi / medic</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">&#128274;</div>
+      <div class="metric-value">ISO 27001</div>
+      <div class="metric-desc">certificare securitate date</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">&#9889;</div>
+      <div class="metric-value">48h</div>
+      <div class="metric-desc">timp de implementare</div>
+    </div>
+  </section>
+
+  <!-- ── Case Study ── -->
+  <section class="case-study">
+    <div class="case-study-card">
+      <div>
+        <span class="case-tag">Studiu de caz real</span>
+        <h3>Clinica de Endocrinologie</h3>
+        <p>O clinica cu un singur medic endocrinolog a integrat AscultAI in practica zilnica. Rezultatele dupa 5 luni de utilizare demonstreaza impactul direct asupra productivitatii si eficientei documentarii medicale.</p>
+        <p style="margin-top: 1rem; font-weight: 600; color: var(--color-dark);">ROI din prima zi — investitia s-a recuperat dupa primii 5 pacienti consultati.</p>
+      </div>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-value">700</div>
+          <div class="case-stat-label">consultatii documentate</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-value">15 min</div>
+          <div class="case-stat-label">economisiti / consultatie</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-value">+3/zi</div>
+          <div class="case-stat-label">consultatii in plus</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-value">175h</div>
+          <div class="case-stat-label">ore economisite total</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="roi-faq">
+    <h2>Intrebari frecvente</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Cum se calculeaza economia de timp?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          AscultAI economiseste in medie 15 minute per consultatie. Acest timp era petrecut anterior cu documentarea manuala — scrierea notelor clinice, completarea fiselor si transcrierile. Cu AscultAI, medicul revizuieste nota generata automat in doar 2 minute, in loc de 15 minute de scriere manuala. Calculul se bazeaza pe datele reale din clinica de endocrinologie care a documentat 700 de consultatii in 5 luni.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        De unde vin cele 3 consultatii in plus pe zi?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Daca un medic vede 15 pacienti pe zi si economiseste 15 minute la fiecare, rezulta 225 minute (3 ore si 45 minute) de timp recuperat zilnic. O consultatie dureaza in medie 20-30 minute, ceea ce inseamna ca medicul poate programa 3 pacienti suplimentari pe zi fara a prelungi programul de lucru.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Cum se calculeaza ROI-ul din prima zi?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Costul AscultAI per medic este de aproximativ 99 EUR/luna (~500 RON). Intr-o zi de lucru cu 15 pacienti, medicul economiseste 225 minute. Valoarea acestui timp (calculata din salariul orar) depaseste costul zilnic al abonamentului dupa doar 5 pacienti consultati. Practic, din prima zi de utilizare, investitia este recuperata.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Ce include AscultAI concret?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          AscultAI include: transcriere automata in timp real a consultatiei in limba romana, interpretare inteligenta care structureaza informatiile in sectiuni clinice relevante, template-uri personalizabile pe specialitate (medicina generala, cardiologie, dermatologie, endocrinologie si multe altele), editare rapida a notelor generate si export in format PDF sau direct in sistemul de management al clinicii. Platforma functioneaza 100% in browser, fara instalare.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Este sigur din punct de vedere GDPR?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Da. AscultAI detine certificare ISO 27001, datele sunt stocate exclusiv in Uniunea Europeana, si nicio inregistrare audio nu este stocata — doar transcrierile text sunt pastrate. Toate datele sunt criptate end-to-end, atat in tranzit cat si in repaus. La activare, este inclus un Acord de Prelucrare a Datelor (DPA) conform GDPR. Accesul la date este controlat prin autentificare multi-factor.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Cat dureaza implementarea?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Implementarea completa dureaza sub 48 de ore si include 4 pasi: crearea conturilor pentru medici (activ in 5 minute), selectarea template-urilor potrivite specialitatii, actualizarea documentatiei GDPR (formulare de consimtamant si politica de confidentialitate incluse), si o sesiune de training de 30 minute cu echipa medicala.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Pe ce dispozitive functioneaza?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          AscultAI functioneaza pe orice dispozitiv cu browser modern: laptop sau desktop (Windows, Mac), tableta (iPad, Android), sau telefon mobil (iOS, Android). Suporta Chrome, Edge, Safari si Firefox. Nu necesita instalare de software — este 100% cloud. Puteti folosi microfonul integrat al dispozitivului sau un microfon extern.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Ce specialitati medicale sunt suportate?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          AscultAI ofera template-uri preconfigurate pentru: medicina generala, cardiologie, dermatologie, endocrinologie, pediatrie, ORL, ortopedie, psihiatrie, ginecologie si multe altele. Fiecare template ghideaza activ algoritmul AI, oferindu-i contextul necesar pentru interpretare corecta. Template-urile sunt complet personalizabile — puteti adauga sectiuni sau modifica structura.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="roi-cta">
+    <h2>Gata sa transformi documentarea medicala?</h2>
+    <p>Incearca AscultAI gratuit — fara card, fara obligatii.</p>
+    <a href="contact.html" class="btn-cta">Programeaza un Demo</a>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        &copy; <span id="year"></span> AscultAI &ndash; Un produs ApolloIQ.
+      </div>
+      <div class="footer-links">
+        <a href="termeni-si-conditii.html">Termeni si Conditii</a>
+        <a href="politica-de-confidentialitate.html">Politica de Confidentialitate</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Year ──
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Mobile menu ──
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileMenuClose');
+    const mobileOverlay = document.getElementById('mobileMenuOverlay');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => mobileMenu.classList.add('active'));
+      mobileClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
+      mobileOverlay.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    }
+
+    // ── Constants from AscultAI data ──
+    const MINUTES_SAVED_PER_CONSULT = 15;  // 15 min saved per consultation (from 15 min manual to 2 min review)
+    const EFFECTIVE_SLOT_MINUTES = 75;      // effective time per extra consultation (includes overhead, breaks)
+    const WORKING_DAYS_PER_MONTH = 22;
+    const WORKING_HOURS_PER_DAY = 8;
+    // Real data: 15 patients/day × 15 min saved = 225 min → 225/75 = 3 extra consultations ✓
+
+    // ── Sliders ──
+    const sliders = {
+      doctors:  document.getElementById('slider-doctors'),
+      salary:   document.getElementById('slider-salary'),
+      patients: document.getElementById('slider-patients')
+    };
+    const vals = {
+      doctors:  document.getElementById('val-doctors'),
+      salary:   document.getElementById('val-salary'),
+      patients: document.getElementById('val-patients')
+    };
+
+    function formatNumber(n) {
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function calculate() {
+      const doctors  = parseInt(sliders.doctors.value);
+      const salary   = parseInt(sliders.salary.value);
+      const patients = parseInt(sliders.patients.value);
+
+      // Update displayed values
+      vals.doctors.textContent  = doctors;
+      vals.salary.textContent   = formatNumber(salary);
+      vals.patients.textContent = patients;
+
+      // Calculate
+      const minPerDay    = doctors * patients * MINUTES_SAVED_PER_CONSULT;
+      const hoursPerMonth = Math.round((minPerDay * WORKING_DAYS_PER_MONTH) / 60);
+      const extraPerDoctor = Math.floor((patients * MINUTES_SAVED_PER_CONSULT) / EFFECTIVE_SLOT_MINUTES);
+      const extraConsults  = doctors * extraPerDoctor;
+
+      // Money: salary / working hours per month * hours saved
+      const hourlyRate   = salary / (WORKING_HOURS_PER_DAY * WORKING_DAYS_PER_MONTH);
+      const moneySaved   = Math.round(hoursPerMonth * hourlyRate);
+
+      // Update results
+      document.getElementById('res-min-day').textContent      = formatNumber(minPerDay);
+      document.getElementById('res-hours-month').textContent   = formatNumber(hoursPerMonth);
+      document.getElementById('res-extra-consult').textContent = '+' + extraConsults;
+      document.getElementById('res-money').textContent         = formatNumber(moneySaved) + ' RON';
+    }
+
+    // Bind events
+    Object.values(sliders).forEach(s => {
+      s.addEventListener('input', calculate);
+    });
+
+    // Initial calc
+    calculate();
+
+    // ── FAQ toggle ──
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(fi => {
+        fi.classList.remove('open');
+        fi.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // Open clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+  </script>
+</body>
+</html>

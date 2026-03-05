@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AscultAI — Prezentare</title>
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary: #00c896;
+      --primary-dark: #00a87d;
+      --primary-soft: #e6fbf4;
+      --dark: #111111;
+      --gray: #666666;
+      --light: #f8f9fa;
+      --border: #e5e5e5;
+      --slide-w: 960px;
+      --slide-h: 540px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #1a1a2e;
+      color: var(--dark);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Slide container ── */
+    .deck {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      position: relative;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      padding: 48px 56px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    /* ── Slide footer bar ── */
+    .slide-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 36px;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .slide-footer img { height: 18px; opacity: 0.9; }
+    .slide-footer .page-num {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Typography ── */
+    h1 { font-family: 'Exo 2', sans-serif; font-weight: 800; }
+    h2 { font-family: 'Exo 2', sans-serif; font-weight: 700; }
+    h3 { font-family: 'Exo 2', sans-serif; font-weight: 600; }
+
+    .tag {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Layout helpers ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; align-items: center; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; flex: 1; align-items: start; }
+
+    .card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .card-accent {
+      background: var(--primary-soft);
+      border: 1.5px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .icon-circle {
+      width: 44px; height: 44px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .icon-circle svg { width: 22px; height: 22px; fill: #fff; }
+
+    .stat-box {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-num {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+
+    ul.bullets { list-style: none; padding: 0; }
+    ul.bullets li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+    }
+    ul.bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 8px; height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .step-num {
+      width: 32px; height: 32px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .check-list { list-style: none; padding: 0; }
+    .check-list li {
+      padding: 6px 0 6px 28px;
+      position: relative;
+      font-size: 14px;
+      color: #333;
+    }
+    .check-list li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* ── Specific slides ── */
+
+    /* Slide 1: Title */
+    .slide-title {
+      background: #fff;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px;
+    }
+    .slide-title .logo-main { height: 72px; margin-bottom: 24px; }
+    .slide-title h1 { color: var(--dark); font-size: 28px; margin-bottom: 12px; }
+    .slide-title p { color: var(--gray); font-size: 16px; max-width: 500px; }
+    .slide-title .slide-footer { background: var(--dark); }
+
+    /* Slide dark */
+    .slide-dark {
+      background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+      color: #fff;
+    }
+    .slide-dark h2 { color: #fff; }
+    .slide-dark p { color: rgba(255,255,255,0.7); }
+    .slide-dark .tag { background: var(--primary); }
+
+    /* Slide green */
+    .slide-green {
+      background: linear-gradient(135deg, var(--primary) 0%, #00a87d 100%);
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .slide-green h2 { color: #fff; font-size: 32px; margin-bottom: 12px; }
+    .slide-green p { color: rgba(255,255,255,0.85); font-size: 18px; }
+    .slide-green .slide-footer { background: rgba(0,0,0,0.2); }
+
+    /* ── Navigation ── */
+    .nav-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0,0,0,0.7);
+      padding: 8px 20px;
+      border-radius: 30px;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background: none;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: var(--primary); border-color: var(--primary); }
+
+    .nav-counter {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.4s ease;
+      z-index: 100;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; overflow: visible; height: auto; }
+      .deck { box-shadow: none; border-radius: 0; }
+      .nav-bar, .progress-bar { display: none !important; }
+      .slide { display: flex !important; opacity: 1 !important; position: relative; page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="deck" id="deck">
+
+  <!-- ═══ SLIDE 1: Title ═══ -->
+  <div class="slide slide-title active">
+    <img src="assets/logo-horizontal.svg" alt="AscultAI" class="logo-main">
+    <h1>Asistentul tau inteligent<br>pentru documentare medicala</h1>
+    <p>Functionalitati, beneficii si studii de caz</p>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">ascult.ai</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 2: Problema ═══ -->
+  <div class="slide">
+    <span class="tag">Provocarea</span>
+    <h2 style="font-size:26px; margin-bottom:24px;">Documentarea medicala consuma<br>prea mult timp</h2>
+    <div class="three-col" style="align-items:center;">
+      <div class="stat-box card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div class="stat-num">35%</div>
+        <div class="stat-label">din timpul medicului<br>e petrecut pe documentare</div>
+      </div>
+      <div class="stat-box card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div class="stat-num">2-3h</div>
+        <div class="stat-label">zilnic completand<br>fise si rapoarte</div>
+      </div>
+      <div class="stat-box card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div class="stat-num">62%</div>
+        <div class="stat-label">dintre medici raporteaza<br>burnout administrativ</div>
+      </div>
+    </div>
+    <p style="font-size:14px; color:var(--gray); margin-top:16px; text-align:center;">Medicii merita sa se concentreze pe ceea ce conteaza cel mai mult: pacientul.</p>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">2 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 3: Solutia ═══ -->
+  <div class="slide">
+    <span class="tag">Solutia</span>
+    <h2 style="font-size:26px; margin-bottom:8px;">Ce este AscultAI?</h2>
+    <p style="font-size:15px; color:var(--gray); margin-bottom:24px;">O platforma de inteligenta artificiala care asculta consultatia si genereaza automat documentatia medicala.</p>
+    <div class="two-col">
+      <div>
+        <ul class="bullets">
+          <li><strong>Transcriere automata</strong> a consultatiei in timp real</li>
+          <li><strong>Interpretare inteligenta</strong> — structureaza informatiile clinic</li>
+          <li><strong>Template-uri personalizabile</strong> pe specialitate</li>
+          <li><strong>Editare si export</strong> direct in sistemul clinicii</li>
+          <li><strong>Conformitate GDPR</strong> si certificare ISO 27001</li>
+        </ul>
+      </div>
+      <div class="card-accent" style="text-align:center; padding:32px;">
+        <svg viewBox="0 0 24 24" style="width:64px;height:64px;fill:var(--primary);margin-bottom:12px;"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.41 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+        <h3 style="font-size:16px; margin-bottom:6px;">Asculta. Intelege. Documenteaza.</h3>
+        <p style="font-size:13px; color:var(--gray);">Medicul vorbeste cu pacientul,<br>AscultAI se ocupa de rest.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">3 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 4: Cum functioneaza ═══ -->
+  <div class="slide">
+    <span class="tag">Flux de lucru</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Cum functioneaza — 3 pasi simpli</h2>
+    <div class="three-col">
+      <div class="card" style="text-align:center;">
+        <div class="step-num" style="margin:0 auto 10px;">1</div>
+        <h3 style="font-size:16px; margin-bottom:8px;">Porneste</h3>
+        <p style="font-size:13px; color:var(--gray);">Apasa butonul de inregistrare la inceputul consultatiei. AscultAI incepe sa capteze conversatia.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="step-num" style="margin:0 auto 10px;">2</div>
+        <h3 style="font-size:16px; margin-bottom:8px;">Consulta</h3>
+        <p style="font-size:13px; color:var(--gray);">Vorbeste natural cu pacientul. Nu e nevoie de comenzi speciale sau dictare structurata.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="step-num" style="margin:0 auto 10px;">3</div>
+        <h3 style="font-size:16px; margin-bottom:8px;">Revizuieste</h3>
+        <p style="font-size:13px; color:var(--gray);">Dupa consultatie, revizuiesti nota generata, faci ajustari si salvezi in sistemul clinicii.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">4 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 5: Functionalitati ═══ -->
+  <div class="slide">
+    <span class="tag">Functionalitati</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Functionalitati cheie</h2>
+    <div class="two-col">
+      <div>
+        <div style="display:flex;gap:14px;margin-bottom:20px;">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3z"/><path d="M17.3 12c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.41 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg></div>
+          <div>
+            <h3 style="font-size:15px; margin-bottom:2px;">Transcriere in timp real</h3>
+            <p style="font-size:13px; color:var(--gray);">Capteaza tot ce se spune in consultatie cu acuratete ridicata, inclusiv limba romana.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;margin-bottom:20px;">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+          <div>
+            <h3 style="font-size:15px; margin-bottom:2px;">Interpretare inteligenta</h3>
+            <p style="font-size:13px; color:var(--gray);">Structureaza automat informatiile in sectiunile relevante ale notei clinice.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:14px;margin-bottom:20px;">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none" stroke="#fff" stroke-width="2"/><polyline points="14 2 14 8 20 8" fill="none" stroke="#fff" stroke-width="2"/></svg></div>
+          <div>
+            <h3 style="font-size:15px; margin-bottom:2px;">Template-uri pe specialitate</h3>
+            <p style="font-size:13px; color:var(--gray);">Sabloane preconfigurate pentru medicina generala, cardiologie, dermatologie si altele.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;margin-bottom:20px;">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></div>
+          <div>
+            <h3 style="font-size:15px; margin-bottom:2px;">Editare si export</h3>
+            <p style="font-size:13px; color:var(--gray);">Revizuiesti nota, corectezi si salvezi direct in sistemul de management al clinicii.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">5 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 6: Template-uri ═══ -->
+  <div class="slide">
+    <span class="tag">Template-uri</span>
+    <h2 style="font-size:24px; margin-bottom:8px;">Template-uri inteligente</h2>
+    <p style="font-size:14px; color:var(--gray); margin-bottom:20px;">Template-ul ghideaza activ algoritmul AI, oferindu-i contextul necesar pentru interpretare corecta.</p>
+    <div class="three-col" style="gap:16px;">
+      <div class="card" style="padding:20px;">
+        <h3 style="font-size:14px; color:var(--primary); margin-bottom:8px;">Medicina Generala</h3>
+        <ul class="check-list" style="font-size:12px;">
+          <li>Motiv prezentare</li>
+          <li>Istoric boala curenta</li>
+          <li>Examen obiectiv</li>
+          <li>Diagnostic</li>
+          <li>Plan terapeutic</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:20px;">
+        <h3 style="font-size:14px; color:var(--primary); margin-bottom:8px;">Cardiologie</h3>
+        <ul class="check-list" style="font-size:12px;">
+          <li>Simptome cardiovasculare</li>
+          <li>Factori de risc</li>
+          <li>Examen cardiac</li>
+          <li>Investigatii</li>
+          <li>Tratament</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:20px;">
+        <h3 style="font-size:14px; color:var(--primary); margin-bottom:8px;">Dermatologie</h3>
+        <ul class="check-list" style="font-size:12px;">
+          <li>Descriere leziune</li>
+          <li>Localizare</li>
+          <li>Evolutie</li>
+          <li>Diagnostic diferential</li>
+          <li>Tratament topic/sistemic</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--gray); margin-top:12px; text-align:center;">+ Pediatrie, ORL, Ortopedie, Psihiatrie, Ginecologie si multe altele</p>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">6 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 7: Beneficii Medici ═══ -->
+  <div class="slide">
+    <span class="tag">Beneficii</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Beneficii pentru medici</h2>
+    <div class="two-col">
+      <div>
+        <div style="margin-bottom:20px;">
+          <h3 style="font-size:16px; margin-bottom:4px;">Mai mult timp cu pacientul</h3>
+          <p style="font-size:14px; color:var(--gray);">Contact vizual in loc de ecran. Conversatie naturala in loc de dictare rigida.</p>
+        </div>
+        <div style="margin-bottom:20px;">
+          <h3 style="font-size:16px; margin-bottom:4px;">Documentatie completa</h3>
+          <p style="font-size:14px; color:var(--gray);">Toate detaliile sunt captate automat — fara omisiuni, fara scriere de mana.</p>
+        </div>
+        <div>
+          <h3 style="font-size:16px; margin-bottom:4px;">Reducerea burnout-ului</h3>
+          <p style="font-size:14px; color:var(--gray);">Mai putin stres administrativ, mai multa satisfactie profesionala.</p>
+        </div>
+      </div>
+      <div class="card-accent" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;">
+        <div class="stat-num" style="font-size:56px;">90%</div>
+        <p style="font-size:15px; color:var(--primary-dark); font-weight:600; margin-top:8px;">reducere a timpului<br>de documentare</p>
+        <p style="font-size:12px; color:var(--gray); margin-top:12px;">Bazat pe feedback-ul utilizatorilor<br>din primele 6 luni de utilizare</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">7 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 8: Beneficii Clinica ═══ -->
+  <div class="slide">
+    <span class="tag">Beneficii</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Beneficii pentru clinica</h2>
+    <div class="three-col" style="gap:20px;">
+      <div class="card" style="text-align:center; padding:28px 20px;">
+        <div class="icon-circle" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        </div>
+        <h3 style="font-size:15px; margin-bottom:6px;">Eficienta crescuta</h3>
+        <p style="font-size:13px; color:var(--gray);">Mai multe consultatii pe zi cu aceeasi echipa medicala.</p>
+      </div>
+      <div class="card" style="text-align:center; padding:28px 20px;">
+        <div class="icon-circle" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <h3 style="font-size:15px; margin-bottom:6px;">Conformitate GDPR</h3>
+        <p style="font-size:13px; color:var(--gray);">ISO 27001, date in UE, fara stocare audio.</p>
+      </div>
+      <div class="card" style="text-align:center; padding:28px 20px;">
+        <div class="icon-circle" style="margin:0 auto 14px;">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3 style="font-size:15px; margin-bottom:6px;">Satisfactia pacientilor</h3>
+        <p style="font-size:13px; color:var(--gray);">Pacienti mai multumiti cand medicul e prezent si atent.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">8 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 9: Studiu de caz 1 ═══ -->
+  <div class="slide">
+    <span class="tag">Studiu de caz</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Economie de timp reala</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="font-size:16px; color:var(--gray); margin-bottom:16px;">Clinica cu 5 medici generalisti</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="card" style="text-align:center; padding:20px;">
+            <p style="font-size:11px; color:var(--gray); text-transform:uppercase; letter-spacing:0.5px;">Inainte</p>
+            <div style="font-family:'Exo 2';font-size:32px;font-weight:800;color:#e74c3c;">15 min</div>
+            <p style="font-size:12px; color:var(--gray);">per consultatie<br>pentru documentare</p>
+          </div>
+          <div class="card-accent" style="text-align:center; padding:20px;">
+            <p style="font-size:11px; color:var(--primary-dark); text-transform:uppercase; letter-spacing:0.5px;">Cu AscultAI</p>
+            <div style="font-family:'Exo 2';font-size:32px;font-weight:800;color:var(--primary);">2 min</div>
+            <p style="font-size:12px; color:var(--gray);">revizuire si salvare</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:24px;">
+          <h3 style="font-size:15px; margin-bottom:12px;">Rezultate dupa 3 luni</h3>
+          <ul class="check-list">
+            <li>13 min economisiti per consultatie</li>
+            <li>+3 consultatii pe zi per medic</li>
+            <li>+15 consultatii pe zi per clinica</li>
+            <li>Documentare mai completa si precisa</li>
+            <li>Medici mai relaxati, pacienti mai multumiti</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">9 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 10: ROI ═══ -->
+  <div class="slide">
+    <span class="tag">ROI</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Return on Investment</h2>
+    <div class="two-col">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="card" style="padding:20px; display:flex; align-items:center; gap:16px;">
+          <div class="stat-num" style="font-size:28px; min-width:80px;">+15</div>
+          <div>
+            <p style="font-size:14px; font-weight:600;">consultatii extra / zi</p>
+            <p style="font-size:12px; color:var(--gray);">pentru o clinica cu 5 medici</p>
+          </div>
+        </div>
+        <div class="card" style="padding:20px; display:flex; align-items:center; gap:16px;">
+          <div class="stat-num" style="font-size:28px; min-width:80px;">325</div>
+          <div>
+            <p style="font-size:14px; font-weight:600;">ore economisite / luna</p>
+            <p style="font-size:12px; color:var(--gray);">timp medical recuperat</p>
+          </div>
+        </div>
+        <div class="card" style="padding:20px; display:flex; align-items:center; gap:16px;">
+          <div class="stat-num" style="font-size:28px; min-width:80px;">10x</div>
+          <div>
+            <p style="font-size:14px; font-weight:600;">ROI in primul an</p>
+            <p style="font-size:12px; color:var(--gray);">investitia se recupereaza rapid</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-accent" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px;">
+        <p style="font-size:14px; color:var(--primary-dark); font-weight:600; margin-bottom:8px;">Cost AscultAI</p>
+        <p style="font-size:13px; color:var(--gray); margin-bottom:20px;">de la</p>
+        <div style="font-family:'Exo 2';font-size:48px;font-weight:800;color:var(--primary);line-height:1;">99&euro;</div>
+        <p style="font-size:14px; color:var(--gray); margin-top:4px;">/ medic / luna</p>
+        <p style="font-size:12px; color:var(--gray); margin-top:16px;">Fara costuri ascunse<br>Fara contracte pe termen lung</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">10 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 11: Securitate ═══ -->
+  <div class="slide">
+    <span class="tag">Securitate</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Securitate si conformitate GDPR</h2>
+    <div class="two-col">
+      <div>
+        <ul class="bullets">
+          <li><strong>Date stocate in UE</strong> — servere in Uniunea Europeana</li>
+          <li><strong>Certificare ISO 27001</strong> — standard international de securitate</li>
+          <li><strong>Zero stocare audio</strong> — doar transcrierile text sunt pastrate</li>
+          <li><strong>Criptare end-to-end</strong> — in tranzit si in repaus</li>
+          <li><strong>DPA inclus</strong> — Acord de Prelucrare a Datelor la activare</li>
+          <li><strong>Audituri periodice</strong> — verificari regulate de securitate</li>
+        </ul>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="card-accent" style="text-align:center; padding:20px;">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;fill:var(--primary);margin-bottom:8px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <h3 style="font-size:15px;">ISO 27001</h3>
+          <p style="font-size:12px; color:var(--gray);">Certificat de securitate</p>
+        </div>
+        <div class="card-accent" style="text-align:center; padding:20px;">
+          <svg viewBox="0 0 24 24" style="width:36px;height:36px;fill:var(--primary);margin-bottom:8px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <h3 style="font-size:15px;">GDPR Compliant</h3>
+          <p style="font-size:12px; color:var(--gray);">Conform legislatiei UE</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">11 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 12: Compatibilitate ═══ -->
+  <div class="slide">
+    <span class="tag">Compatibilitate</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Functioneaza cu ce ai deja</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="font-size:16px; margin-bottom:14px;">Dispozitive</h3>
+        <ul class="check-list">
+          <li>Laptop sau desktop (Windows, Mac)</li>
+          <li>Tableta (iPad, Android)</li>
+          <li>Telefon mobil (iOS, Android)</li>
+          <li>Microfon integrat sau extern</li>
+        </ul>
+        <h3 style="font-size:16px; margin-top:20px; margin-bottom:14px;">Browser</h3>
+        <ul class="check-list">
+          <li>Chrome, Edge, Safari, Firefox</li>
+          <li>Fara instalare de software</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:16px; margin-bottom:14px;">Integrari</h3>
+        <ul class="check-list">
+          <li>Export in orice sistem de management</li>
+          <li>Copy-paste in fisa electronica</li>
+          <li>API pentru integrare directa</li>
+          <li>Print direct din platforma</li>
+        </ul>
+        <div class="card-accent" style="margin-top:20px; text-align:center; padding:16px;">
+          <p style="font-size:13px; color:var(--primary-dark); font-weight:600;">100% cloud — acces de oriunde</p>
+          <p style="font-size:12px; color:var(--gray);">Fara instalare, fara mentenanta IT</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">12 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 13: Implementare ═══ -->
+  <div class="slide">
+    <span class="tag">Implementare</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Implementare rapida in 4 pasi</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; flex:1; align-items:start;">
+      <div class="card" style="display:flex; gap:14px; align-items:flex-start; padding:20px;">
+        <div class="step-num">1</div>
+        <div>
+          <h3 style="font-size:15px; margin-bottom:4px;">Creare conturi</h3>
+          <p style="font-size:13px; color:var(--gray);">Cont pentru fiecare medic pe app.ascult.ai — activ in 5 minute.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; gap:14px; align-items:flex-start; padding:20px;">
+        <div class="step-num">2</div>
+        <div>
+          <h3 style="font-size:15px; margin-bottom:4px;">Selectare template-uri</h3>
+          <p style="font-size:13px; color:var(--gray);">Alegeti sabloanele potrivite specialitatii fiecarui medic.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; gap:14px; align-items:flex-start; padding:20px;">
+        <div class="step-num">3</div>
+        <div>
+          <h3 style="font-size:15px; margin-bottom:4px;">Actualizare GDPR</h3>
+          <p style="font-size:13px; color:var(--gray);">Adaugati AscultAI in politica de confidentialitate si pregatiti formularele de consimtamant.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex; gap:14px; align-items:flex-start; padding:20px;">
+        <div class="step-num">4</div>
+        <div>
+          <h3 style="font-size:15px; margin-bottom:4px;">Training echipa</h3>
+          <p style="font-size:13px; color:var(--gray);">Sesiune de 30 min cu medicii — pornire, revizuire, salvare. Simplu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">13 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 14: Planuri ═══ -->
+  <div class="slide">
+    <span class="tag">Planuri</span>
+    <h2 style="font-size:24px; margin-bottom:24px;">Planuri flexibile</h2>
+    <div class="three-col" style="gap:20px;">
+      <div class="card" style="text-align:center; padding:28px 20px; border:2px solid var(--border);">
+        <h3 style="font-size:14px; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Starter</h3>
+        <div style="font-family:'Exo 2';font-size:36px;font-weight:800;color:var(--dark);">Gratis</div>
+        <p style="font-size:13px; color:var(--gray); margin:8px 0 20px;">pentru a testa</p>
+        <ul class="check-list" style="text-align:left; font-size:13px;">
+          <li>10 consultatii / luna</li>
+          <li>Template-uri de baza</li>
+          <li>Suport email</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center; padding:28px 20px; border:2px solid var(--primary); position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-size:11px;font-weight:600;padding:3px 16px;border-radius:12px;">POPULAR</div>
+        <h3 style="font-size:14px; color:var(--primary); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Professional</h3>
+        <div style="font-family:'Exo 2';font-size:36px;font-weight:800;color:var(--primary);">99&euro;</div>
+        <p style="font-size:13px; color:var(--gray); margin:8px 0 20px;">/ medic / luna</p>
+        <ul class="check-list" style="text-align:left; font-size:13px;">
+          <li>Consultatii nelimitate</li>
+          <li>Toate template-urile</li>
+          <li>Suport prioritar</li>
+          <li>Export avansat</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center; padding:28px 20px; border:2px solid var(--border);">
+        <h3 style="font-size:14px; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Enterprise</h3>
+        <div style="font-family:'Exo 2';font-size:36px;font-weight:800;color:var(--dark);">Custom</div>
+        <p style="font-size:13px; color:var(--gray); margin:8px 0 20px;">contactati-ne</p>
+        <ul class="check-list" style="text-align:left; font-size:13px;">
+          <li>Tot din Professional</li>
+          <li>Integrare API directa</li>
+          <li>Manager dedicat</li>
+          <li>SLA garantat</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img src="assets/logo-horizontal-white.svg" alt="AscultAI">
+      <span class="page-num">14 / 15</span>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE 15: CTA / Contact ═══ -->
+  <div class="slide slide-green">
+    <img src="assets/logo-horizontal-white.svg" alt="AscultAI" style="height:56px; margin-bottom:24px;">
+    <h2>Gata sa transformi<br>documentarea medicala?</h2>
+    <p style="margin-bottom:32px;">Incearca AscultAI gratuit — fara card, fara obligatii.</p>
+    <div style="display:flex; gap:16px; justify-content:center;">
+      <div style="background:rgba(255,255,255,0.2); padding:16px 28px; border-radius:12px;">
+        <p style="font-size:13px; color:rgba(255,255,255,0.7);">Website</p>
+        <p style="font-size:18px; font-weight:700;">ascult.ai</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.2); padding:16px 28px; border-radius:12px;">
+        <p style="font-size:13px; color:rgba(255,255,255,0.7);">Email</p>
+        <p style="font-size:18px; font-weight:700;">contact@ascult.ai</p>
+      </div>
+    </div>
+    <div class="slide-footer" style="background:rgba(0,0,0,0.15);">
+      <span></span>
+      <span class="page-num" style="color:rgba(255,255,255,0.6);">15 / 15</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation -->
+<div class="nav-bar">
+  <button class="nav-btn" onclick="navigate(-1)">&#9664;</button>
+  <span class="nav-counter" id="counter">1 / 15</span>
+  <button class="nav-btn" onclick="navigate(1)">&#9654;</button>
+</div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  const counter = document.getElementById('counter');
+  const progress = document.getElementById('progress');
+
+  function show(idx) {
+    slides.forEach(s => { s.classList.remove('active'); });
+    slides[idx].classList.add('active');
+    counter.textContent = (idx + 1) + ' / ' + total;
+    progress.style.width = ((idx + 1) / total * 100) + '%';
+  }
+
+  function navigate(dir) {
+    current = Math.max(0, Math.min(total - 1, current + dir));
+    show(current);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); navigate(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); navigate(-1); }
+    if (e.key === 'Home') { current = 0; show(current); }
+    if (e.key === 'End') { current = total - 1; show(current); }
+  });
+
+  show(0);
+</script>
+
+</body>
+</html>
